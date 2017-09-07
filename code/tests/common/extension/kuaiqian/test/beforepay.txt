@@ -1,0 +1,1 @@
+a:1:{s:16:"GetDynNumContent";a:5:{s:10:"merchantId";s:15:"104110045112012";s:10:"customerId";s:8:"00002012";s:11:"storablePan";s:10:"4380880007";s:5:"token";s:7:"1259631";s:12:"responseCode";s:2:"00";}}

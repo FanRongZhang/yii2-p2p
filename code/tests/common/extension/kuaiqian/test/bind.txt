@@ -1,0 +1,1 @@
+a:1:{s:23:"indAuthDynVerifyContent";a:6:{s:10:"merchantId";s:15:"104110045112012";s:10:"customerId";s:8:"00002012";s:17:"externalRefNumber";s:14:"20151223101800";s:11:"storablePan";s:10:"4380880007";s:12:"responseCode";s:2:"00";s:19:"responseTextMessage";s:6:"成功";}}

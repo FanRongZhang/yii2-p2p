@@ -1,0 +1,106 @@
+body,h1,h2,h3,h4,h5,h6,hr,blockquote,dl,dt,dd,ul,ol,li,pre,form,legend,button,input,textarea,th,td {
+    margin:0;
+    padding:0;
+    font-family: Helvetica, "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+    color: #555;
+    font-size: 14px;
+    background: #f0f0f0;
+}
+/*particulars begin*/
+.qfb-cencer{
+    width: 100%;
+    max-width: 980px;
+    height: auto;
+    margin: 0 auto;
+}
+.qfb-text-content{
+    width:100%;
+    box-sizing: border-box;
+    border-top: 1px #dadde6 solid;
+    margin: 0;
+    padding:0 12px;
+    clear:both;
+}
+.qfb-text-content li{
+    width: 100%;
+    border-top: 1px #dadde6 solid;
+    line-height: 38px;
+    box-sizing: border-box;
+    text-decoration:none;
+    list-style:none;
+    display: table;
+
+}
+.qfb-text-content li:first-child{
+    border-top: none;
+}
+.qfb-headings{
+    position: relative;
+    background: #fff;
+    color: #60677f;
+
+}
+.qfb-text{
+    padding-left:5px;
+    display: table-cell;
+    color:#60677f;
+}
+.qfb-text-right{
+    text-align: right;
+    color: #60677f;
+    font-size: 16px;
+    display: table-cell;
+}
+.qfb-title{
+    padding-bottom: 20px;
+}
+.qfb-title h3{
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #60677f;
+    padding-left: 12px;
+    background-color: #e4e7f1;
+    border-top: 1px #dadde6 solid;
+    border-bottom: 1px #dadde6 solid;
+    margin-bottom: 20px;
+}
+.qfb-title p{
+    padding: 0 12px;
+    color: #60677f;
+}
+/*particulars end*/
+
+/*协议详情页面 START*/
+.phone_index {
+  width: 100%;
+  max-width: 980px;
+  height: auto;
+  display: table;
+  margin: 0 auto;
+}
+
+.content{
+	padding:10px 15px;
+}
+.content p{
+    line-height:28px;
+    font-size: 14px;
+    word-break: break-all;
+    word-wrap:break-word;
+}
+.contentmain p img{
+    width:100%;
+}
+.main{
+	background: #2b81d1;
+	font-weight: bold;
+	color: #fff;
+	padding:30px 20px;
+}
+.main .maincenter{
+	text-align: center;
+	font-size: 18px;
+}
+/*协议详情页面 END*/

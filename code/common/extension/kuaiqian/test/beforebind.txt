@@ -1,0 +1,1 @@
+a:2:{s:7:"version";s:3:"1.0";s:14:"indAuthContent";a:8:{s:10:"merchantId";s:15:"104110045112012";s:10:"terminalId";s:8:"00002012";s:10:"customerId";s:8:"00002012";s:17:"externalRefNumber";s:14:"20151223101800";s:11:"storablePan";s:10:"4380880007";s:5:"token";s:7:"1259661";s:12:"responseCode";s:2:"00";s:19:"responseTextMessage";s:12:"交易成功";}}
