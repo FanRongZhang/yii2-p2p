@@ -20,14 +20,14 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_about`;
 CREATE TABLE `qfb_about` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `mobile` varchar(15) NOT NULL COMMENT '电话',
-  `weixin` varchar(100) NOT NULL DEFAULT '' COMMENT '微信',
-  `qq` varchar(100) NOT NULL DEFAULT '' COMMENT 'qq',
-  `open_time` varchar(500) NOT NULL DEFAULT '' COMMENT '开放时间设置',
-  `remark` varchar(20) NOT NULL DEFAULT '' COMMENT '备注',
-  `wx_pic` varchar(255) NOT NULL DEFAULT '' COMMENT '微信图片',
-  PRIMARY KEY (`id`)
+                             `id` int(11) NOT NULL AUTO_INCREMENT,
+                             `mobile` varchar(15) NOT NULL COMMENT '电话',
+                             `weixin` varchar(100) NOT NULL DEFAULT '' COMMENT '微信',
+                             `qq` varchar(100) NOT NULL DEFAULT '' COMMENT 'qq',
+                             `open_time` varchar(500) NOT NULL DEFAULT '' COMMENT '开放时间设置',
+                             `remark` varchar(20) NOT NULL DEFAULT '' COMMENT '备注',
+                             `wx_pic` varchar(255) NOT NULL DEFAULT '' COMMENT '微信图片',
+                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='关于我们';
 
 -- ----------------------------
@@ -40,14 +40,14 @@ INSERT INTO `qfb_about` VALUES ('1', '400-607-1818', 'dmsj', '2797353115', '[{\"
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_about_me`;
 CREATE TABLE `qfb_about_me` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL COMMENT '名称',
-  `position` varchar(50) NOT NULL COMMENT '职位',
-  `image` varchar(50) NOT NULL COMMENT '头像',
-  `content` text NOT NULL COMMENT '简介内容',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态，1：启用，2：禁用',
-  `sort` tinyint(10) NOT NULL DEFAULT '1' COMMENT '排序',
-  PRIMARY KEY (`id`)
+                                `id` int(11) NOT NULL AUTO_INCREMENT,
+                                `name` varchar(50) NOT NULL COMMENT '名称',
+                                `position` varchar(50) NOT NULL COMMENT '职位',
+                                `image` varchar(50) NOT NULL COMMENT '头像',
+                                `content` text NOT NULL COMMENT '简介内容',
+                                `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态，1：启用，2：禁用',
+                                `sort` tinyint(10) NOT NULL DEFAULT '1' COMMENT '排序',
+                                PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='PC关于我们';
 
 -- ----------------------------
@@ -67,16 +67,16 @@ INSERT INTO `qfb_about_me` VALUES ('8', '123', '123', '1/kfRfGJJA0n4Wq1TJqkqqY7U
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_admin`;
 CREATE TABLE `qfb_admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  `account` varchar(30) NOT NULL COMMENT '登录账号',
-  `password` varchar(32) NOT NULL COMMENT '登录密码',
-  `enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用0 否 1是',
-  `is_sys` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否系统管理员0 否 1是',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `last_login` int(11) NOT NULL COMMENT '最后登录时间',
-  `permission` text COMMENT '权限值',
-  `true_name` varchar(20) NOT NULL COMMENT '姓名',
-  PRIMARY KEY (`id`)
+                             `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+                             `account` varchar(30) NOT NULL COMMENT '登录账号',
+                             `password` varchar(32) NOT NULL COMMENT '登录密码',
+                             `enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用0 否 1是',
+                             `is_sys` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否系统管理员0 否 1是',
+                             `create_time` int(11) NOT NULL COMMENT '创建时间',
+                             `last_login` int(11) NOT NULL COMMENT '最后登录时间',
+                             `permission` text COMMENT '权限值',
+                             `true_name` varchar(20) NOT NULL COMMENT '姓名',
+                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='管理员表';
 
 -- ----------------------------
@@ -90,12 +90,12 @@ INSERT INTO `qfb_admin` VALUES ('2', 'ceshi', 'e10adc3949ba59abbe56e057f20f883e'
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_admin_group`;
 CREATE TABLE `qfb_admin_group` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  `name` varchar(50) NOT NULL COMMENT '权限组名',
-  `remark` varchar(250) NOT NULL DEFAULT '' COMMENT '备注',
-  `users` varchar(5000) NOT NULL DEFAULT '' COMMENT '组用户',
-  `permission` text COMMENT '权限值',
-  PRIMARY KEY (`id`)
+                                   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+                                   `name` varchar(50) NOT NULL COMMENT '权限组名',
+                                   `remark` varchar(250) NOT NULL DEFAULT '' COMMENT '备注',
+                                   `users` varchar(5000) NOT NULL DEFAULT '' COMMENT '组用户',
+                                   `permission` text COMMENT '权限值',
+                                   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='管理员组';
 
 -- ----------------------------
@@ -109,14 +109,14 @@ INSERT INTO `qfb_admin_group` VALUES ('2', '测试2', '', ',2,', '{\"36\":15,\"2
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_agreement`;
 CREATE TABLE `qfb_agreement` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(30) NOT NULL COMMENT '标题',
-  `content` text NOT NULL COMMENT '内容',
-  `pic_url` varchar(50) NOT NULL DEFAULT '' COMMENT '图标地址',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `type` tinyint(2) NOT NULL DEFAULT '0' COMMENT '0其他协议1活期协议2定期协议',
-  `is_del` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除0否1是',
-  PRIMARY KEY (`id`)
+                                 `id` int(11) NOT NULL AUTO_INCREMENT,
+                                 `title` varchar(30) NOT NULL COMMENT '标题',
+                                 `content` text NOT NULL COMMENT '内容',
+                                 `pic_url` varchar(50) NOT NULL DEFAULT '' COMMENT '图标地址',
+                                 `create_time` int(11) NOT NULL COMMENT '创建时间',
+                                 `type` tinyint(2) NOT NULL DEFAULT '0' COMMENT '0其他协议1活期协议2定期协议',
+                                 `is_del` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除0否1是',
+                                 PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='产品协议';
 
 -- ----------------------------
@@ -138,14 +138,14 @@ INSERT INTO `qfb_agreement` VALUES ('13', 'yinhang1', '<p>1</p>', '1/uHVvPQNXlYn
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_article`;
 CREATE TABLE `qfb_article` (
-  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '文章id',
-  `title` varchar(100) NOT NULL COMMENT '文章标题',
-  `create_time` int(10) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `content` text NOT NULL COMMENT '文章内容',
-  `operator_id` int(10) NOT NULL COMMENT '对应管理员id',
-  `update_time` int(10) NOT NULL DEFAULT '0' COMMENT '修改时间',
-  `sortord` int(4) NOT NULL DEFAULT '999' COMMENT '排序，从小到大',
-  PRIMARY KEY (`id`)
+                               `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '文章id',
+                               `title` varchar(100) NOT NULL COMMENT '文章标题',
+                               `create_time` int(10) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                               `content` text NOT NULL COMMENT '文章内容',
+                               `operator_id` int(10) NOT NULL COMMENT '对应管理员id',
+                               `update_time` int(10) NOT NULL DEFAULT '0' COMMENT '修改时间',
+                               `sortord` int(4) NOT NULL DEFAULT '999' COMMENT '排序，从小到大',
+                               PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COMMENT='文章表';
 
 -- ----------------------------
@@ -168,18 +168,18 @@ INSERT INTO `qfb_article` VALUES ('19', '测试111', '1499078150', '<p>360安全
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_bank`;
 CREATE TABLE `qfb_bank` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `username` varchar(25) NOT NULL COMMENT '开户人姓名',
-  `name` varchar(50) NOT NULL COMMENT '银行名称',
-  `no` varchar(30) NOT NULL COMMENT '银行卡号',
-  `mobile` varchar(15) NOT NULL COMMENT '银行预留手机号',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `bank_abbr` varchar(16) NOT NULL DEFAULT '' COMMENT '银行缩写(如CCB)',
-  `province` varchar(18) NOT NULL DEFAULT '' COMMENT '省份',
-  `city` varchar(18) NOT NULL DEFAULT '' COMMENT '城市',
-  `is_del` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除0否1是',
-  PRIMARY KEY (`id`)
+                            `id` int(11) NOT NULL AUTO_INCREMENT,
+                            `member_id` int(11) NOT NULL COMMENT '会员id',
+                            `username` varchar(25) NOT NULL COMMENT '开户人姓名',
+                            `name` varchar(50) NOT NULL COMMENT '银行名称',
+                            `no` varchar(30) NOT NULL COMMENT '银行卡号',
+                            `mobile` varchar(15) NOT NULL COMMENT '银行预留手机号',
+                            `create_time` int(11) NOT NULL COMMENT '创建时间',
+                            `bank_abbr` varchar(16) NOT NULL DEFAULT '' COMMENT '银行缩写(如CCB)',
+                            `province` varchar(18) NOT NULL DEFAULT '' COMMENT '省份',
+                            `city` varchar(18) NOT NULL DEFAULT '' COMMENT '城市',
+                            `is_del` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除0否1是',
+                            PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=utf8 COMMENT='银行卡表';
 
 -- ----------------------------
@@ -288,21 +288,21 @@ INSERT INTO `qfb_bank` VALUES ('139', '510', '3699', '邮政储蓄银行', '6221
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_bank_card_info`;
 CREATE TABLE `qfb_bank_card_info` (
-  `id` double NOT NULL DEFAULT '0',
-  `bank_id` varchar(135) DEFAULT NULL,
-  `iss_users` varchar(90) DEFAULT NULL,
-  `card_no` varchar(270) DEFAULT NULL,
-  `card_len` double DEFAULT NULL,
-  `card_bin` varchar(135) DEFAULT NULL,
-  `card_name` varchar(450) DEFAULT NULL,
-  `bank_name` varchar(450) DEFAULT NULL,
-  `branch_id` varchar(108) DEFAULT NULL,
-  `branch_id2` varchar(108) DEFAULT NULL,
-  `card_type` int(11) DEFAULT NULL,
-  `card_org` varchar(36) DEFAULT NULL,
-  `card_tag` int(11) DEFAULT NULL,
-  `card_tag2` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                      `id` double NOT NULL DEFAULT '0',
+                                      `bank_id` varchar(135) DEFAULT NULL,
+                                      `iss_users` varchar(90) DEFAULT NULL,
+                                      `card_no` varchar(270) DEFAULT NULL,
+                                      `card_len` double DEFAULT NULL,
+                                      `card_bin` varchar(135) DEFAULT NULL,
+                                      `card_name` varchar(450) DEFAULT NULL,
+                                      `bank_name` varchar(450) DEFAULT NULL,
+                                      `branch_id` varchar(108) DEFAULT NULL,
+                                      `branch_id2` varchar(108) DEFAULT NULL,
+                                      `card_type` int(11) DEFAULT NULL,
+                                      `card_org` varchar(36) DEFAULT NULL,
+                                      `card_tag` int(11) DEFAULT NULL,
+                                      `card_tag2` int(11) DEFAULT NULL,
+                                      PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='银行卡库表';
 
 -- ----------------------------
@@ -3401,16 +3401,16 @@ INSERT INTO `qfb_bank_card_info` VALUES ('3087', '01000000', '100', '625367xxxxx
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_bank_extend`;
 CREATE TABLE `qfb_bank_extend` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `bank_id` int(11) NOT NULL COMMENT '银行id',
-  `channel_id` int(11) NOT NULL COMMENT '通道id',
-  `is_del` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态0否1是',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '绑定时间',
-  `is_default` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否默认0否1是',
-  `token` int(11) NOT NULL DEFAULT '0' COMMENT '通道token',
-  `storable_pan` bigint(11) NOT NULL DEFAULT '0' COMMENT '通道短卡号',
-  `old_bank_id` int(11) DEFAULT '0' COMMENT '旧银行卡id',
-  PRIMARY KEY (`id`)
+                                   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                   `bank_id` int(11) NOT NULL COMMENT '银行id',
+                                   `channel_id` int(11) NOT NULL COMMENT '通道id',
+                                   `is_del` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态0否1是',
+                                   `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '绑定时间',
+                                   `is_default` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否默认0否1是',
+                                   `token` int(11) NOT NULL DEFAULT '0' COMMENT '通道token',
+                                   `storable_pan` bigint(11) NOT NULL DEFAULT '0' COMMENT '通道短卡号',
+                                   `old_bank_id` int(11) DEFAULT '0' COMMENT '旧银行卡id',
+                                   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8 COMMENT='用户银行扩展表';
 
 -- ----------------------------
@@ -3525,18 +3525,18 @@ INSERT INTO `qfb_bank_extend` VALUES ('137', '139', '8', '0', '1502332040', '0',
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_bank_limit`;
 CREATE TABLE `qfb_bank_limit` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL COMMENT '银行名称',
-  `trade_num` tinyint(2) NOT NULL DEFAULT '0' COMMENT '每月交易次数0不限制',
-  `one_trade` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '单笔交易限额',
-  `day_trade` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '单日交易限额',
-  `month_trade` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '单月交易限额',
-  `create_user` tinyint(4) NOT NULL DEFAULT '1' COMMENT '添加人',
-  `iss_users` varchar(50) NOT NULL DEFAULT ',' COMMENT '银行代号',
-  `is_support` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否支持该银行卡0否1是',
-  `pt_type` tinyint(1) NOT NULL DEFAULT '5' COMMENT '平台类别1易联,2支付宝,3零钱,4京东,5快钱',
-  `bank_abbr` varchar(16) NOT NULL COMMENT '银行缩写(ICBC)',
-  PRIMARY KEY (`id`)
+                                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                                  `name` varchar(20) NOT NULL COMMENT '银行名称',
+                                  `trade_num` tinyint(2) NOT NULL DEFAULT '0' COMMENT '每月交易次数0不限制',
+                                  `one_trade` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '单笔交易限额',
+                                  `day_trade` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '单日交易限额',
+                                  `month_trade` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '单月交易限额',
+                                  `create_user` tinyint(4) NOT NULL DEFAULT '1' COMMENT '添加人',
+                                  `iss_users` varchar(50) NOT NULL DEFAULT ',' COMMENT '银行代号',
+                                  `is_support` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否支持该银行卡0否1是',
+                                  `pt_type` tinyint(1) NOT NULL DEFAULT '5' COMMENT '平台类别1易联,2支付宝,3零钱,4京东,5快钱',
+                                  `bank_abbr` varchar(16) NOT NULL COMMENT '银行缩写(ICBC)',
+                                  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=utf8 COMMENT='通道对应银行限制表';
 
 -- ----------------------------
@@ -3573,19 +3573,19 @@ INSERT INTO `qfb_bank_limit` VALUES ('40', '北京银行', '0', '50000.00', '300
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_banner`;
 CREATE TABLE `qfb_banner` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '广告标题',
-  `location_push` tinyint(1) NOT NULL DEFAULT '1' COMMENT '广告投放位置1,首页,2,活动',
-  `imgurl` varchar(255) NOT NULL DEFAULT '' COMMENT '广告图片地址',
-  `linkurl` varchar(255) NOT NULL DEFAULT '' COMMENT '广告外链地址',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '广告状态,0,未发布,1,发布',
-  `display_start_time` int(11) NOT NULL DEFAULT '0' COMMENT '发布开始时间',
-  `display_end_time` int(11) NOT NULL DEFAULT '0' COMMENT '发布结束时间',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型，0表示无跳转，1为钱富宝原生，2为商城广告u，3为url无token，4为手机充.5定期理财。具体看api文档，写不下',
-  `share_type` int(4) NOT NULL DEFAULT '0' COMMENT '0没有分享,3表示邀请送流量linkurl有值',
-  `sortord` int(4) NOT NULL DEFAULT '999' COMMENT '排序(从小到大)',
-  PRIMARY KEY (`id`)
+                              `id` int(11) NOT NULL AUTO_INCREMENT,
+                              `name` varchar(50) NOT NULL DEFAULT '' COMMENT '广告标题',
+                              `location_push` tinyint(1) NOT NULL DEFAULT '1' COMMENT '广告投放位置1,首页,2,活动',
+                              `imgurl` varchar(255) NOT NULL DEFAULT '' COMMENT '广告图片地址',
+                              `linkurl` varchar(255) NOT NULL DEFAULT '' COMMENT '广告外链地址',
+                              `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '广告状态,0,未发布,1,发布',
+                              `display_start_time` int(11) NOT NULL DEFAULT '0' COMMENT '发布开始时间',
+                              `display_end_time` int(11) NOT NULL DEFAULT '0' COMMENT '发布结束时间',
+                              `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                              `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型，0表示无跳转，1为钱富宝原生，2为商城广告u，3为url无token，4为手机充.5定期理财。具体看api文档，写不下',
+                              `share_type` int(4) NOT NULL DEFAULT '0' COMMENT '0没有分享,3表示邀请送流量linkurl有值',
+                              `sortord` int(4) NOT NULL DEFAULT '999' COMMENT '排序(从小到大)',
+                              PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='广告管理';
 
 -- ----------------------------
@@ -3604,14 +3604,14 @@ INSERT INTO `qfb_banner` VALUES ('20', 'LOGO', '4', '1/2aq01Ft0Ky0CMzO0H4lmOmYdV
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_base_navigation`;
 CREATE TABLE `qfb_base_navigation` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL COMMENT '栏目名',
-  `pid` tinyint(2) NOT NULL DEFAULT '0' COMMENT '所属父级id，0表示顶级',
-  `url` varchar(100) NOT NULL COMMENT '跳转地址',
-  `level` tinyint(1) NOT NULL DEFAULT '1' COMMENT '所属等级(已废除)',
-  `sort` tinyint(2) NOT NULL DEFAULT '1' COMMENT '排序，越小越靠前',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态，0：启用，1：禁用',
-  PRIMARY KEY (`id`)
+                                       `id` int(11) NOT NULL AUTO_INCREMENT,
+                                       `name` varchar(50) NOT NULL COMMENT '栏目名',
+                                       `pid` tinyint(2) NOT NULL DEFAULT '0' COMMENT '所属父级id，0表示顶级',
+                                       `url` varchar(100) NOT NULL COMMENT '跳转地址',
+                                       `level` tinyint(1) NOT NULL DEFAULT '1' COMMENT '所属等级(已废除)',
+                                       `sort` tinyint(2) NOT NULL DEFAULT '1' COMMENT '排序，越小越靠前',
+                                       `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态，0：启用，1：禁用',
+                                       PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COMMENT='底部导航表';
 
 -- ----------------------------
@@ -3637,23 +3637,23 @@ INSERT INTO `qfb_base_navigation` VALUES ('22', '111', '9', '10', '1', '1', '0')
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_binding_bank`;
 CREATE TABLE `qfb_binding_bank` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `sn` varchar(30) NOT NULL,
-  `member_id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `check_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否对账 0为否 1为成功，2失败，3处理中，4无此交易',
-  `remark` varchar(30) NOT NULL DEFAULT '' COMMENT '备注',
-  `token` int(11) NOT NULL DEFAULT '0' COMMENT '快钱绑卡token',
-  `storable_pan` varchar(16) NOT NULL DEFAULT '' COMMENT '快钱存短卡号',
-  `mobile` varchar(15) NOT NULL DEFAULT '' COMMENT '预留手机',
-  `bank_abbr` varchar(16) NOT NULL DEFAULT '' COMMENT '银行缩写(如CCB)',
-  `province` varchar(18) NOT NULL DEFAULT '' COMMENT '省份',
-  `city` varchar(18) NOT NULL DEFAULT '' COMMENT '城市',
-  `channel_id` int(10) NOT NULL DEFAULT '0' COMMENT '通道id',
-  `no` varchar(50) NOT NULL COMMENT '银行卡卡号',
-  `id_card` varchar(20) NOT NULL DEFAULT '' COMMENT '身份证号',
-  PRIMARY KEY (`id`)
+                                    `id` int(11) NOT NULL AUTO_INCREMENT,
+                                    `sn` varchar(30) NOT NULL,
+                                    `member_id` int(11) NOT NULL,
+                                    `name` varchar(50) NOT NULL,
+                                    `username` varchar(30) NOT NULL,
+                                    `check_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否对账 0为否 1为成功，2失败，3处理中，4无此交易',
+                                    `remark` varchar(30) NOT NULL DEFAULT '' COMMENT '备注',
+                                    `token` int(11) NOT NULL DEFAULT '0' COMMENT '快钱绑卡token',
+                                    `storable_pan` varchar(16) NOT NULL DEFAULT '' COMMENT '快钱存短卡号',
+                                    `mobile` varchar(15) NOT NULL DEFAULT '' COMMENT '预留手机',
+                                    `bank_abbr` varchar(16) NOT NULL DEFAULT '' COMMENT '银行缩写(如CCB)',
+                                    `province` varchar(18) NOT NULL DEFAULT '' COMMENT '省份',
+                                    `city` varchar(18) NOT NULL DEFAULT '' COMMENT '城市',
+                                    `channel_id` int(10) NOT NULL DEFAULT '0' COMMENT '通道id',
+                                    `no` varchar(50) NOT NULL COMMENT '银行卡卡号',
+                                    `id_card` varchar(20) NOT NULL DEFAULT '' COMMENT '身份证号',
+                                    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8 COMMENT='快钱绑卡记录表';
 
 -- ----------------------------
@@ -3742,18 +3742,18 @@ INSERT INTO `qfb_binding_bank` VALUES ('138', 'BK20170810102720VIX41I', '510', '
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_borrow_money`;
 CREATE TABLE `qfb_borrow_money` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '借款性质，1：抵押贷',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '借款金额',
-  `sey` varchar(10) NOT NULL DEFAULT '' COMMENT '借款周期，天数',
-  `guarantee` varchar(100) NOT NULL DEFAULT '' COMMENT '抵押物',
-  `purpose` varchar(200) NOT NULL DEFAULT '' COMMENT '借款用途',
-  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '借款人姓名',
-  `tel` varchar(20) NOT NULL DEFAULT '' COMMENT '借款人电话',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否联系过，1：未联系，2：已联系',
-  `time` int(11) NOT NULL DEFAULT '0' COMMENT '申请时间',
-  `reply_time` int(11) NOT NULL DEFAULT '0' COMMENT '回访时间',
-  PRIMARY KEY (`id`)
+                                    `id` int(11) NOT NULL AUTO_INCREMENT,
+                                    `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '借款性质，1：抵押贷',
+                                    `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '借款金额',
+                                    `sey` varchar(10) NOT NULL DEFAULT '' COMMENT '借款周期，天数',
+                                    `guarantee` varchar(100) NOT NULL DEFAULT '' COMMENT '抵押物',
+                                    `purpose` varchar(200) NOT NULL DEFAULT '' COMMENT '借款用途',
+                                    `name` varchar(50) NOT NULL DEFAULT '' COMMENT '借款人姓名',
+                                    `tel` varchar(20) NOT NULL DEFAULT '' COMMENT '借款人电话',
+                                    `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否联系过，1：未联系，2：已联系',
+                                    `time` int(11) NOT NULL DEFAULT '0' COMMENT '申请时间',
+                                    `reply_time` int(11) NOT NULL DEFAULT '0' COMMENT '回访时间',
+                                    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='借款申请记录';
 
 -- ----------------------------
@@ -3771,17 +3771,17 @@ INSERT INTO `qfb_borrow_money` VALUES ('6', '1', '1000000.00', '365', '房子', 
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_channel`;
 CREATE TABLE `qfb_channel` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL DEFAULT '' COMMENT '通道名称',
-  `ds_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '通道代收费用',
-  `df_money` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '通道代付费用',
-  `in_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否支持代收0否1是',
-  `out_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否支持代付0否1是',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `sort` tinyint(2) NOT NULL DEFAULT '9' COMMENT '排序从小到大',
-  `is_default` tinyint(1) NOT NULL DEFAULT '0' COMMENT '默认提现通道0否1是',
-  `need_certification` tinyint(1) DEFAULT '0' COMMENT '是否需要提前单独实名认证（通道是否支持实名认证）',
-  PRIMARY KEY (`id`)
+                               `id` int(11) NOT NULL AUTO_INCREMENT,
+                               `name` varchar(20) NOT NULL DEFAULT '' COMMENT '通道名称',
+                               `ds_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '通道代收费用',
+                               `df_money` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '通道代付费用',
+                               `in_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否支持代收0否1是',
+                               `out_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否支持代付0否1是',
+                               `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                               `sort` tinyint(2) NOT NULL DEFAULT '9' COMMENT '排序从小到大',
+                               `is_default` tinyint(1) NOT NULL DEFAULT '0' COMMENT '默认提现通道0否1是',
+                               `need_certification` tinyint(1) DEFAULT '0' COMMENT '是否需要提前单独实名认证（通道是否支持实名认证）',
+                               PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='通道表';
 
 -- ----------------------------
@@ -3796,10 +3796,10 @@ INSERT INTO `qfb_channel` VALUES ('8', '易宝支付', '0.00', '0.00', '0', '0',
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_day_off`;
 CREATE TABLE `qfb_day_off` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `time` int(10) NOT NULL COMMENT '假日时间',
-  `operator` varchar(25) NOT NULL COMMENT '操作人',
-  PRIMARY KEY (`id`)
+                               `id` int(11) NOT NULL AUTO_INCREMENT,
+                               `time` int(10) NOT NULL COMMENT '假日时间',
+                               `operator` varchar(25) NOT NULL COMMENT '操作人',
+                               PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -3813,12 +3813,12 @@ INSERT INTO `qfb_day_off` VALUES ('2', '1496419200', '系统管理员');
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_error_msg`;
 CREATE TABLE `qfb_error_msg` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增主键',
-  `channel_id` tinyint(4) NOT NULL DEFAULT '0' COMMENT '支付通道id',
-  `code` varchar(16) NOT NULL DEFAULT '' COMMENT '错误代码',
-  `msg` varchar(255) NOT NULL DEFAULT '' COMMENT '错误描述',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  PRIMARY KEY (`id`)
+                                 `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增主键',
+                                 `channel_id` tinyint(4) NOT NULL DEFAULT '0' COMMENT '支付通道id',
+                                 `code` varchar(16) NOT NULL DEFAULT '' COMMENT '错误代码',
+                                 `msg` varchar(255) NOT NULL DEFAULT '' COMMENT '错误描述',
+                                 `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                 PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -3831,17 +3831,17 @@ INSERT INTO `qfb_error_msg` VALUES ('9', '0', '11', '11', '1500607446');
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_experience_money`;
 CREATE TABLE `qfb_experience_money` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
-  `name` varchar(10) NOT NULL DEFAULT '' COMMENT '名称',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型(0:固定规则发放,1:活动发放)',
-  `valid_days` int(4) NOT NULL DEFAULT '0' COMMENT '有效期(天)',
-  `money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `use_members` varchar(20) NOT NULL DEFAULT '' COMMENT '可用人群',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否开启(1:是,0:否)',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `start_time` int(11) NOT NULL DEFAULT '0' COMMENT '体验金开始时间',
-  `end_time` int(11) NOT NULL DEFAULT '0' COMMENT '体验金结束时间',
-  PRIMARY KEY (`id`)
+                                        `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
+                                        `name` varchar(10) NOT NULL DEFAULT '' COMMENT '名称',
+                                        `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型(0:固定规则发放,1:活动发放)',
+                                        `valid_days` int(4) NOT NULL DEFAULT '0' COMMENT '有效期(天)',
+                                        `money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
+                                        `use_members` varchar(20) NOT NULL DEFAULT '' COMMENT '可用人群',
+                                        `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否开启(1:是,0:否)',
+                                        `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                        `start_time` int(11) NOT NULL DEFAULT '0' COMMENT '体验金开始时间',
+                                        `end_time` int(11) NOT NULL DEFAULT '0' COMMENT '体验金结束时间',
+                                        PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='体验金';
 
 -- ----------------------------
@@ -3853,16 +3853,16 @@ CREATE TABLE `qfb_experience_money` (
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_feedback`;
 CREATE TABLE `qfb_feedback` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '反馈id',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `title` varchar(100) NOT NULL COMMENT '标题',
-  `content` text NOT NULL COMMENT '反馈的内容',
-  `reply` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否回复0未回复1已回复',
-  `pid` int(11) NOT NULL DEFAULT '0' COMMENT '对应回复的id',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_read` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否已读0未读1已读',
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_8` (`member_id`)
+                                `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '反馈id',
+                                `member_id` int(11) NOT NULL COMMENT '用户id',
+                                `title` varchar(100) NOT NULL COMMENT '标题',
+                                `content` text NOT NULL COMMENT '反馈的内容',
+                                `reply` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否回复0未回复1已回复',
+                                `pid` int(11) NOT NULL DEFAULT '0' COMMENT '对应回复的id',
+                                `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                `is_read` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否已读0未读1已读',
+                                PRIMARY KEY (`id`),
+                                KEY `FK_Reference_8` (`member_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=220 DEFAULT CHARSET=utf8 COMMENT='意见反馈';
 
 -- ----------------------------
@@ -4045,15 +4045,15 @@ INSERT INTO `qfb_feedback` VALUES ('219', '0', 'df', 'EE', '0', '213', '0', '0')
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_file_storage_item`;
 CREATE TABLE `qfb_file_storage_item` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '附件id',
-  `component` varchar(255) NOT NULL DEFAULT '' COMMENT '组件',
-  `path` varchar(1024) NOT NULL COMMENT '路径',
-  `type` varchar(255) DEFAULT NULL COMMENT '文件类型',
-  `size` int(11) DEFAULT NULL COMMENT '图片大小',
-  `name` varchar(255) DEFAULT NULL COMMENT '名字',
-  `upload_ip` varchar(15) DEFAULT NULL COMMENT '上传者ip',
-  `created_at` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  PRIMARY KEY (`id`)
+                                         `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '附件id',
+                                         `component` varchar(255) NOT NULL DEFAULT '' COMMENT '组件',
+                                         `path` varchar(1024) NOT NULL COMMENT '路径',
+                                         `type` varchar(255) DEFAULT NULL COMMENT '文件类型',
+                                         `size` int(11) DEFAULT NULL COMMENT '图片大小',
+                                         `name` varchar(255) DEFAULT NULL COMMENT '名字',
+                                         `upload_ip` varchar(15) DEFAULT NULL COMMENT '上传者ip',
+                                         `created_at` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                         PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4200,13 +4200,13 @@ INSERT INTO `qfb_file_storage_item` VALUES ('191', 'fileStorage', '1/wDJMk8qEVI6
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_imei`;
 CREATE TABLE `qfb_imei` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `member_id` int(11) NOT NULL,
-  `imei` varchar(100) NOT NULL DEFAULT '' COMMENT '设备唯一标识',
-  `imei_count` tinyint(1) NOT NULL DEFAULT '0' COMMENT '此设备认证失败次数',
-  `member_count` tinyint(1) NOT NULL DEFAULT '0' COMMENT '对应人在此设备认证失败次数',
-  `edit_time` int(11) NOT NULL DEFAULT '0' COMMENT '编辑时间',
-  PRIMARY KEY (`id`)
+                            `id` int(11) NOT NULL AUTO_INCREMENT,
+                            `member_id` int(11) NOT NULL,
+                            `imei` varchar(100) NOT NULL DEFAULT '' COMMENT '设备唯一标识',
+                            `imei_count` tinyint(1) NOT NULL DEFAULT '0' COMMENT '此设备认证失败次数',
+                            `member_count` tinyint(1) NOT NULL DEFAULT '0' COMMENT '对应人在此设备认证失败次数',
+                            `edit_time` int(11) NOT NULL DEFAULT '0' COMMENT '编辑时间',
+                            PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='用户实名认证设备表';
 
 -- ----------------------------
@@ -4218,9 +4218,9 @@ CREATE TABLE `qfb_imei` (
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_imei_notice`;
 CREATE TABLE `qfb_imei_notice` (
-  `imei` varchar(100) COLLATE utf8_bin NOT NULL COMMENT '设备号',
-  `notice_id` int(11) NOT NULL COMMENT '记录消息id',
-  UNIQUE KEY `imei` (`imei`)
+                                   `imei` varchar(100) COLLATE utf8_bin NOT NULL COMMENT '设备号',
+                                   `notice_id` int(11) NOT NULL COMMENT '记录消息id',
+                                   UNIQUE KEY `imei` (`imei`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
@@ -4273,14 +4273,14 @@ INSERT INTO `qfb_imei_notice` VALUES ('ffebd28893b8d2d6fb9ad2d7d4e7adde9c3dff7c'
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_index`;
 CREATE TABLE `qfb_index` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  `title` varchar(30) NOT NULL DEFAULT '' COMMENT '宫格标题',
-  `icon` varchar(255) NOT NULL DEFAULT '' COMMENT '宫格图标url',
-  `url` varchar(255) NOT NULL DEFAULT '' COMMENT '如果是会员权益',
-  `click` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否可点击进入，默认为true可以进入，如果为false就表示不能进入',
-  `click_tips` varchar(30) NOT NULL DEFAULT '' COMMENT '如果click为false不可点击，客户端弹出提示语，默认『当前未开放』',
-  `type` int(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
+                             `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+                             `title` varchar(30) NOT NULL DEFAULT '' COMMENT '宫格标题',
+                             `icon` varchar(255) NOT NULL DEFAULT '' COMMENT '宫格图标url',
+                             `url` varchar(255) NOT NULL DEFAULT '' COMMENT '如果是会员权益',
+                             `click` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否可点击进入，默认为true可以进入，如果为false就表示不能进入',
+                             `click_tips` varchar(30) NOT NULL DEFAULT '' COMMENT '如果click为false不可点击，客户端弹出提示语，默认『当前未开放』',
+                             `type` int(1) NOT NULL DEFAULT '0',
+                             PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='个人中心9宫格';
 
 -- ----------------------------
@@ -4301,12 +4301,12 @@ INSERT INTO `qfb_index` VALUES ('9', '待收奖励', 'https://api.qianfb.com/img
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_level`;
 CREATE TABLE `qfb_level` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(8) NOT NULL DEFAULT '' COMMENT '等级名称',
-  `experience` int(11) NOT NULL DEFAULT '0' COMMENT '所需成长值',
-  `top_experience` int(11) NOT NULL DEFAULT '0' COMMENT '最高成长值',
-  `sort` smallint(4) NOT NULL DEFAULT '0' COMMENT '排序从小到大',
-  PRIMARY KEY (`id`)
+                             `id` int(11) NOT NULL AUTO_INCREMENT,
+                             `name` varchar(8) NOT NULL DEFAULT '' COMMENT '等级名称',
+                             `experience` int(11) NOT NULL DEFAULT '0' COMMENT '所需成长值',
+                             `top_experience` int(11) NOT NULL DEFAULT '0' COMMENT '最高成长值',
+                             `sort` smallint(4) NOT NULL DEFAULT '0' COMMENT '排序从小到大',
+                             PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='用户等级表';
 
 -- ----------------------------
@@ -4325,11 +4325,11 @@ INSERT INTO `qfb_level` VALUES ('15', '普通会员', '0', '0', '0');
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_live_log`;
 CREATE TABLE `qfb_live_log` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `year_rate` decimal(5,2) DEFAULT NULL COMMENT '年化收益率',
-  `create_time` int(11) DEFAULT NULL COMMENT '记录时间',
-  `recommend_rate` decimal(5,2) DEFAULT NULL COMMENT '三级分润、管理奖总奖励比例率',
-  PRIMARY KEY (`id`)
+                                `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                `year_rate` decimal(5,2) DEFAULT NULL COMMENT '年化收益率',
+                                `create_time` int(11) DEFAULT NULL COMMENT '记录时间',
+                                `recommend_rate` decimal(5,2) DEFAULT NULL COMMENT '三级分润、管理奖总奖励比例率',
+                                PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=209 DEFAULT CHARSET=utf8 COMMENT='活期利率记录表';
 
 -- ----------------------------
@@ -4547,12 +4547,12 @@ INSERT INTO `qfb_live_log` VALUES ('208', '12.00', '1497369600', '6.00');
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_login_record`;
 CREATE TABLE `qfb_login_record` (
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `ip` varchar(25) NOT NULL COMMENT '访问ip'
-) ENGINE=MRG_MyISAM DEFAULT CHARSET=utf8 UNION=(`qfb_login_record_t0`,`qfb_login_record_t1`,`qfb_login_record_t2`,`qfb_login_record_t3`,`qfb_login_record_t4`,`qfb_login_record_t5`,`qfb_login_record_t6`,`qfb_login_record_t7`,`qfb_login_record_t8`,`qfb_login_record_t9`) COMMENT='密码错误日志表';
+                                    `member_id` int(11) NOT NULL COMMENT '会员id',
+                                    `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
+                                    `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
+                                    `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                    `ip` varchar(25) NOT NULL COMMENT '访问ip'
+)  COMMENT='密码错误日志表';
 
 -- ----------------------------
 -- Records of qfb_login_record
@@ -4656,290 +4656,33 @@ INSERT INTO `qfb_login_record` VALUES ('139', '1', '1', '1502180896', '127.0.0.1
 INSERT INTO `qfb_login_record` VALUES ('139', '1', '1', '1502180910', '127.0.0.1');
 INSERT INTO `qfb_login_record` VALUES ('139', '1', '1', '1502180921', '127.0.0.1');
 
--- ----------------------------
--- Table structure for qfb_login_record_t0
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_login_record_t0`;
-CREATE TABLE `qfb_login_record_t0` (
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `ip` varchar(25) NOT NULL COMMENT '访问ip'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='密码错误日志表';
-
--- ----------------------------
--- Records of qfb_login_record_t0
--- ----------------------------
-INSERT INTO `qfb_login_record_t0` VALUES ('50', '1', '1', '1496398232', '116.24.144.164');
-INSERT INTO `qfb_login_record_t0` VALUES ('140', '1', '1', '1502960281', '127.0.0.1');
-INSERT INTO `qfb_login_record_t0` VALUES ('140', '1', '1', '1502850985', '127.0.0.1');
-INSERT INTO `qfb_login_record_t0` VALUES ('140', '1', '1', '1502260934', '127.0.0.1');
-INSERT INTO `qfb_login_record_t0` VALUES ('210', '1', '1', '1500361327', '127.0.0.1');
-INSERT INTO `qfb_login_record_t0` VALUES ('210', '1', '1', '1502180968', '127.0.0.1');
-INSERT INTO `qfb_login_record_t0` VALUES ('140', '1', '1', '1498817928', '127.0.0.1');
-INSERT INTO `qfb_login_record_t0` VALUES ('140', '1', '1', '1498874408', '127.0.0.1');
-INSERT INTO `qfb_login_record_t0` VALUES ('140', '1', '1', '1498904403', '127.0.0.1');
-
--- ----------------------------
--- Table structure for qfb_login_record_t1
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_login_record_t1`;
-CREATE TABLE `qfb_login_record_t1` (
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `ip` varchar(25) NOT NULL COMMENT '访问ip'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='密码错误日志表';
-
--- ----------------------------
--- Records of qfb_login_record_t1
--- ----------------------------
-INSERT INTO `qfb_login_record_t1` VALUES ('131', '0', '1', '1497510835', '127.0.0.1');
-
--- ----------------------------
--- Table structure for qfb_login_record_t2
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_login_record_t2`;
-CREATE TABLE `qfb_login_record_t2` (
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `ip` varchar(25) NOT NULL COMMENT '访问ip'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='密码错误日志表';
-
--- ----------------------------
--- Records of qfb_login_record_t2
--- ----------------------------
-INSERT INTO `qfb_login_record_t2` VALUES ('2', '1', '1', '1496394603', '116.24.144.164');
-INSERT INTO `qfb_login_record_t2` VALUES ('2', '1', '1', '1496396687', '116.24.144.164');
-INSERT INTO `qfb_login_record_t2` VALUES ('2', '1', '1', '1496396697', '116.24.144.164');
-INSERT INTO `qfb_login_record_t2` VALUES ('122', '1', '1', '1497063345', '127.0.0.1');
-INSERT INTO `qfb_login_record_t2` VALUES ('122', '0', '1', '1497433278', '127.0.0.1');
-INSERT INTO `qfb_login_record_t2` VALUES ('132', '1', '1', '1497510817', '127.0.0.1');
-INSERT INTO `qfb_login_record_t2` VALUES ('132', '1', '1', '1498008877', '127.0.0.1');
-INSERT INTO `qfb_login_record_t2` VALUES ('132', '1', '1', '1498197358', '127.0.0.1');
-INSERT INTO `qfb_login_record_t2` VALUES ('132', '1', '1', '1498197364', '127.0.0.1');
-INSERT INTO `qfb_login_record_t2` VALUES ('132', '1', '1', '1499848288', '127.0.0.1');
-INSERT INTO `qfb_login_record_t2` VALUES ('202', '1', '1', '1500360978', '127.0.0.1');
-
--- ----------------------------
--- Table structure for qfb_login_record_t3
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_login_record_t3`;
-CREATE TABLE `qfb_login_record_t3` (
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `ip` varchar(25) NOT NULL COMMENT '访问ip'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='密码错误日志表';
-
--- ----------------------------
--- Records of qfb_login_record_t3
--- ----------------------------
-INSERT INTO `qfb_login_record_t3` VALUES ('13', '1', '1', '1496388646', '116.24.144.164');
-INSERT INTO `qfb_login_record_t3` VALUES ('73', '0', '1', '1496391704', '116.24.144.164');
-INSERT INTO `qfb_login_record_t3` VALUES ('73', '0', '1', '1496391953', '116.24.144.164');
-INSERT INTO `qfb_login_record_t3` VALUES ('73', '0', '1', '1496391965', '116.24.144.164');
-INSERT INTO `qfb_login_record_t3` VALUES ('13', '1', '1', '1496392993', '116.24.144.164');
-INSERT INTO `qfb_login_record_t3` VALUES ('3', '1', '1', '1496394370', '116.24.144.164');
-INSERT INTO `qfb_login_record_t3` VALUES ('13', '1', '1', '1496476088', '116.24.144.164');
-INSERT INTO `qfb_login_record_t3` VALUES ('123', '0', '1', '1497835113', '127.0.0.1');
-INSERT INTO `qfb_login_record_t3` VALUES ('133', '0', '1', '1498008818', '127.0.0.1');
-INSERT INTO `qfb_login_record_t3` VALUES ('133', '0', '1', '1498008824', '127.0.0.1');
-INSERT INTO `qfb_login_record_t3` VALUES ('133', '0', '1', '1498008837', '127.0.0.1');
-INSERT INTO `qfb_login_record_t3` VALUES ('43', '0', '1', '1501569610', '192.168.16.117');
-INSERT INTO `qfb_login_record_t3` VALUES ('43', '0', '1', '1501569865', '192.168.16.117');
-INSERT INTO `qfb_login_record_t3` VALUES ('43', '0', '1', '1501569878', '192.168.16.117');
-
--- ----------------------------
--- Table structure for qfb_login_record_t4
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_login_record_t4`;
-CREATE TABLE `qfb_login_record_t4` (
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `ip` varchar(25) NOT NULL COMMENT '访问ip'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='密码错误日志表';
-
--- ----------------------------
--- Records of qfb_login_record_t4
--- ----------------------------
-INSERT INTO `qfb_login_record_t4` VALUES ('74', '1', '1', '1496390806', '116.24.144.164');
-INSERT INTO `qfb_login_record_t4` VALUES ('74', '1', '1', '1496392043', '116.24.144.164');
-INSERT INTO `qfb_login_record_t4` VALUES ('74', '0', '1', '1496393399', '116.24.144.164');
-INSERT INTO `qfb_login_record_t4` VALUES ('64', '0', '1', '1496650850', '14.155.137.137');
-INSERT INTO `qfb_login_record_t4` VALUES ('114', '0', '1', '1497061951', '127.0.0.1');
-INSERT INTO `qfb_login_record_t4` VALUES ('134', '0', '1', '1497510878', '127.0.0.1');
-INSERT INTO `qfb_login_record_t4` VALUES ('124', '1', '1', '1497669495', '127.0.0.1');
-INSERT INTO `qfb_login_record_t4` VALUES ('154', '1', '1', '1498114778', '127.0.0.1');
-
--- ----------------------------
--- Table structure for qfb_login_record_t5
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_login_record_t5`;
-CREATE TABLE `qfb_login_record_t5` (
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `ip` varchar(25) NOT NULL COMMENT '访问ip'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='密码错误日志表';
-
--- ----------------------------
--- Records of qfb_login_record_t5
--- ----------------------------
-INSERT INTO `qfb_login_record_t5` VALUES ('145', '1', '1', '1498008922', '127.0.0.1');
-INSERT INTO `qfb_login_record_t5` VALUES ('145', '0', '1', '1498787564', '127.0.0.1');
-INSERT INTO `qfb_login_record_t5` VALUES ('145', '0', '1', '1498787575', '127.0.0.1');
-INSERT INTO `qfb_login_record_t5` VALUES ('145', '0', '1', '1498787586', '127.0.0.1');
-
--- ----------------------------
--- Table structure for qfb_login_record_t6
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_login_record_t6`;
-CREATE TABLE `qfb_login_record_t6` (
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `ip` varchar(25) NOT NULL COMMENT '访问ip'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='密码错误日志表';
-
--- ----------------------------
--- Records of qfb_login_record_t6
--- ----------------------------
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '1496384002', '116.24.144.164');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '1496384009', '116.24.144.164');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '1496384472', '116.24.144.164');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '1496385401', '116.24.144.164');
-INSERT INTO `qfb_login_record_t6` VALUES ('16', '1', '1', '1496388117', '116.24.144.164');
-INSERT INTO `qfb_login_record_t6` VALUES ('16', '1', '1', '1496388122', '116.24.144.164');
-INSERT INTO `qfb_login_record_t6` VALUES ('16', '1', '1', '1496388153', '116.24.144.164');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '1496388275', '116.24.144.164');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '1496388282', '116.24.144.164');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '1496392115', '116.24.144.164');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '1496468096', '116.24.144.164');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '1496478745', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '1496479340', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '0', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '0', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '0', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '0', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '0', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '0', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '0', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '0', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '0', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('66', '1', '1', '1496624868', '14.155.137.108');
-INSERT INTO `qfb_login_record_t6` VALUES ('146', '0', '1', '1498008909', '127.0.0.1');
-
--- ----------------------------
--- Table structure for qfb_login_record_t7
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_login_record_t7`;
-CREATE TABLE `qfb_login_record_t7` (
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `ip` varchar(25) NOT NULL COMMENT '访问ip'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='密码错误日志表';
-
--- ----------------------------
--- Records of qfb_login_record_t7
--- ----------------------------
-INSERT INTO `qfb_login_record_t7` VALUES ('137', '1', '1', '1498013136', '127.0.0.1');
-INSERT INTO `qfb_login_record_t7` VALUES ('137', '1', '1', '1498013323', '127.0.0.1');
-INSERT INTO `qfb_login_record_t7` VALUES ('137', '1', '1', '1498016643', '127.0.0.1');
-INSERT INTO `qfb_login_record_t7` VALUES ('167', '0', '1', '1498039032', '127.0.0.1');
-INSERT INTO `qfb_login_record_t7` VALUES ('167', '0', '1', '1498039095', '127.0.0.1');
-INSERT INTO `qfb_login_record_t7` VALUES ('167', '0', '1', '1498039716', '127.0.0.1');
-INSERT INTO `qfb_login_record_t7` VALUES ('47', '0', '1', '1501567979', '192.168.16.82');
-INSERT INTO `qfb_login_record_t7` VALUES ('47', '0', '1', '1502181173', '127.0.0.1');
-
--- ----------------------------
--- Table structure for qfb_login_record_t8
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_login_record_t8`;
-CREATE TABLE `qfb_login_record_t8` (
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `ip` varchar(25) NOT NULL COMMENT '访问ip'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='密码错误日志表';
-
--- ----------------------------
--- Records of qfb_login_record_t8
--- ----------------------------
-INSERT INTO `qfb_login_record_t8` VALUES ('168', '1', '1', '1498039872', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('168', '1', '1', '1498047470', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('168', '1', '1', '1498047534', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('168', '1', '1', '1498048116', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('168', '1', '1', '1498048557', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('168', '1', '1', '1498119874', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('168', '1', '1', '1498197633', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('178', '1', '1', '1498198024', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('198', '1', '1', '1498613172', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('198', '1', '1', '1498613188', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('168', '1', '1', '1498702373', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('168', '1', '1', '1498734868', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('188', '1', '1', '1499045985', '127.0.0.1');
-INSERT INTO `qfb_login_record_t8` VALUES ('28', '1', '1', '1501569546', '192.168.16.82');
-
--- ----------------------------
--- Table structure for qfb_login_record_t9
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_login_record_t9`;
-CREATE TABLE `qfb_login_record_t9` (
-  `member_id` int(11) NOT NULL COMMENT '会员id',
-  `flag` tinyint(1) NOT NULL DEFAULT '1' COMMENT '密码输入状态0失败1成功',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型0登录1支付',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `ip` varchar(25) NOT NULL COMMENT '访问ip'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='密码错误日志表';
-
--- ----------------------------
--- Records of qfb_login_record_t9
--- ----------------------------
-INSERT INTO `qfb_login_record_t9` VALUES ('139', '1', '1', '1498740972', '127.0.0.1');
-INSERT INTO `qfb_login_record_t9` VALUES ('129', '1', '1', '1501568997', '192.168.16.82');
-INSERT INTO `qfb_login_record_t9` VALUES ('139', '1', '1', '1502180896', '127.0.0.1');
-INSERT INTO `qfb_login_record_t9` VALUES ('139', '1', '1', '1502180910', '127.0.0.1');
-INSERT INTO `qfb_login_record_t9` VALUES ('139', '1', '1', '1502180921', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for qfb_member
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_member`;
 CREATE TABLE `qfb_member` (
-  `id` int(11) NOT NULL DEFAULT '0' COMMENT '用户id',
-  `level` tinyint(4) NOT NULL COMMENT '用户级别',
-  `relations` varchar(10000) NOT NULL DEFAULT '' COMMENT '用户关系',
-  `r_member_id` int(11) NOT NULL COMMENT '推荐人id',
-  `layer` tinyint(4) NOT NULL COMMENT '层级关系',
-  `mobile` varchar(20) NOT NULL COMMENT '手机号',
-  `account` varchar(50) NOT NULL COMMENT '帐号',
-  `access_token` varchar(32) NOT NULL DEFAULT '' COMMENT '通行秘钥',
-  `channel_id` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1.Android 2：IOS',
-  `last_access_time` int(11) NOT NULL DEFAULT '0' COMMENT '最后访问时间',
-  `imei` varchar(100) NOT NULL DEFAULT '' COMMENT '设备号',
-  `zf_pwd` varchar(32) NOT NULL COMMENT '支付密码',
-  `last_ip` varchar(20) NOT NULL DEFAULT '' COMMENT '最后登录ip',
-  `operator` varchar(50) NOT NULL DEFAULT '' COMMENT '操作者',
-  `experience` int(10) NOT NULL DEFAULT '0' COMMENT '成长值',
-  `is_newer` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否是新手，1：新手 0：不是新手',
-  `is_dredge` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否开通银行账户 0 未开通 1 已开通 9 开通异常',
-  `member_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '用户类型 1 投资人 2 借款人',
-  `address` varchar(255) NOT NULL DEFAULT '' COMMENT '最后登录地址',
-  `option_time` int(11) NOT NULL DEFAULT '0' COMMENT '请求银行操作时间',
-  PRIMARY KEY (`id`)
+                              `id` int(11) NOT NULL DEFAULT '0' COMMENT '用户id',
+                              `level` tinyint(4) NOT NULL COMMENT '用户级别',
+                              `relations` varchar(10000) NOT NULL DEFAULT '' COMMENT '用户关系',
+                              `r_member_id` int(11) NOT NULL COMMENT '推荐人id',
+                              `layer` tinyint(4) NOT NULL COMMENT '层级关系',
+                              `mobile` varchar(20) NOT NULL COMMENT '手机号',
+                              `account` varchar(50) NOT NULL COMMENT '帐号',
+                              `access_token` varchar(32) NOT NULL DEFAULT '' COMMENT '通行秘钥',
+                              `channel_id` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1.Android 2：IOS',
+                              `last_access_time` int(11) NOT NULL DEFAULT '0' COMMENT '最后访问时间',
+                              `imei` varchar(100) NOT NULL DEFAULT '' COMMENT '设备号',
+                              `zf_pwd` varchar(32) NOT NULL COMMENT '支付密码',
+                              `last_ip` varchar(20) NOT NULL DEFAULT '' COMMENT '最后登录ip',
+                              `operator` varchar(50) NOT NULL DEFAULT '' COMMENT '操作者',
+                              `experience` int(10) NOT NULL DEFAULT '0' COMMENT '成长值',
+                              `is_newer` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否是新手，1：新手 0：不是新手',
+                              `is_dredge` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否开通银行账户 0 未开通 1 已开通 9 开通异常',
+                              `member_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '用户类型 1 投资人 2 借款人',
+                              `address` varchar(255) NOT NULL DEFAULT '' COMMENT '最后登录地址',
+                              `option_time` int(11) NOT NULL DEFAULT '0' COMMENT '请求银行操作时间',
+                              PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户信息表';
 
 -- ----------------------------
@@ -5151,17 +4894,17 @@ INSERT INTO `qfb_member` VALUES ('510', '15', ',1,', '1', '2', '18002503699', '1
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_member_experience_money`;
 CREATE TABLE `qfb_member_experience_money` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `experience_money_id` int(11) NOT NULL COMMENT '体验金ID',
-  `member_id` int(11) DEFAULT NULL COMMENT '用户id',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态(0:未使用,1:已使用,2:已失效)',
-  `receive_time` int(11) NOT NULL DEFAULT '0' COMMENT '领取时间',
-  `invalid_time` int(11) NOT NULL DEFAULT '0' COMMENT '失效时间',
-  `profit` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '已产生收益',
-  `money` decimal(9,2) DEFAULT '0.00' COMMENT '金额',
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_13` (`member_id`),
-  KEY `FK_Reference_4` (`experience_money_id`)
+                                               `id` int(11) NOT NULL AUTO_INCREMENT,
+                                               `experience_money_id` int(11) NOT NULL COMMENT '体验金ID',
+                                               `member_id` int(11) DEFAULT NULL COMMENT '用户id',
+                                               `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态(0:未使用,1:已使用,2:已失效)',
+                                               `receive_time` int(11) NOT NULL DEFAULT '0' COMMENT '领取时间',
+                                               `invalid_time` int(11) NOT NULL DEFAULT '0' COMMENT '失效时间',
+                                               `profit` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '已产生收益',
+                                               `money` decimal(9,2) DEFAULT '0.00' COMMENT '金额',
+                                               PRIMARY KEY (`id`),
+                                               KEY `FK_Reference_13` (`member_id`),
+                                               KEY `FK_Reference_4` (`experience_money_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='用户体检金关系表';
 
 -- ----------------------------
@@ -5173,17 +4916,17 @@ CREATE TABLE `qfb_member_experience_money` (
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_member_info`;
 CREATE TABLE `qfb_member_info` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `realname` varchar(20) NOT NULL DEFAULT '' COMMENT '姓名',
-  `nickname` varchar(20) NOT NULL DEFAULT '' COMMENT '昵称',
-  `avatar` varchar(255) NOT NULL DEFAULT '' COMMENT '用户头像',
-  `card_type` tinyint(2) NOT NULL DEFAULT '1' COMMENT '证件类型  (1身份证,2港澳通行证,3护照,4外国人永久居留证)',
-  `card_no` varchar(20) NOT NULL DEFAULT '' COMMENT '证件号',
-  `is_verify` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否实名认证  0未认证 1已认证',
-  `create_time` int(10) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `bindId` int(10) NOT NULL DEFAULT '0' COMMENT '证联实名认证绑定ID',
-  PRIMARY KEY (`member_id`),
-  CONSTRAINT `FK_Reference_4` FOREIGN KEY (`member_id`) REFERENCES `qfb_member` (`id`)
+                                   `member_id` int(11) NOT NULL COMMENT '用户id',
+                                   `realname` varchar(20) NOT NULL DEFAULT '' COMMENT '姓名',
+                                   `nickname` varchar(20) NOT NULL DEFAULT '' COMMENT '昵称',
+                                   `avatar` varchar(255) NOT NULL DEFAULT '' COMMENT '用户头像',
+                                   `card_type` tinyint(2) NOT NULL DEFAULT '1' COMMENT '证件类型  (1身份证,2港澳通行证,3护照,4外国人永久居留证)',
+                                   `card_no` varchar(20) NOT NULL DEFAULT '' COMMENT '证件号',
+                                   `is_verify` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否实名认证  0未认证 1已认证',
+                                   `create_time` int(10) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                   `bindId` int(10) NOT NULL DEFAULT '0' COMMENT '证联实名认证绑定ID',
+                                   PRIMARY KEY (`member_id`),
+                                   CONSTRAINT `FK_Reference_4` FOREIGN KEY (`member_id`) REFERENCES `qfb_member` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户扩展信息表';
 
 -- ----------------------------
@@ -5393,15 +5136,15 @@ INSERT INTO `qfb_member_info` VALUES ('510', '3699', '', '', '1', '4600021991021
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_member_money`;
 CREATE TABLE `qfb_member_money` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '零钱',
-  `live_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '活期总金额',
-  `fix_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '定期总金额',
-  `pre_live_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '预存金额',
-  `lock_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '冻结金额',
-  `last_profit_time` int(11) NOT NULL DEFAULT '0' COMMENT '最后分润时间',
-  PRIMARY KEY (`member_id`),
-  CONSTRAINT `FK_Reference_5` FOREIGN KEY (`member_id`) REFERENCES `qfb_member` (`id`)
+                                    `member_id` int(11) NOT NULL COMMENT '用户id',
+                                    `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '零钱',
+                                    `live_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '活期总金额',
+                                    `fix_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '定期总金额',
+                                    `pre_live_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '预存金额',
+                                    `lock_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '冻结金额',
+                                    `last_profit_time` int(11) NOT NULL DEFAULT '0' COMMENT '最后分润时间',
+                                    PRIMARY KEY (`member_id`),
+                                    CONSTRAINT `FK_Reference_5` FOREIGN KEY (`member_id`) REFERENCES `qfb_member` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户金额表';
 
 -- ----------------------------
@@ -5612,18 +5355,18 @@ INSERT INTO `qfb_member_money` VALUES ('510', '6012.14', '0.00', '4100.00', '0.0
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_member_vouchers`;
 CREATE TABLE `qfb_member_vouchers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `vouchers_id` int(11) NOT NULL COMMENT '代金券ID',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态(0:未使用,1:已使用)',
-  `receive_time` int(11) NOT NULL DEFAULT '0' COMMENT '领取时间',
-  `invalid_time` int(11) NOT NULL DEFAULT '0' COMMENT '失效时间',
-  `remark` varchar(50) NOT NULL DEFAULT '' COMMENT '获得途径',
-  `sn` varchar(50) NOT NULL,
-  `product_id` int(11) NOT NULL DEFAULT '0' COMMENT '使用项目id',
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_2` (`vouchers_id`),
-  KEY `FK_Reference_12` (`member_id`,`product_id`)
+                                       `id` int(11) NOT NULL AUTO_INCREMENT,
+                                       `vouchers_id` int(11) NOT NULL COMMENT '代金券ID',
+                                       `member_id` int(11) NOT NULL COMMENT '用户id',
+                                       `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态(0:未使用,1:已使用)',
+                                       `receive_time` int(11) NOT NULL DEFAULT '0' COMMENT '领取时间',
+                                       `invalid_time` int(11) NOT NULL DEFAULT '0' COMMENT '失效时间',
+                                       `remark` varchar(50) NOT NULL DEFAULT '' COMMENT '获得途径',
+                                       `sn` varchar(50) NOT NULL,
+                                       `product_id` int(11) NOT NULL DEFAULT '0' COMMENT '使用项目id',
+                                       PRIMARY KEY (`id`),
+                                       KEY `FK_Reference_2` (`vouchers_id`),
+                                       KEY `FK_Reference_12` (`member_id`,`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=272 DEFAULT CHARSET=utf8 COMMENT='用户代金券关系表';
 
 -- ----------------------------
@@ -5764,15 +5507,15 @@ INSERT INTO `qfb_member_vouchers` VALUES ('271', '26', '90', '0', '1496460943', 
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_menu`;
 CREATE TABLE `qfb_menu` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '菜单id',
-  `name` varchar(32) NOT NULL DEFAULT '' COMMENT '菜单名',
-  `display` tinyint(1) NOT NULL DEFAULT '1' COMMENT '0.不显示  1.显示',
-  `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT '父菜单ID   0 为根菜单',
-  `level` tinyint(4) NOT NULL COMMENT '菜单级别',
-  `url` varchar(100) NOT NULL DEFAULT '' COMMENT '链接地址',
-  `permision_value` int(11) NOT NULL COMMENT '菜单权限值',
-  `sorts` tinyint(4) NOT NULL DEFAULT '0' COMMENT '菜单排序(小到大)',
-  PRIMARY KEY (`id`)
+                            `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '菜单id',
+                            `name` varchar(32) NOT NULL DEFAULT '' COMMENT '菜单名',
+                            `display` tinyint(1) NOT NULL DEFAULT '1' COMMENT '0.不显示  1.显示',
+                            `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT '父菜单ID   0 为根菜单',
+                            `level` tinyint(4) NOT NULL COMMENT '菜单级别',
+                            `url` varchar(100) NOT NULL DEFAULT '' COMMENT '链接地址',
+                            `permision_value` int(11) NOT NULL COMMENT '菜单权限值',
+                            `sorts` tinyint(4) NOT NULL DEFAULT '0' COMMENT '菜单排序(小到大)',
+                            PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 COMMENT='菜单表';
 
 -- ----------------------------
@@ -5838,16 +5581,16 @@ INSERT INTO `qfb_menu` VALUES ('54', '平台账户列表', '1', '17', '2', '/ord
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_message`;
 CREATE TABLE `qfb_message` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(150) NOT NULL DEFAULT '' COMMENT '消息标题',
-  `content` text NOT NULL COMMENT '消息内容',
-  `send_ob` tinyint(1) NOT NULL DEFAULT '0' COMMENT '消息发送对象0(按会员级别)1(会员账号)2(会员标签)',
-  `send_ob_value` text NOT NULL COMMENT '消息发送对象的值',
-  `send_mode` tinyint(1) NOT NULL DEFAULT '0' COMMENT '消息发送的方式0延时1立即',
-  `send_type` int(11) NOT NULL DEFAULT '0' COMMENT '消息发送状态0未1成功2失败',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `send_time` int(10) NOT NULL DEFAULT '0' COMMENT '消息开始发送时间',
-  PRIMARY KEY (`id`)
+                               `id` int(11) NOT NULL AUTO_INCREMENT,
+                               `title` varchar(150) NOT NULL DEFAULT '' COMMENT '消息标题',
+                               `content` text NOT NULL COMMENT '消息内容',
+                               `send_ob` tinyint(1) NOT NULL DEFAULT '0' COMMENT '消息发送对象0(按会员级别)1(会员账号)2(会员标签)',
+                               `send_ob_value` text NOT NULL COMMENT '消息发送对象的值',
+                               `send_mode` tinyint(1) NOT NULL DEFAULT '0' COMMENT '消息发送的方式0延时1立即',
+                               `send_type` int(11) NOT NULL DEFAULT '0' COMMENT '消息发送状态0未1成功2失败',
+                               `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                               `send_time` int(10) NOT NULL DEFAULT '0' COMMENT '消息开始发送时间',
+                               PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='钱富宝-消息表';
 
 -- ----------------------------
@@ -5869,9 +5612,9 @@ INSERT INTO `qfb_message` VALUES ('11', 'http://admin.yinengjj.com/#menu/menu_18
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_migration`;
 CREATE TABLE `qfb_migration` (
-  `version` varchar(180) NOT NULL,
-  `apply_time` int(11) DEFAULT NULL,
-  PRIMARY KEY (`version`)
+                                 `version` varchar(180) NOT NULL,
+                                 `apply_time` int(11) DEFAULT NULL,
+                                 PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -5884,14 +5627,14 @@ INSERT INTO `qfb_migration` VALUES ('m000000_000000_base', '1498616935');
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_money_detail`;
 CREATE TABLE `qfb_money_detail` (
-  `member_id` int(11) NOT NULL COMMENT '收益用户id',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
-  `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
-  `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
-) ENGINE=MRG_MyISAM DEFAULT CHARSET=utf8 UNION=(`qfb_money_detail_t0`,`qfb_money_detail_t1`,`qfb_money_detail_t2`,`qfb_money_detail_t3`,`qfb_money_detail_t4`,`qfb_money_detail_t5`,`qfb_money_detail_t6`,`qfb_money_detail_t7`,`qfb_money_detail_t8`,`qfb_money_detail_t9`) COMMENT='收益详情';
+                                    `member_id` int(11) NOT NULL COMMENT '收益用户id',
+                                    `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
+                                    `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
+                                    `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
+                                    `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
+                                    `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                    `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
+)   COMMENT='收益详情';
 
 -- ----------------------------
 -- Records of qfb_money_detail
@@ -5951,254 +5694,22 @@ INSERT INTO `qfb_money_detail` VALUES ('44', '3', '1', '45', '0.05', '1496469862
 INSERT INTO `qfb_money_detail` VALUES ('44', '4', '1', '45', '0.01', '1496469862', '1');
 INSERT INTO `qfb_money_detail` VALUES ('45', '1', '1', '45', '0.03', '1496469862', '1');
 
--- ----------------------------
--- Table structure for qfb_money_detail_t0
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_detail_t0`;
-CREATE TABLE `qfb_money_detail_t0` (
-  `member_id` int(11) NOT NULL COMMENT '收益用户id',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
-  `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
-  `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of qfb_money_detail_t0
--- ----------------------------
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '3', '1', '22', '2.46', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '3', '1', '37', '0.49', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '3', '1', '43', '0.49', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '1', '1', '22', '0.82', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '4', '1', '22', '0.82', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('11', '1', '1', '66', '0.01', '1496470728', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('12', '3', '1', '66', '0.04', '1496470728', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('12', '4', '1', '66', '0.01', '1496470728', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('13', '3', '1', '66', '0.04', '1496470728', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('13', '1', '1', '66', '0.03', '1496470728', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('11', '1', '1', '66', '0.01', '1496470728', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('12', '3', '1', '66', '0.04', '1496470728', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('12', '4', '1', '66', '0.01', '1496470728', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('13', '3', '1', '66', '0.04', '1496470728', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('13', '1', '1', '66', '0.03', '1496470728', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('11', '1', '2', '66', '0.08', '1497252946', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('12', '3', '2', '66', '0.24', '1497252946', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('12', '4', '2', '66', '0.24', '1497252946', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('13', '3', '2', '66', '0.24', '1497252946', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('13', '1', '2', '66', '0.16', '1497252946', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '3', '1', '22', '2.46', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '3', '1', '37', '0.49', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '3', '1', '43', '0.73', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '1', '1', '22', '0.82', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '4', '1', '22', '0.82', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '4', '1', '37', '0.16', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('6', '4', '1', '43', '0.24', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('10', '3', '1', '42', '0.49', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('11', '1', '1', '66', '0.01', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('12', '3', '1', '66', '0.04', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('12', '4', '1', '66', '0.01', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('13', '3', '1', '66', '0.04', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('13', '1', '1', '66', '0.03', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('22', '1', '1', '22', '1.64', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('35', '1', '1', '45', '0.01', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('37', '1', '1', '37', '0.49', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('37', '1', '1', '43', '0.73', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('42', '1', '1', '42', '0.49', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('44', '3', '1', '45', '0.05', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('44', '4', '1', '45', '0.01', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('45', '1', '1', '45', '0.03', '1497411496', '1');
-INSERT INTO `qfb_money_detail_t0` VALUES ('52', '3', '1', '59', '49.32', '1497411496', '1');
-
--- ----------------------------
--- Table structure for qfb_money_detail_t1
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_detail_t1`;
-CREATE TABLE `qfb_money_detail_t1` (
-  `member_id` int(11) NOT NULL COMMENT '收益用户id',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
-  `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
-  `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_money_detail_t1
--- ----------------------------
-INSERT INTO `qfb_money_detail_t1` VALUES ('6', '4', '1', '37', '0.16', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t1` VALUES ('6', '4', '1', '43', '0.16', '1507166640', '1');
-INSERT INTO `qfb_money_detail_t1` VALUES ('10', '3', '1', '42', '0.49', '1496469862', '1');
-INSERT INTO `qfb_money_detail_t1` VALUES ('22', '1', '1', '22', '1.64', '1496469862', '1');
-INSERT INTO `qfb_money_detail_t1` VALUES ('35', '1', '1', '45', '0.01', '1496469862', '1');
-INSERT INTO `qfb_money_detail_t1` VALUES ('52', '3', '1', '59', '49.31', '1496470728', '1');
-
--- ----------------------------
--- Table structure for qfb_money_detail_t2
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_detail_t2`;
-CREATE TABLE `qfb_money_detail_t2` (
-  `member_id` int(11) NOT NULL COMMENT '收益用户id',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
-  `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
-  `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_money_detail_t2
--- ----------------------------
-INSERT INTO `qfb_money_detail_t2` VALUES ('37', '1', '1', '37', '0.49', '1496469862', '1');
-INSERT INTO `qfb_money_detail_t2` VALUES ('37', '1', '1', '43', '0.49', '1496469862', '1');
-INSERT INTO `qfb_money_detail_t2` VALUES ('42', '1', '1', '42', '0.49', '1496469862', '1');
-INSERT INTO `qfb_money_detail_t2` VALUES ('44', '3', '1', '45', '0.05', '1496469862', '1');
-INSERT INTO `qfb_money_detail_t2` VALUES ('44', '4', '1', '45', '0.01', '1496469862', '1');
-
--- ----------------------------
--- Table structure for qfb_money_detail_t3
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_detail_t3`;
-CREATE TABLE `qfb_money_detail_t3` (
-  `member_id` int(11) NOT NULL COMMENT '收益用户id',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
-  `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
-  `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_money_detail_t3
--- ----------------------------
-INSERT INTO `qfb_money_detail_t3` VALUES ('45', '1', '1', '45', '0.03', '1496469862', '1');
-
--- ----------------------------
--- Table structure for qfb_money_detail_t4
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_detail_t4`;
-CREATE TABLE `qfb_money_detail_t4` (
-  `member_id` int(11) NOT NULL COMMENT '收益用户id',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
-  `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
-  `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_money_detail_t4
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_money_detail_t5
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_detail_t5`;
-CREATE TABLE `qfb_money_detail_t5` (
-  `member_id` int(11) NOT NULL COMMENT '收益用户id',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
-  `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
-  `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_money_detail_t5
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_money_detail_t6
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_detail_t6`;
-CREATE TABLE `qfb_money_detail_t6` (
-  `member_id` int(11) NOT NULL COMMENT '收益用户id',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
-  `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
-  `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_money_detail_t6
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_money_detail_t7
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_detail_t7`;
-CREATE TABLE `qfb_money_detail_t7` (
-  `member_id` int(11) NOT NULL COMMENT '收益用户id',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
-  `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
-  `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_money_detail_t7
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_money_detail_t8
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_detail_t8`;
-CREATE TABLE `qfb_money_detail_t8` (
-  `member_id` int(11) NOT NULL COMMENT '收益用户id',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
-  `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
-  `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_money_detail_t8
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_money_detail_t9
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_detail_t9`;
-CREATE TABLE `qfb_money_detail_t9` (
-  `member_id` int(11) NOT NULL COMMENT '收益用户id',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '明细类型   1.管理奖  3.分润',
-  `money_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1.活期理财  2.定期理财',
-  `from_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '从哪个用户获取的金额',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '收益金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_money_detail_t9
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for qfb_money_log
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_money_log`;
 CREATE TABLE `qfb_money_log` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
-  `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型 1零钱 2活期 3定期',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
-  `action` tinyint(4) NOT NULL COMMENT '行为类型 1活期管理奖,2充值,3分润,4活期推荐奖,5定期推荐奖,6转账,7提现,8活期收益,9退款,10兑换,11(零钱活期转换),12(零钱定期转换),13店铺押金,14财富计划购买失败返回及收益,16定期收益,17定期管理奖,18定期分润,19现金奖励,20购买财富计划,21借款人还款 22借款人获取金额 23 扣减冻结金额',
-  `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
-) ENGINE=MRG_MyISAM DEFAULT CHARSET=utf8 UNION=(`qfb_money_log_t0`,`qfb_money_log_t1`,`qfb_money_log_t2`,`qfb_money_log_t3`,`qfb_money_log_t4`,`qfb_money_log_t5`,`qfb_money_log_t6`,`qfb_money_log_t7`,`qfb_money_log_t8`,`qfb_money_log_t9`) COMMENT='日志表';
+                                 `member_id` int(11) NOT NULL COMMENT '用户id',
+                                 `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
+                                 `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型 1零钱 2活期 3定期',
+                                 `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
+                                 `create_time` int(11) NOT NULL COMMENT '创建时间',
+                                 `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
+                                 `action` tinyint(4) NOT NULL COMMENT '行为类型 1活期管理奖,2充值,3分润,4活期推荐奖,5定期推荐奖,6转账,7提现,8活期收益,9退款,10兑换,11(零钱活期转换),12(零钱定期转换),13店铺押金,14财富计划购买失败返回及收益,16定期收益,17定期管理奖,18定期分润,19现金奖励,20购买财富计划,21借款人还款 22借款人获取金额 23 扣减冻结金额',
+                                 `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
+)   DEFAULT CHARSET=utf8  COMMENT='日志表';
 
 -- ----------------------------
 -- Records of qfb_money_log
@@ -7302,2045 +6813,17 @@ INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '10000.00', '1497948919', '
 INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '100.00', '1497951414', '100796.00', '2', '充值');
 INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '100.00', '1497951475', '100896.00', '2', '充值');
 INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '100.00', '1497951550', '100996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497954823', '101096.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497954823', '36900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497955090', '101096.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497955090', '36900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '1000.00', '1497959751', '100096.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '100.00', '1497962723', '101096.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '100.00', '1497962723', '37900.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497963443', '100996.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497963443', '38000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497963483', '100996.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497963483', '38000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '100.00', '1497963559', '100996.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '100.00', '1497963559', '38000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497963703', '100996.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497963703', '38000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '2000.00', '1497963825', '99996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '2000.00', '1497963825', '39000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497963855', '97996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497963855', '41000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497964046', '96996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497964046', '42000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '100.00', '1497965728', '95996.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '100.00', '1497965728', '43000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497966573', '95996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497966573', '43000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497966590', '95996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497966590', '43000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497966592', '95996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497966592', '43000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497966594', '95996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497966594', '43000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '2', '1', '1000.00', '1497966613', '95996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '3', '1000.00', '1497966613', '43000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '1000.00', '1497968915', '94996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '1000.00', '1498888130', '95996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '100000.00', '1498888132', '96996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '100000.00', '1498888133', '196996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '100000.00', '1498888133', '296996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '100000.00', '1498888134', '396996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '100000.00', '1498888134', '496996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '100000.00', '1498888134', '596996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '100000.00', '1498888135', '696996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '1000.00', '1498888135', '796996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '1000.00', '1498888135', '797996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '1000.00', '1498888136', '798996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '123456.00', '1498888136', '799996.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '1000.00', '1498888136', '923452.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '1000.00', '1498888136', '924452.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '1000.00', '1498888136', '925452.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('137', '1', '1', '1000.00', '1498888136', '926452.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('28', '1', '1', '100.00', '1496907950', '50.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('28', '1', '1', '100.00', '1496908929', '150.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('28', '1', '1', '100.00', '1496909226', '250.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('28', '1', '1', '100.00', '1496909226', '450.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('28', '1', '1', '100.00', '1496909226', '550.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('28', '1', '1', '100.00', '1496909226', '650.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '1', '10000.00', '1497339884', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497339796', '10000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497339796', '0.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497339893', '9900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497339893', '100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497339972', '9800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497339972', '200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340128', '9700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340128', '300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340140', '9600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340140', '400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340141', '9500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340141', '500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340144', '9400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340144', '600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340209', '9300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340209', '700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340248', '9200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340248', '800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340488', '9100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340488', '900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340523', '9000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340523', '1000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340529', '8900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340529', '1100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340575', '8800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340575', '1200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340709', '8700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340709', '1300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340771', '8600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340771', '1400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340810', '8500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340810', '1500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340817', '8400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340817', '1600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340832', '8300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340832', '1700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340881', '8200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340881', '1800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340897', '8100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340897', '1900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497340998', '8000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497340998', '2000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497341189', '7900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497341189', '2100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497341191', '7800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497341191', '2200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497341193', '7700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497341193', '2300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497341201', '7600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497341201', '2400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497341203', '7500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497341203', '2500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497341203', '7400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497341203', '2600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497341204', '7300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497341204', '2700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497341204', '7200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497341204', '2800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '2', '1', '100.00', '1497341210', '7100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('58', '1', '3', '100.00', '1497341210', '2900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('68', '1', '1', '100000.00', '1497511163', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('68', '1', '1', '100000.00', '1497511163', '100000.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('68', '1', '1', '100000.00', '1497511163', '200000.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('68', '1', '1', '100000.00', '1497511163', '300000.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('68', '1', '1', '100000.00', '1497515706', '-4.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('68', '2', '1', '100.00', '1497515635', '99996.00', '12', '购买产品6');
-INSERT INTO `qfb_money_log` VALUES ('68', '1', '3', '100.00', '1497515635', '0.00', '12', '购买产品6');
-INSERT INTO `qfb_money_log` VALUES ('68', '2', '1', '10.00', '1497517813', '99896.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('68', '1', '3', '10.00', '1497517813', '100.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('68', '2', '1', '10.00', '1497518102', '99886.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('68', '1', '3', '10.00', '1497518102', '110.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '10000.00', '1498040522', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1000.00', '1498040545', '10000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1000.00', '1498040545', '0.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1000.00', '1498040617', '9000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1000.00', '1498040617', '1000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1000.00', '1498040654', '8000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1000.00', '1498040654', '2000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1000.00', '1498040750', '7000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1000.00', '1498040750', '3000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1000.00', '1498040794', '6000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1000.00', '1498040794', '4000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1000.00', '1498040832', '5000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1000.00', '1498040832', '5000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '100.00', '1498040869', '4000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '100.00', '1498040869', '6000.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1000.00', '1498100543', '3900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1000.00', '1498100543', '6100.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1000.00', '1498100763', '3900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1000.00', '1498100763', '6100.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1000.00', '1498101052', '3900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1000.00', '1498101052', '6100.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '100.00', '1498116624', '2865.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '100.00', '1498116624', '2965.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '1000.00', '1498116818', '3065.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1.00', '1498117770', '4065.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1.00', '1498117770', '7100.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '1000.00', '1498119008', '4064.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '1000.00', '1498119194', '5064.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '1000.00', '1498119225', '6064.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '1000.00', '1498119290', '7064.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1.00', '1498119569', '8064.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1.00', '1498119569', '7101.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1.00', '1498119584', '8063.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1.00', '1498119584', '7102.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1000.00', '1498119748', '8062.00', '12', '购买新手测试1');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1000.00', '1498119748', '7103.00', '12', '购买新手测试1');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '100.00', '1498123107', '8062.00', '12', '购买新手测试1');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '100.00', '1498123107', '7103.00', '12', '购买新手测试1');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '100.00', '1498130701', '7962.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1.00', '1498182460', '7962.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1.00', '1498182460', '7203.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '100.00', '1498182615', '7962.00', '12', '购买分页测试');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '100.00', '1498182615', '7203.00', '12', '购买分页测试');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1.00', '1498467455', '7862.00', '12', '购买产品');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1.00', '1498467455', '7303.00', '12', '购买产品');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '100.00', '1498467811', '7861.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '1.00', '1498467882', '7961.00', '12', '购买产品');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '1.00', '1498467882', '7304.00', '12', '购买产品');
-INSERT INTO `qfb_money_log` VALUES ('188', '1', '1', '10000.00', '1498475900', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '100.00', '1498629774', '7960.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '123.00', '1498630489', '8060.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '100.00', '1498631129', '8183.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '100.00', '1498631766', '8283.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '100.00', '1498631804', '8283.00', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '1000.00', '1498636883', '8283.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '102.00', '1498637237', '9181.00', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '102.00', '1498637270', '9079.00', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '400000.00', '1498639460', '9079.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '500000.00', '1498702403', '409079.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '200.00', '1498734956', '908879.00', '12', '购买chan');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '200.00', '1498734956', '7505.00', '12', '购买chan');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '20.00', '1498735082', '908859.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '20.00', '1498735082', '7525.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '100.00', '1498791081', '908759.00', '12', '购买321');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '100.00', '1498791081', '7625.00', '12', '购买321');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '100.00', '1498791190', '908659.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '100.00', '1498791190', '7725.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '100.00', '1498791411', '908559.00', '12', '购买123');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '100.00', '1498791411', '7825.00', '12', '购买123');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '100.00', '1498791301', '908559.00', '12', '投资本金返还');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '100.00', '1498791579', '908459.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '100.00', '1498791579', '7925.00', '12', '购买111');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '100.00', '1498792580', '908359.00', '12', '购买1');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '100.00', '1498792580', '8025.00', '12', '购买1');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '100.00', '1498792932', '908259.00', '12', '购买123');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '100.00', '1498792932', '8125.00', '12', '购买123');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '20.00', '1498794347', '908239.00', '12', '购买123');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '20.00', '1498794347', '8145.00', '12', '购买123');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '80.00', '1498794366', '908159.00', '12', '购买123');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '80.00', '1498794366', '8225.00', '12', '购买123');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '100.00', '1499049392', '908159.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '500000.00', '1499306823', '908259.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '100.00', '1499391111', '1408159.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '100.00', '1499391111', '8325.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '200.00', '1499391746', '1407959.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '200.00', '1499391746', '8525.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log` VALUES ('168', '2', '1', '300.00', '1499391779', '1407659.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '3', '300.00', '1499391779', '8825.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '10000.00', '1499652246', '1407659.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '26.30', '1499652381', '1417659.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '26.30', '1499652417', '1417685.30', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '10000.00', '1499830174', '1417711.60', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '1000.00', '1499831603', '1427711.60', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '1000.00', '1499831603', '1428711.60', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '10000.00', '1499841125', '1429711.60', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '10000.00', '1500012082', '1439711.60', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '100.00', '1500951133', '1449711.60', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '102.00', '1500951153', '1449811.60', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '123.00', '1502352633', '1449913.60', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('168', '1', '1', '10000.00', '1502761079', '1450036.60', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '1', '100.00', '1496992370', '973509.45', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '1', '100.00', '1496992370', '973609.45', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497002810', '973709.45', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497002810', '26000.00', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497002867', '973609.45', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497002867', '26100.00', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497002829', '973509.45', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497002829', '26200.00', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497002957', '973409.45', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497002957', '26300.00', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '1', '100.00', '1497003672', '973309.45', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '1', '100.00', '1497009615', '973409.45', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('9', '2', '1', '100.00', '1497016104', '100000.00', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('9', '1', '3', '100.00', '1497016104', '0.00', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497016605', '973509.45', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497016605', '26400.00', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497321397', '973409.45', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497321397', '26500.00', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497322114', '973309.45', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497322114', '26600.00', '12', '购买blake');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497338763', '973209.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497338763', '26700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497338867', '973109.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497338867', '26800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497339031', '973009.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497339031', '26900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497339036', '972909.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497339036', '27000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497339041', '972809.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497339041', '27100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497339044', '972709.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497339044', '27200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497339088', '972609.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497339088', '27300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497339374', '972509.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497339374', '27400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497339993', '972409.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497339993', '27500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497340122', '972309.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497340122', '27600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497341605', '972209.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497341605', '27700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497342619', '972109.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497342619', '27800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497342653', '972009.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497342653', '27900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497342958', '971909.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497342958', '28000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497342964', '971809.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497342964', '28100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497440724', '971709.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497440724', '28200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497441040', '971609.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497441040', '28300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497441081', '971509.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497441081', '28400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497515626', '971409.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497515626', '28500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497581498', '971309.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497581498', '28600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497581581', '971209.45', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497581581', '28700.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497581591', '971109.45', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497581591', '28800.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497581621', '971009.45', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497581621', '28900.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497581657', '970909.45', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497581657', '29000.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497581769', '970809.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497581769', '29100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497582369', '970709.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497582369', '29200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497583808', '970609.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497583808', '29300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497584103', '970509.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497584103', '29400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '2', '1', '100.00', '1497592286', '970409.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('19', '1', '3', '100.00', '1497592286', '29500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log` VALUES ('189', '1', '1', '100000.00', '1498531757', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '10000.00', '1498741217', '90.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '1000.00', '1498741365', '9090.00', '12', '购买测试1111');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '1000.00', '1498741365', '1000.00', '12', '购买测试1111');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '1000.00', '1498742001', '8090.00', '12', '购买测试111');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '1000.00', '1498742001', '2000.00', '12', '购买测试111');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '8.49', '1498743119', '8090.00', '16', '投资人收益');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '1000.00', '1498745533', '8098.49', '12', '购买大主宰');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '1000.00', '1498745533', '2000.00', '12', '购买大主宰');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '8.21', '1498745699', '8098.49', '16', '投资人收益');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '5000.00', '1498795834', '9106.70', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '0.00', '1498795958', '13606.70', '12', '购买武动乾坤2');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '500.00', '1498795958', '1500.00', '12', '购买武动乾坤2');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '100.00', '1498796000', '13506.70', '12', '购买武动乾坤2');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '100.00', '1498796000', '1600.00', '12', '购买武动乾坤2');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '1000.00', '1498818430', '12506.70', '12', '购买武动乾坤3');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '1000.00', '1498818430', '2600.00', '12', '购买武动乾坤3');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '1000.00', '1498819289', '13514.91', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820048', '11506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820067', '10506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820083', '9506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820105', '8506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820120', '7506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820130', '6506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820160', '5506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820171', '4506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820192', '3506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820202', '2506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820215', '1506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '1000.00', '1498820239', '506.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '10.00', '1498820603', '496.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '10.00', '1498820735', '486.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '3.00', '1498893407', '483.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '3.00', '1498893505', '480.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '100.00', '1498896341', '380.70', '12', '购买诛仙');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '100.00', '1498896341', '2700.00', '12', '购买诛仙');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '10000.00', '1498899259', '380.70', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '1000.00', '1498899181', '9380.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '1000.00', '1498899196', '8380.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '1000.00', '1498899207', '7380.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '1000.00', '1498899220', '6380.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '1000.00', '1498899235', '5380.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '5000.00', '1498899280', '380.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '0.00', '1498899570', '380.70', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '10000.00', '1498899483', '380.70', '7', '提现');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '100.00', '1499149001', '280.70', '12', '购买123');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '100.00', '1499149001', '2800.00', '12', '购买123');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '0.00', '1499165558', '280.70', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '5000.00', '1499165601', '1280.70', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '4700.00', '1499165519', '1580.70', '12', '购买测试对账-勿操作');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '4700.00', '1499165519', '7500.00', '12', '购买测试对账-勿操作');
-INSERT INTO `qfb_money_log` VALUES ('129', '1', '1', '7901.00', '1501570773', '90.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log` VALUES ('129', '1', '1', '10000.00', '1501571079', '7991.00', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('129', '1', '1', '9000.00', '1501571730', '17991.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '100.00', '1502102097', '33506.70', '12', '购买1');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '100.00', '1502102097', '7600.00', '12', '购买1');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '100.00', '1502102129', '33406.70', '12', '购买1');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '100.00', '1502102129', '7700.00', '12', '购买1');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '1', '5000.00', '1502761080', '33406.70', '2', '充值');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '1000.00', '1502939585', '37406.70', '12', '购买dfsd ');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '1000.00', '1502939585', '8700.00', '12', '购买dfsd ');
-INSERT INTO `qfb_money_log` VALUES ('139', '2', '1', '100.00', '1502939732', '37306.70', '12', '购买小李-测试');
-INSERT INTO `qfb_money_log` VALUES ('139', '1', '3', '0.00', '1502939732', '8800.00', '12', '购买小李-测试');
-
--- ----------------------------
--- Table structure for qfb_money_log_t0
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_log_t0`;
-CREATE TABLE `qfb_money_log_t0` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
-  `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
-  `action` tinyint(4) NOT NULL COMMENT '行为类型 1管理奖,2充值,3分润,5推荐奖,6转账,7提现,8收益,9退款,10兑换,12转入,',
-  `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='日志表';
-
--- ----------------------------
--- Records of qfb_money_log_t0
--- ----------------------------
-INSERT INTO `qfb_money_log_t0` VALUES ('1', '1', '1', '0.00', '1507166640', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('1', '1', '1', '0.33', '1507166640', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('1', '1', '1', '0.16', '1507166640', '0.00', '4', '活期理财代理推荐奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('6', '1', '1', '3.44', '1507166640', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('6', '1', '1', '0.82', '1507166640', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('6', '1', '1', '1.14', '1507166640', '0.00', '4', '活期理财代理推荐奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('10', '1', '1', '0.49', '1496469862', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('22', '1', '2', '16.43', '1496469862', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('22', '1', '1', '1.64', '1496469862', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('30', '1', '2', '0.03', '1496469862', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('35', '1', '1', '0.01', '1496469862', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('37', '1', '2', '3.28', '1496469862', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('37', '1', '1', '0.98', '1496469862', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('38', '1', '2', '1.64', '1496469862', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('42', '1', '2', '3.28', '1496469862', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('42', '1', '1', '0.49', '1496469862', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('43', '1', '2', '3.28', '1496469862', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('44', '1', '1', '0.05', '1496469862', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('44', '1', '1', '0.01', '1496469862', '0.00', '4', '活期理财代理推荐奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('45', '1', '2', '0.39', '1496469862', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('45', '1', '1', '0.03', '1496469862', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('46', '1', '2', '0.65', '1496469862', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('1', '1', '1', '49.31', '1498642863', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('1', '1', '1', '49.31', '1498642865', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('11', '1', '1', '0.01', '1496470728', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('12', '1', '1', '0.04', '1496470728', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('12', '1', '1', '0.01', '1496470728', '0.00', '4', '活期理财代理推荐奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('13', '1', '1', '0.04', '1496470728', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('13', '1', '1', '0.03', '1496470728', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('52', '1', '1', '49.31', '1496470728', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('59', '1', '2', '328.77', '1496470728', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('61', '1', '2', '0.03', '1496470728', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('65', '1', '2', '0.01', '1496470728', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('66', '1', '2', '0.32', '1496470728', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('11', '1', '1', '0.01', '1496470728', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('12', '1', '1', '0.04', '1496470728', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('12', '1', '1', '0.01', '1496470728', '0.00', '4', '活期理财代理推荐奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('13', '1', '1', '0.04', '1496470728', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('13', '1', '1', '0.03', '1496470728', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('66', '1', '2', '0.32', '1496475173', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('11', '1', '1', '0.08', '1497252946', '0.00', '17', '定期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('12', '1', '1', '0.24', '1497252946', '0.00', '18', '定期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('12', '1', '1', '0.24', '1497252946', '0.00', '5', '定期理财代理推荐奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('13', '1', '1', '0.24', '1497252946', '0.00', '18', '定期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('13', '1', '1', '0.16', '1497252946', '0.00', '17', '定期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('66', '1', '1', '0.29', '1497252946', '0.00', '16', '定期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('66', '1', '1', '180.20', '1497252946', '0.00', '12', '定期本金返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('1', '1', '1', '52.60', '1507166640', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('1', '1', '1', '49.65', '1507166640', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('1', '1', '1', '0.16', '1507166640', '0.00', '4', '活期理财代理推荐奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('6', '1', '1', '3.68', '1507166640', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('6', '1', '1', '0.82', '1507166640', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('6', '1', '1', '1.22', '1507166640', '0.00', '4', '活期理财代理推荐奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('10', '1', '1', '0.49', '1497411496', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('11', '1', '1', '0.01', '1497411496', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('12', '1', '1', '0.04', '1497411496', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('12', '1', '1', '0.01', '1497411496', '0.00', '4', '活期理财代理推荐奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('13', '1', '1', '0.04', '1497411496', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('13', '1', '1', '0.03', '1497411496', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('22', '1', '2', '16.44', '1497411496', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('22', '1', '1', '1.64', '1497411496', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('30', '1', '2', '0.03', '1497411496', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('35', '1', '1', '0.01', '1497411496', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('37', '1', '2', '3.29', '1497411496', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('37', '1', '1', '1.22', '1497411496', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('38', '1', '2', '1.64', '1497411496', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('42', '1', '2', '3.29', '1497411496', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('42', '1', '1', '0.49', '1497411496', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('43', '1', '2', '4.93', '1497411496', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('44', '1', '1', '0.05', '1497411496', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('44', '1', '1', '0.01', '1497411496', '0.00', '4', '活期理财代理推荐奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('45', '1', '2', '0.39', '1497411496', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('45', '1', '1', '0.03', '1497411496', '0.00', '1', '活期理财账户管理奖');
-INSERT INTO `qfb_money_log_t0` VALUES ('46', '1', '2', '0.65', '1497411496', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('52', '1', '1', '49.32', '1497411496', '0.00', '3', '活期理财账户分润');
-INSERT INTO `qfb_money_log_t0` VALUES ('59', '1', '2', '328.87', '1497411496', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('61', '1', '2', '0.03', '1497411496', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('66', '1', '2', '0.32', '1497411496', '0.00', '8', '活期理财账户收益');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '8000000.00', '1497860936', '90.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1000.00', '1497967343', '7999590.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '3', '1000.00', '1497967343', '0.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1000.00', '1498008761', '7999590.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '3', '1000.00', '1498008761', '0.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '20.00', '1498047078', '12.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '10000.00', '1498047384', '7999590.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '10000.00', '1498047408', '7999590.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '10000.00', '1498047409', '7999690.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1498098984', '7999890.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1498099940', '7999990.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1498100462', '8000090.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '270.00', '1498104016', '8000190.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '180.00', '1498115221', '8000460.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '9000.00', '1498115222', '8000640.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '450.00', '1498131941', '8009640.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '499.50', '1498135570', '8010090.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '400.00', '1498207789', '8010589.50', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '450.00', '1498531123', '8010989.50', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '102.00', '1498534839', '8010735.09', '7', '提现');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1498535070', '8010635.09', '7', '提现');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '1000.00', '1498741416', '8009929.19', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1008.21', '1498741564', '8010929.19', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '1000.00', '1498742150', '8009920.98', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1008.49', '1498742190', '8010920.98', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '1000.00', '1498745586', '8009912.49', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1008.21', '1498745687', '8010912.49', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '450.00', '1498787159', '8009904.28', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '501.36', '1498788448', '8010354.28', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '1000.00', '1498811275', '8008852.92', '7', '提现');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '1000.00', '1498819237', '8008852.92', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1008.21', '1498819266', '8009852.92', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '500.00', '1498821049', '8008844.71', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100000.00', '1498888135', '8009344.71', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499062960', '8109344.71', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '1', '1', '10000.00', '1499065356', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '2', '1', '100.00', '1499065463', '9900.00', '12', '购买测试对账-勿操作');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '1', '3', '100.00', '1499065463', '100.00', '12', '购买测试对账-勿操作');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '2', '1', '100.00', '1499067079', '9800.00', '12', '购买测试对账-勿操作');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '1', '3', '100.00', '1499067079', '200.00', '12', '购买测试对账-勿操作');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '2', '1', '100.00', '1499067201', '9700.00', '12', '购买测试对账-勿操作');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '1', '3', '100.00', '1499067201', '300.00', '12', '购买测试对账-勿操作');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '2', '1', '500.00', '1499067364', '9200.00', '12', '购买测试还款对账-勿操作');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '1', '3', '500.00', '1499067364', '800.00', '12', '购买测试还款对账-勿操作');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '450.00', '1499067382', '8109444.71', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '1', '1', '100.00', '1499075326', '9200.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '1', '1', '11.00', '1499075575', '9300.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '1', '1', '223.00', '1499076074', '9311.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '1', '1', '123.00', '1499077481', '9534.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '1', '1', '111.00', '1499079065', '9657.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('210', '1', '1', '123.00', '1499079201', '9768.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '4500.00', '1499154902', '8109894.71', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '5001.37', '1499155619', '8114394.71', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '4410.00', '1499165656', '8109393.34', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '5000.12', '1499166106', '8113803.34', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499313509', '8108803.22', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499313529', '8108903.22', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499313574', '8109003.22', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499319277', '8109103.22', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499319296', '8109203.22', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499319400', '8109303.22', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499319486', '8109403.22', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499319543', '8109503.22', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499319639', '8109603.22', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499319746', '8109703.22', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1499319760', '8109803.22', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '100.00', '1500360400', '8111607.22', '7', '提现');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '100.00', '1500371054', '8112007.22', '7', '提现');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '100.00', '1500371093', '8111907.22', '7', '提现');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '2.10', '1500531902', '8111807.22', '7', '提现');
-INSERT INTO `qfb_money_log_t0` VALUES ('500', '1', '1', '10000.00', '1501557686', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('500', '1', '1', '1111.00', '1501557830', '10000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('500', '2', '1', '100.00', '1501582948', '11011.00', '12', '购买ce ');
-INSERT INTO `qfb_money_log_t0` VALUES ('500', '1', '3', '100.00', '1501582948', '100.00', '12', '购买ce ');
-INSERT INTO `qfb_money_log_t0` VALUES ('500', '2', '1', '100.00', '1501582965', '10911.00', '12', '购买ce ');
-INSERT INTO `qfb_money_log_t0` VALUES ('500', '1', '3', '100.00', '1501582965', '200.00', '12', '购买ce ');
-INSERT INTO `qfb_money_log_t0` VALUES ('500', '2', '1', '800.00', '1501582985', '10111.00', '12', '购买ce ');
-INSERT INTO `qfb_money_log_t0` VALUES ('500', '1', '3', '800.00', '1501582985', '1000.00', '12', '购买ce ');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1501583196', '8111805.12', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('500', '2', '1', '1000.00', '1501743989', '9111.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t0` VALUES ('500', '1', '3', '1000.00', '1501743989', '2000.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1501745036', '8112705.12', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '10000.00', '1502181605', '8113605.12', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '1000.00', '1502182208', '8123605.12', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '1000.00', '1502260838', '8124605.12', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '8.10', '1502329802', '8125605.12', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '1', '10000.00', '1502332194', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '1000.00', '1502332084', '9000.00', '12', '购买数据测试中，勿操作');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '1000.00', '1502332084', '1000.00', '12', '购买数据测试中，勿操作');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '990.00', '1502332103', '8125597.02', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502349611', '8126587.02', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '1', '1.00', '1502353417', '9000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '1000.00', '1502421094', '8128495.12', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '8.10', '1502421342', '8129495.12', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '8.10', '1502422357', '8129487.02', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '1000.00', '1502674361', '8001.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '1000.00', '1502674361', '2000.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '1', '111.00', '1502677437', '8001.00', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '1000.00', '1502678458', '8129478.92', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '8.10', '1502681657', '8130478.92', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '100.00', '1502684870', '8012.00', '12', '购买小李-测试1');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '100.00', '1502684870', '2100.00', '12', '购买小李-测试1');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '99.00', '1502684937', '8130470.82', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '100.00', '1502685042', '8130569.82', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '1', '100.00', '1502685317', '8012.00', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '1000.00', '1502687770', '7012.00', '12', '购买小李-测试2');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '1000.00', '1502687770', '3100.00', '12', '购买小李-测试2');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502687795', '8130469.82', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1000.02', '1502687812', '8131369.82', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '1', '1000.00', '1502688128', '7012.00', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '0.02', '1502688128', '8012.00', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '1000.00', '1502689064', '7012.02', '12', '购买小李-测试3');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '1000.00', '1502689064', '3100.00', '12', '购买小李-测试3');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '1000.00', '1502689804', '6012.02', '12', '购买小李测试4--');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '1000.00', '1502689804', '4100.00', '12', '购买小李测试4--');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502690007', '8130369.80', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1000.02', '1502690151', '8131269.80', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '1', '1000.00', '1502690242', '6012.02', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '0.02', '1502690242', '7012.02', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502690332', '8130269.78', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '1000.00', '1502691791', '6012.04', '12', '购买测试6');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '1000.00', '1502691791', '4100.00', '12', '购买测试6');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502691822', '8131169.78', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '1', '1000.00', '1502692135', '6012.04', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '0.02', '1502692135', '7012.04', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '1000.00', '1502695942', '6012.06', '12', '购买测试7');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '1000.00', '1502695942', '4100.00', '12', '购买测试7');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502695959', '8132069.78', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '1000.00', '1502697287', '5012.06', '12', '购买测试8');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '1000.00', '1502697287', '5100.00', '12', '购买测试8');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '990.00', '1502697321', '8132969.78', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '1', '1000.00', '1502697436', '5012.06', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '0.02', '1502697436', '6012.06', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '1000.00', '1502699335', '5012.08', '12', '购买防守打法');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '1000.00', '1502699335', '5100.00', '12', '购买防守打法');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502699345', '8133959.78', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1000.02', '1502699421', '8134859.78', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '1', '1000.00', '1502699432', '5012.08', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '0.02', '1502699432', '6012.08', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '1000.00', '1502699566', '5012.10', '12', '购买测试9');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '1000.00', '1502699566', '5100.00', '12', '购买测试9');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502699598', '8133859.76', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '1', '1000.00', '1502699951', '5012.10', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '0.02', '1502699951', '6012.10', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '2', '1', '1000.00', '1502758699', '5012.12', '12', '购买测试11');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '1000.00', '1502758699', '5100.00', '12', '购买测试11');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502758712', '8134759.76', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '1', '1000.00', '1502758846', '5012.12', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('510', '1', '3', '0.02', '1502758846', '6012.12', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '1000.00', '1502761078', '8135659.76', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1502761078', '8136659.76', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '100.00', '1502761078', '8136759.76', '2', '充值');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502845437', '8136859.76', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1000.02', '1502845482', '8137759.76', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502861552', '8136759.74', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1000.02', '1502861796', '8137659.74', '21', '借款人还款');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '1', '1', '900.00', '1502863977', '8136659.72', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t0` VALUES ('140', '2', '1', '1000.02', '1502864097', '8137559.72', '21', '借款人还款');
-
--- ----------------------------
--- Table structure for qfb_money_log_t1
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_log_t1`;
-CREATE TABLE `qfb_money_log_t1` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
-  `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
-  `action` tinyint(4) NOT NULL COMMENT '行为类型',
-  `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='日志表';
-
--- ----------------------------
--- Records of qfb_money_log_t1
--- ----------------------------
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '300.00', '1496713591', '9464.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '300.00', '1496713641', '9764.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '300.00', '1496715247', '10064.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '300.00', '1496721205', '10364.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '123.00', '1496721450', '10664.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '1000.00', '1496733184', '10787.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '10000.00', '1496738567', '11787.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '10000.00', '1496738628', '21787.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '10000.00', '1496738673', '31787.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '10.00', '1496739456', '41787.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '10000.00', '1496744102', '41797.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '123.00', '1496819977', '51797.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '123.00', '1496819993', '51920.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496831578', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496831578', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496833670', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496833670', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496833738', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496833738', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496834637', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496834637', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496835269', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496835269', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496835374', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496835374', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496836412', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496836412', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496836527', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496836527', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496841111', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496841111', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496841240', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496841240', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496841282', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496841282', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496841296', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496841296', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496841314', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496841314', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496841327', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496841327', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496841473', '52043.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496841473', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '1', '123.00', '1496841981', '52043.18', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496842143', '52166.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496842143', '2000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496842175', '52066.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496842175', '2100.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496842420', '51966.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496842420', '2200.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496842449', '51866.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496842449', '2300.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496842461', '51766.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496842461', '2400.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496884679', '51666.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496884679', '2500.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496884682', '51566.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496884682', '2600.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496884693', '51466.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496884693', '2700.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496884703', '51366.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496884703', '2800.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496884736', '51266.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496884736', '2900.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496884767', '51166.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496884767', '3000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496884802', '51066.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496884802', '3100.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496884804', '50966.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496884804', '3200.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496884907', '50866.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496884907', '3300.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496885003', '50766.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496885003', '3400.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496885040', '50666.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496885040', '3500.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496885137', '50566.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496885137', '3600.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496885815', '50466.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496885815', '3700.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496885880', '50366.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496885880', '3800.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496887001', '50266.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496887001', '3900.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496988049', '50166.18', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496988049', '4000.00', '12', '购买定期60天');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496991855', '50066.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496991855', '4100.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496992988', '49966.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496992988', '4200.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496993388', '49866.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496993388', '4300.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496993506', '49766.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496993506', '4400.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496993539', '49666.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496993539', '4500.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496997315', '49566.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496997315', '4600.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496997353', '49466.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496997353', '4700.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1496999973', '49366.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1496999973', '4800.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1497000464', '49266.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1497000464', '4900.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1497000933', '49166.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1497000933', '5000.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1497001712', '49066.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1497001712', '5100.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1497002905', '48966.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1497002905', '5200.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1497002946', '48866.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1497002946', '5300.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1497012019', '48766.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1497012019', '5400.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1497017064', '48666.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1497017064', '5500.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1497321241', '48566.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1497321241', '5600.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '100.00', '1497322106', '48466.18', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '1', '3', '100.00', '1497322106', '5700.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '1', '100000.00', '1497686312', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497686248', '100000.00', '12', '购买fsdf ');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497686248', '0.00', '12', '购买fsdf ');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497686852', '99900.00', '12', '购买blake创建标的');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497686852', '100.00', '12', '购买blake创建标的');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497687274', '99890.00', '12', '购买balke产品1');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497687274', '200.00', '12', '购买balke产品1');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497687414', '99790.00', '12', '购买balke产品1');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497687414', '300.00', '12', '购买balke产品1');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497687731', '99690.00', '12', '购买blake产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497687731', '400.00', '12', '购买blake产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497688967', '99590.00', '12', '购买产品100');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497688967', '500.00', '12', '购买产品100');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497689551', '99490.00', '12', '购买产品痘方式');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497689551', '600.00', '12', '购买产品痘方式');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497690465', '99390.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497690465', '700.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497690472', '99290.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497690472', '800.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497690478', '99190.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497690478', '900.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497690664', '99090.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497690664', '1000.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497691574', '98990.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497691574', '1100.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497691581', '98890.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497691581', '1200.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497691587', '98790.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497691587', '1300.00', '12', '购买时发生地方');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '10.00', '1497696059', '98690.00', '12', '购买ceshi  58');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '10.00', '1497696059', '1400.00', '12', '购买ceshi  58');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '10.00', '1497696066', '98680.00', '12', '购买ceshi  58');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '10.00', '1497696066', '1410.00', '12', '购买ceshi  58');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497696811', '98670.00', '12', '购买ceshi  58');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497696811', '1420.00', '12', '购买ceshi  58');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497696822', '98570.00', '12', '购买ceshi  58');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497696822', '1520.00', '12', '购买ceshi  58');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497698463', '98470.00', '12', '购买ceshi  58');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497698463', '1620.00', '12', '购买ceshi  58');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497860617', '98370.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497860617', '1720.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497860634', '98270.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497860634', '1820.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497860640', '98170.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497860640', '1920.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497860645', '98070.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497860645', '2020.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497860649', '97970.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497860649', '2120.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497860654', '97870.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497860654', '2220.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497937220', '97770.00', '12', '购买1100');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497937220', '2320.00', '12', '购买1100');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497938597', '97770.00', '12', '购买1100');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497938597', '2320.00', '12', '购买1100');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497962945', '97770.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497962945', '2320.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497964730', '97670.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497964730', '2420.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497964739', '97670.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497964739', '2420.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1497964754', '97670.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1497964754', '2420.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498051568', '97670.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498051568', '2420.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498052743', '97470.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498052743', '2620.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498052752', '97370.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498052752', '2720.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498053257', '97270.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498053257', '2820.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498053349', '97170.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498053349', '2920.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498053382', '97070.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498053382', '3020.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498053765', '96970.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498053765', '3120.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498054043', '96870.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498054043', '3220.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498054075', '96770.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498054075', '3320.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498054218', '96670.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498054218', '3420.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498054298', '96570.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498054298', '3520.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498054399', '96570.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498054399', '3520.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498054599', '96470.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498054599', '3620.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498055131', '96370.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498055131', '3720.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498095288', '96270.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498095288', '3820.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498098235', '96170.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498098235', '3920.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498098863', '96070.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498098863', '4020.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498098864', '96070.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498098864', '4020.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498098975', '95970.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498098975', '4120.00', '12', '购买产品159');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498099712', '95870.00', '12', '购买123');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498099712', '4220.00', '12', '购买123');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498100298', '95770.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498100298', '4320.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498103554', '95670.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498103554', '4420.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498103562', '95570.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498103562', '4520.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498103569', '95470.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498103569', '4620.00', '12', '购买测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498110076', '95370.00', '12', '购买产品名称');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498110076', '4720.00', '12', '购买产品名称');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498110199', '95270.00', '12', '购买产品名称');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498110199', '4820.00', '12', '购买产品名称');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498110780', '95170.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498110780', '4920.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113370', '95070.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113370', '5020.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113383', '94970.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113383', '5120.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113398', '94870.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113398', '5220.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113440', '94770.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113440', '5320.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113450', '94770.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113450', '5320.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113571', '94770.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113571', '5320.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113580', '94670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113580', '5420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113609', '94670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113609', '5420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113611', '94670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113611', '5420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113618', '93670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113618', '6420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113619', '93670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113619', '6420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113628', '92670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113628', '7420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113634', '91670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113634', '8420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113635', '91670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113635', '8420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113658', '90670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113658', '9420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113659', '90670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113659', '9420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113659', '90670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113659', '9420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113669', '89670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113669', '10420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113671', '89670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113671', '10420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113671', '89670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113671', '10420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113678', '88670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113678', '11420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113680', '88670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113680', '11420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113686', '87670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113686', '12420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113689', '87670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113689', '12420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113689', '87670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113689', '12420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113699', '86670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113699', '13420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '1000.00', '1498113701', '86670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '1000.00', '1498113701', '13420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498113757', '86670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498113757', '13420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '500.00', '1498113760', '86670.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '500.00', '1498113760', '13420.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498114290', '86170.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498114290', '13920.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498114393', '86170.00', '12', '购买blake 测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498114393', '13920.00', '12', '购买blake 测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498114411', '86070.00', '12', '购买blake 测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498114411', '14020.00', '12', '购买blake 测试产品');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498114614', '85970.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498114614', '14120.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498114648', '85870.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498114648', '14220.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '1', '100000.00', '1498116929', '85770.00', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498131874', '185770.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498131874', '14320.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '200.00', '1498131888', '185670.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '200.00', '1498131888', '14420.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '200.00', '1498131902', '185470.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '200.00', '1498131902', '14620.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498135470', '185270.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498135470', '14820.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '400.00', '1498135483', '185170.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '400.00', '1498135483', '14920.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '500.00', '1498137647', '184770.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '500.00', '1498137647', '15320.00', '12', '购买产品2');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '1', '100000.00', '1498186809', '184270.00', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '500.00', '1498206727', '282270.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '500.00', '1498206727', '15820.00', '12', '购买测试');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498207583', '281770.00', '12', '购买放松放松');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498207583', '16320.00', '12', '购买放松放松');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498207594', '281670.00', '12', '购买放松放松');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498207594', '16420.00', '12', '购买放松放松');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498207607', '281570.00', '12', '购买放松放松');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498207607', '16520.00', '12', '购买放松放松');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498207621', '281470.00', '12', '购买放松放松');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498207621', '16620.00', '12', '购买放松放松');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498207630', '281370.00', '12', '购买放松放松');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498207630', '16720.00', '12', '购买放松放松');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498216182', '281270.00', '12', '购买fsdfs ');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498216182', '16820.00', '12', '购买fsdfs ');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498787087', '281170.00', '12', '购买chan');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498787087', '16920.00', '12', '购买chan');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498787113', '281070.00', '12', '购买测试还款-勿动');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498787113', '17020.00', '12', '购买测试还款-勿动');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '100.00', '1498787119', '280970.00', '12', '购买测试还款-勿动');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498787119', '17120.00', '12', '购买测试还款-勿动');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '2', '1', '300.00', '1498787126', '280670.00', '12', '购买测试还款-勿动');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '300.00', '1498787126', '17420.00', '12', '购买测试还款-勿动');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '300.00', '1498801521', '280970.82', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '0.82', '1498801521', '281270.82', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498801521', '280770.27', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '0.27', '1498801521', '280870.27', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '100.00', '1498801521', '280770.27', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '3', '0.27', '1498801521', '280870.27', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t1` VALUES ('141', '1', '1', '100000.00', '1498888137', '280670.00', '2', '充值');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '1000.20', '1502343195', '48467.18', '21', '借款人还逾期款');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '8.10', '1502679841', '47466.98', '21', '借款人还逾期款');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '1000.03', '1502693720', '47458.88', '21', '借款人还逾期款');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '1000.03', '1502696651', '46458.85', '21', '借款人还逾期款');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '1000.03', '1502697065', '45458.82', '21', '借款人还逾期款');
-INSERT INTO `qfb_money_log_t1` VALUES ('1', '2', '1', '1000.03', '1502697520', '44458.79', '21', '借款人还逾期款');
-
--- ----------------------------
--- Table structure for qfb_money_log_t2
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_log_t2`;
-CREATE TABLE `qfb_money_log_t2` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
-  `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
-  `action` tinyint(4) NOT NULL COMMENT '行为类型',
-  `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='日志表';
-
--- ----------------------------
--- Records of qfb_money_log_t2
--- ----------------------------
-INSERT INTO `qfb_money_log_t2` VALUES ('12', '2', '1', '1.00', '1496393623', '1000028.41', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t2` VALUES ('12', '1', '1', '1.00', '1496393643', '1000027.41', '9', '提现未通过审核返还');
-INSERT INTO `qfb_money_log_t2` VALUES ('12', '1', '1', '1.00', '1496653219', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t2` VALUES ('202', '1', '1', '50000.00', '1499136780', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t2` VALUES ('132', '1', '1', '10.00', '1499848447', '90.00', '2', '充值');
-INSERT INTO `qfb_money_log_t2` VALUES ('132', '1', '1', '1.00', '1500955247', '100.00', '2', '充值');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '1', '1', '1000.00', '1501558139', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t2` VALUES ('2', '2', '1', '1000.03', '1502699737', '1000090.00', '21', '借款人还逾期款');
-INSERT INTO `qfb_money_log_t2` VALUES ('132', '1', '1', '10.00', '1502761079', '101.00', '2', '充值');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '2', '1', '1000.00', '1502845322', '0.00', '12', '购买测试13');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '1', '3', '1000.00', '1502845322', '1000.00', '12', '购买测试13');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '1', '1', '1000.00', '1502845519', '0.00', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '1', '3', '0.02', '1502845519', '1000.00', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '2', '1', '1000.00', '1502860065', '0.02', '12', '购买1015');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '1', '3', '1000.00', '1502860065', '1000.00', '12', '购买1015');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '1', '1', '1000.00', '1502861872', '0.02', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '1', '3', '0.02', '1502861872', '1000.02', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '2', '1', '1000.00', '1502863934', '0.04', '12', '购买1017');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '1', '3', '1000.00', '1502863934', '1000.00', '12', '购买1017');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '1', '1', '1000.00', '1502866616', '0.04', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t2` VALUES ('502', '1', '3', '0.00', '1502866616', '1000.04', '16', '投资人收益返还');
-
--- ----------------------------
--- Table structure for qfb_money_log_t3
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_log_t3`;
-CREATE TABLE `qfb_money_log_t3` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
-  `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
-  `action` tinyint(4) NOT NULL COMMENT '行为类型',
-  `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='日志表';
-
--- ----------------------------
--- Records of qfb_money_log_t3
--- ----------------------------
-INSERT INTO `qfb_money_log_t3` VALUES ('133', '1', '1', '100000.00', '1497497019', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('133', '1', '1', '1000000.00', '1497497083', '100000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('133', '1', '1', '10000000.00', '1497497366', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('133', '1', '1', '10000000.00', '1497497463', '20000000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('133', '1', '1', '10000000.00', '1497497482', '30000000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('133', '1', '1', '100000.00', '1497498698', '140000000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('133', '1', '1', '100000.00', '1497531273', '140100000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '1', '100000.00', '1498478180', '90.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498478073', '100090.00', '12', '购买新');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498478073', '0.00', '12', '购买新');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '10.00', '1498478148', '100090.00', '12', '购买新');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '10.00', '1498478148', '0.00', '12', '购买新');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498478611', '100090.00', '12', '购买新2222');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498478611', '0.00', '12', '购买新2222');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498478650', '99990.00', '12', '购买新2222');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498478650', '100.00', '12', '购买新2222');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498482799', '99990.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498482799', '100.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498483345', '99990.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498483345', '100.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498483489', '99990.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498483489', '100.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498483575', '99990.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498483575', '100.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498483576', '99990.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498483576', '100.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498530621', '99990.00', '12', '购买产品-还款产品测试添加');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498530621', '100.00', '12', '购买产品-还款产品测试添加');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '1', '100000.00', '1498532482', '99490.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '1', '100000.00', '1498532482', '199490.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '1', '100000.00', '1498532625', '299490.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498551251', '399090.00', '12', '购买产品-还款产品测试添加');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498551251', '1000.00', '12', '购买产品-还款产品测试添加');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498551345', '398990.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498551345', '1100.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '1', '5000000.00', '1498562010', '398990.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '1', '9000000.00', '1498562027', '5398990.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '1', '100000.00', '1498634492', '14398990.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498901919', '14498890.00', '12', '购买ceshi ');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498901919', '1200.00', '12', '购买ceshi ');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '2', '1', '100.00', '1498902315', '14498890.00', '12', '购买ceshi ');
-INSERT INTO `qfb_money_log_t3` VALUES ('73', '1', '3', '100.00', '1498902315', '1200.00', '12', '购买ceshi ');
-INSERT INTO `qfb_money_log_t3` VALUES ('503', '1', '1', '200000.00', '1501569881', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t3` VALUES ('503', '2', '1', '5000.00', '1501569974', '195000.00', '12', '购买15315232323满+1');
-INSERT INTO `qfb_money_log_t3` VALUES ('503', '1', '3', '5000.00', '1501569974', '5000.00', '12', '购买15315232323满+1');
-INSERT INTO `qfb_money_log_t3` VALUES ('503', '2', '1', '5000.00', '1501570014', '190000.00', '12', '购买15315232323满+1');
-INSERT INTO `qfb_money_log_t3` VALUES ('503', '1', '3', '5000.00', '1501570014', '10000.00', '12', '购买15315232323满+1');
-INSERT INTO `qfb_money_log_t3` VALUES ('503', '2', '1', '5000.00', '1501571399', '185000.00', '12', '购买15315232323投+1');
-INSERT INTO `qfb_money_log_t3` VALUES ('503', '1', '3', '5000.00', '1501571399', '15000.00', '12', '购买15315232323投+1');
-INSERT INTO `qfb_money_log_t3` VALUES ('503', '2', '1', '5000.00', '1501571412', '180000.00', '12', '购买15315232323投+1');
-INSERT INTO `qfb_money_log_t3` VALUES ('503', '1', '3', '5000.00', '1501571412', '20000.00', '12', '购买15315232323投+1');
-
--- ----------------------------
--- Table structure for qfb_money_log_t4
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_log_t4`;
-CREATE TABLE `qfb_money_log_t4` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
-  `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
-  `action` tinyint(4) NOT NULL COMMENT '行为类型',
-  `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='日志表';
-
--- ----------------------------
--- Records of qfb_money_log_t4
--- ----------------------------
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '1', '100000.00', '1497441125', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497441053', '100000.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497441053', '0.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497441107', '99990.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497441107', '10.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497441994', '99980.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497441994', '20.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497442031', '99970.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497442031', '30.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497442137', '99960.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497442137', '40.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497443094', '99950.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497443094', '50.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497443213', '99940.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497443213', '60.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497443304', '99930.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497443304', '70.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497443306', '99920.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497443306', '80.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497444127', '99910.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497444127', '90.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497444138', '99900.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497444138', '100.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497444406', '99890.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497444406', '110.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497444410', '99880.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497444410', '120.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497515418', '99780.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497515418', '220.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497515425', '99770.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497515425', '230.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '10.00', '1497517798', '99760.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '10.00', '1497517798', '240.00', '12', '购买产品测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497609509', '99450.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497609509', '550.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497609574', '99350.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497609574', '650.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497609676', '99250.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497609676', '750.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497609685', '99250.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497609685', '750.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497662755', '99250.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497662755', '99250.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497662755', '750.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497662755', '750.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497662757', '99250.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497662757', '750.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497662825', '99150.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497662825', '850.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497662852', '99050.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497662852', '950.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663009', '99050.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663009', '950.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663010', '99050.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663010', '950.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663044', '98950.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663044', '1050.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '200.00', '1497663049', '98950.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '200.00', '1497663049', '1050.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663088', '98750.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663088', '1250.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663090', '98750.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663090', '1250.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663114', '98650.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663114', '1350.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663117', '98650.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663117', '1350.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663139', '98550.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663139', '1450.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663141', '98550.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663141', '1450.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663377', '98550.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663377', '1450.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663416', '98350.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663416', '1650.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663417', '98350.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663417', '1650.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663418', '98350.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663418', '1650.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663460', '98250.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663460', '1750.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663462', '98250.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663462', '1750.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663462', '98250.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663462', '1750.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663474', '98150.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663474', '1850.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663477', '98150.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663477', '1850.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663477', '98150.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663477', '1850.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663488', '98150.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663488', '1850.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663491', '98150.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663491', '1850.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663491', '98150.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663491', '1850.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663523', '98150.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663523', '1850.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497663526', '98150.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497663526', '1850.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497664495', '97250.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497664495', '2750.00', '12', '购买产品 添加17');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497667690', '97150.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497667690', '2850.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497667700', '97150.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497667700', '2850.00', '12', '购买测试 产品');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497667974', '97150.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497667974', '2850.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497667985', '97150.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497667985', '2850.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497667988', '97150.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497667988', '2850.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497667995', '97150.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497667995', '2850.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497668004', '97050.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497668004', '2950.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497668024', '96950.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497668024', '3050.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '100.00', '1497669467', '96850.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '100.00', '1497669467', '3150.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669541', '96750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669541', '3250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669748', '95750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669748', '4250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669766', '94750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669766', '5250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669805', '93750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669805', '6250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669913', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669913', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669914', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669914', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669915', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669915', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669915', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669915', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669915', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669915', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669927', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669927', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669928', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669928', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497669956', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497669956', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497670020', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497670020', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497670020', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497670020', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497670043', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497670043', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497670100', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497670100', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '1000.00', '1497679921', '92750.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '1000.00', '1497679921', '7250.00', '12', '购买林测试');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '111.00', '1497683611', '92709.00', '12', '购买产品6');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '111.00', '1497683611', '7250.00', '12', '购买产品6');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '111.00', '1497683669', '92709.00', '12', '购买产品6');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '111.00', '1497683669', '7250.00', '12', '购买产品6');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '2', '1', '111.00', '1497683676', '92709.00', '12', '购买产品6');
-INSERT INTO `qfb_money_log_t4` VALUES ('124', '1', '3', '111.00', '1497683676', '7250.00', '12', '购买产品6');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '5000.00', '1501570154', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '200.00', '1501570499', '5000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '10000.00', '1502181349', '5200.00', '2', '充值');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '2', '1', '10000.00', '1502181249', '5200.00', '12', '购买测试111');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '10000.00', '1502181249', '10000.00', '12', '购买测试111');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '2', '1', '1000.00', '1502182186', '4200.00', '12', '购买测试112');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '1000.00', '1502182186', '11000.00', '12', '购买测试112');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '2', '1', '1000.00', '1502260750', '3200.00', '12', '购买大主宰');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '1000.00', '1502260750', '12000.00', '12', '购买大主宰');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '2', '1', '1000.00', '1502349555', '2200.00', '12', '购买测试大主宰');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '1000.00', '1502349555', '13000.00', '12', '购买测试大主宰');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '1000.00', '1502349944', '8127487.02', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502349944', '8128487.02', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '1000.00', '1502350083', '2200.00', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502350083', '3200.00', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502350212', '3208.10', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502350212', '3208.10', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '2', '1', '1000.00', '1502421060', '2216.20', '12', '购买诛仙');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '1000.00', '1502421060', '13000.00', '12', '购买诛仙');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '2', '1', '1000.00', '1502677753', '1216.20', '12', '购买吞噬星空');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '1000.00', '1502677753', '14000.00', '12', '购买吞噬星空');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502685314', '1216.20', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502685314', '1216.20', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502685314', '1224.30', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502685314', '1224.30', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502685315', '1232.40', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502685315', '1232.40', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502685315', '1240.50', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502685315', '1240.50', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502685316', '1248.60', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502685316', '1248.60', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502692134', '1256.70', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502692134', '1256.70', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502693159', '1264.80', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502693159', '1264.80', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502697435', '1272.90', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502697435', '1272.90', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502699432', '1281.00', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502699432', '1281.00', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502699951', '1289.10', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502699951', '1289.10', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502758845', '1297.20', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502758845', '1297.20', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502845518', '1305.30', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502845518', '1305.30', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502861871', '1313.40', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502861871', '1313.40', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502861898', '1321.50', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502861898', '1321.50', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502861977', '1329.60', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502861977', '1329.60', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502862027', '1337.70', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502862027', '1337.70', '16', '投资人收益返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '1', '0.00', '1502866615', '1345.80', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t4` VALUES ('504', '1', '3', '8.10', '1502866615', '1345.80', '16', '投资人收益返还');
-
--- ----------------------------
--- Table structure for qfb_money_log_t5
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_log_t5`;
-CREATE TABLE `qfb_money_log_t5` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
-  `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
-  `action` tinyint(4) NOT NULL COMMENT '行为类型',
-  `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='日志表';
-
--- ----------------------------
--- Records of qfb_money_log_t5
--- ----------------------------
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '2.00', '1496384493', '45.60', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '2.00', '1496384552', '43.60', '9', '提现未通过审核返还');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '2.10', '1496384640', '45.60', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '0.50', '1496385240', '43.50', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '2.10', '1496385330', '43.00', '9', '提现未通过审核返还');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '3', '0.20', '1496388339', '0.00', '2', '购买定期产品');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '3', '0.20', '1496389217', '0.00', '2', '购买12345');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '0.20', '1496391129', '500.00', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '200.00', '1496393208', '499.80', '12', '购买1');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '3', '200.00', '1496393208', '0.41', '12', '购买1');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '2.00', '1496397453', '299.80', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '2', '50.00', '1496632779', '50.11', '7', '活期赎回');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '50.00', '1496632779', '347.80', '12', '活期赎回');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '2', '0.01', '1496632817', '0.11', '7', '活期赎回');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '0.01', '1496632817', '347.81', '12', '活期赎回');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '2', '0.10', '1496632949', '0.00', '2', '购买活期理财');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '2.10', '1496634682', '347.81', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '2.20', '1496641680', '345.71', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '0.30', '1496642681', '343.51', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '1.50', '1496644227', '343.21', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '2.30', '1496645298', '341.71', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '1.50', '1496645645', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '2.30', '1496645646', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '100.00', '1496647185', '343.21', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '50.00', '1496647195', '243.21', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '50.00', '1496647205', '193.21', '9', '提现未通过审核返还');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '100.00', '1496647209', '243.21', '9', '提现未通过审核返还');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '2.20', '1496648450', '343.21', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '2.20', '1496649415', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '0.30', '1496649415', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '1.50', '1496649415', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '2.30', '1496649416', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '100.00', '1496651170', '347.31', '11', '购买活期理财');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '2', '100.00', '1496651170', '200.41', '11', '购买活期理财');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '900.00', '1496651273', '5000.00', '12', '购买满标起息q');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '3', '900.00', '1496651273', '200.41', '12', '购买满标起息q');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '2', '4.00', '1496651999', '0.00', '2', '购买活期理财');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '2', '1', '2.40', '1496652037', '4100.00', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t5` VALUES ('65', '1', '1', '50.00', '1496653220', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t5` VALUES ('45', '2', '1', '100.00', '1497339382', '911.11', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t5` VALUES ('45', '1', '3', '100.00', '1497339382', '11000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '1', '1', '10000.00', '1498009064', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '2', '1', '100.00', '1498010035', '10000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '1', '3', '100.00', '1498010035', '0.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '2', '1', '1000.00', '1498112157', '10000.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '1', '3', '1000.00', '1498112157', '0.00', '12', '购买chanpin');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '2', '1', '1.00', '1498459029', '9000.00', '12', '购买产品新手尊享');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '1', '3', '1.00', '1498459029', '1000.00', '12', '购买产品新手尊享');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '2', '1', '1.00', '1498459092', '9000.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '1', '3', '1.00', '1498459092', '1000.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '2', '1', '1.00', '1498459136', '9000.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '1', '3', '1.00', '1498459136', '1000.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '2', '1', '1.00', '1498466332', '9000.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t5` VALUES ('145', '1', '3', '1.00', '1498466332', '1000.00', '12', '购买产品');
-
--- ----------------------------
--- Table structure for qfb_money_log_t6
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_log_t6`;
-CREATE TABLE `qfb_money_log_t6` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
-  `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
-  `action` tinyint(4) NOT NULL COMMENT '行为类型',
-  `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='日志表';
-
--- ----------------------------
--- Records of qfb_money_log_t6
--- ----------------------------
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '3.10', '1496384163', '999.01', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '10.00', '1496386098', '995.91', '12', '购买新手尊投2');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '3', '10.00', '1496386098', '9.99', '12', '购买新手尊投2');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '985.91', '1496386122', '985.91', '11', '购买活期理财');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '2', '985.91', '1496386122', '19.99', '11', '购买活期理财');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '2', '0.10', '1496388350', '0.00', '2', '购买活期理财');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '3', '0.20', '1496388479', '0.00', '2', '购买定期产品');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '80.00', '1496389096', '1000.00', '12', '购买12345');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '3', '80.00', '1496389096', '20.19', '12', '购买12345');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '800.00', '1496392937', '920.00', '12', '购买1');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '3', '800.00', '1496392937', '100.19', '12', '购买1');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '100.00', '1496394282', '120.00', '12', '购买测试001');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '3', '100.00', '1496394282', '900.19', '12', '购买测试001');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '1.00', '1496397486', '20.00', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '2.10', '1496397531', '19.00', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '3.00', '1496468872', '16.90', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '3.00', '1496478909', '194.39', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '1.00', '1496480363', '191.39', '11', '购买活期理财');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '2', '1.00', '1496480363', '819.99', '11', '购买活期理财');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '50.00', '1496625484', '190.39', '12', '购买测试001');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '3', '50.00', '1496625484', '819.99', '12', '购买测试001');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '2', '0.10', '1496633131', '0.00', '2', '购买活期理财');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '2.20', '1496633222', '140.39', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '3', '0.10', '1496633518', '0.00', '2', '购买1');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '2', '0.10', '1497411496', '0.00', '2', '活期理财充值成功');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '1.00', '1496634896', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '2.10', '1496634897', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '3.00', '1496634897', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '3.00', '1496634897', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '2.20', '1496634897', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '2.40', '1496637014', '149.49', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '2.10', '1496644301', '147.09', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '2', '1', '100.00', '1496644486', '144.99', '7', '零钱提现');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '100.00', '1496644520', '44.99', '9', '提现未通过审核返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '2.10', '1496645645', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '1.00', '1496649413', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '2.10', '1496649413', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '3.00', '1496649413', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '3.00', '1496649414', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '2.20', '1496649414', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '2.40', '1496649415', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('66', '1', '1', '2.10', '1496649415', '0.00', '9', '零钱转出失败返还');
-INSERT INTO `qfb_money_log_t6` VALUES ('6', '2', '1', '100.00', '1497684558', '6324.96', '12', '购买不要动本商品数据');
-INSERT INTO `qfb_money_log_t6` VALUES ('6', '1', '3', '100.00', '1497684558', '69600.00', '12', '购买不要动本商品数据');
-INSERT INTO `qfb_money_log_t6` VALUES ('206', '1', '1', '100.00', '1498742857', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t6` VALUES ('16', '1', '1', '20000.00', '1499154737', '90.00', '2', '充值');
-INSERT INTO `qfb_money_log_t6` VALUES ('16', '2', '1', '5000.00', '1499154634', '15090.00', '12', '购买测试对账-勿操作');
-INSERT INTO `qfb_money_log_t6` VALUES ('16', '1', '3', '5000.00', '1499154634', '5000.00', '12', '购买测试对账-勿操作');
-
--- ----------------------------
--- Table structure for qfb_money_log_t7
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_log_t7`;
-CREATE TABLE `qfb_money_log_t7` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
-  `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
-  `action` tinyint(4) NOT NULL COMMENT '行为类型',
-  `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='日志表';
-
--- ----------------------------
--- Records of qfb_money_log_t7
--- ----------------------------
-INSERT INTO `qfb_money_log_t7` VALUES ('27', '1', '1', '100.00', '1496909642', '999015.18', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('27', '1', '1', '222.00', '1496909910', '999115.18', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497582379', '100.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497582379', '0.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100.00', '1497583126', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '10000.00', '1497583187', '100.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '123.00', '1497583496', '10100.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497583817', '10223.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497583817', '100.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497584086', '10123.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497584086', '200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497584117', '10023.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497584117', '300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '20.00', '1497592345', '9623.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '20.00', '1497592345', '700.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497592383', '9603.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497592383', '720.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497592461', '9503.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497592461', '820.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497592988', '9503.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497592988', '820.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497594857', '9503.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497594857', '820.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497594858', '9503.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497594858', '820.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497595046', '9503.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497595046', '820.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1497597621', '9403.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1220.00', '1497606463', '10403.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '123.00', '1497668857', '11623.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1111.00', '1497670535', '11746.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1111.00', '1497670535', '920.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497670577', '11746.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497670577', '920.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497670699', '11746.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497670699', '920.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497670714', '11746.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497670714', '920.00', '12', '购买不要删除数据');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '110.00', '1497680247', '10746.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '110.00', '1497682183', '10856.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '110.00', '1497682183', '10966.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1.00', '1497682353', '11076.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '110.00', '1497682814', '11077.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '110.00', '1497682814', '11187.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '110.00', '1497682814', '11297.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1.00', '1497682353', '11407.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '110.00', '1497685811', '11408.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1497687650', '11608.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497835767', '12608.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497835767', '1920.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497835803', '11608.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497835803', '2920.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497836153', '10608.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497836153', '3920.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497836381', '2000.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497836381', '0.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '10000.00', '1497836647', '1000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497836888', '11000.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497836888', '1000.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '600.00', '1497837031', '10000.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '600.00', '1497837031', '2000.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '10000.00', '1497837137', '9400.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '10000.00', '1497837158', '19400.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '10000.00', '1497837158', '2600.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '500.00', '1497837217', '9400.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '500.00', '1497837217', '12600.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '500000.00', '1497837367', '8900.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '10000.00', '1497837489', '508900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '10000.00', '1497837489', '13100.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '10000.00', '1497837579', '498900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '10000.00', '1497837579', '23100.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497838866', '488900.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497838866', '33100.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497839281', '488800.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497839281', '33200.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497839361', '488700.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497839361', '33300.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1497840439', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1497840481', '1000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100.00', '1497840536', '2000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497851784', '2100.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497851784', '34300.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497851844', '1100.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497851844', '35300.00', '12', '购买123456');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497852144', '1000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497852144', '35400.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1497852989', '900.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1497853060', '100900.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1497853060', '200900.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497853420', '300900.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497853420', '35500.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1497853063', '300800.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1497853063', '300800.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1497853063', '400800.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1497854281', '500800.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1497854500', '-4.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497857366', '-4.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497857952', '96.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497857974', '1096.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497857974', '35600.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497863834', '96.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497863913', '1096.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497863913', '36600.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497922999', '996.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497922999', '36700.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497923019', '896.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497923019', '36800.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497944773', '796.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497944773', '36900.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1497944796', '796.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '10000.00', '1497948771', '100796.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '10000.00', '1497948771', '36900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '10000.00', '1497948783', '100796.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '10000.00', '1497948783', '36900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '10000.00', '1497948919', '100796.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '10000.00', '1497948919', '36900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100.00', '1497951414', '100796.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100.00', '1497951475', '100896.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100.00', '1497951550', '100996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497954823', '101096.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497954823', '36900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497955090', '101096.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497955090', '36900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1497959751', '100096.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497962723', '101096.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497962723', '37900.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497963443', '100996.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497963443', '38000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497963483', '100996.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497963483', '38000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497963559', '100996.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497963559', '38000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497963703', '100996.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497963703', '38000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '2000.00', '1497963825', '99996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '2000.00', '1497963825', '39000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497963855', '97996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497963855', '41000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497964046', '96996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497964046', '42000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '100.00', '1497965728', '95996.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '100.00', '1497965728', '43000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497966573', '95996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497966573', '43000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497966590', '95996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497966590', '43000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497966592', '95996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497966592', '43000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497966594', '95996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497966594', '43000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '2', '1', '1000.00', '1497966613', '95996.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '3', '1000.00', '1497966613', '43000.00', '12', '购买测试投标-新手');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1497968915', '94996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1498888130', '95996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1498888132', '96996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1498888133', '196996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1498888133', '296996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1498888134', '396996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1498888134', '496996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1498888134', '596996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '100000.00', '1498888135', '696996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1498888135', '796996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1498888135', '797996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1498888136', '798996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '123456.00', '1498888136', '799996.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1498888136', '923452.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1498888136', '924452.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1498888136', '925452.00', '2', '充值');
-INSERT INTO `qfb_money_log_t7` VALUES ('137', '1', '1', '1000.00', '1498888136', '926452.00', '2', '充值');
-
--- ----------------------------
--- Table structure for qfb_money_log_t8
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_log_t8`;
-CREATE TABLE `qfb_money_log_t8` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
-  `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
-  `action` tinyint(4) NOT NULL COMMENT '行为类型',
-  `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='日志表';
-
--- ----------------------------
--- Records of qfb_money_log_t8
--- ----------------------------
-INSERT INTO `qfb_money_log_t8` VALUES ('28', '1', '1', '100.00', '1496907950', '50.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('28', '1', '1', '100.00', '1496908929', '150.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('28', '1', '1', '100.00', '1496909226', '250.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('28', '1', '1', '100.00', '1496909226', '450.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('28', '1', '1', '100.00', '1496909226', '550.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('28', '1', '1', '100.00', '1496909226', '650.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '1', '10000.00', '1497339884', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497339796', '10000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497339796', '0.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497339893', '9900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497339893', '100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497339972', '9800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497339972', '200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340128', '9700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340128', '300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340140', '9600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340140', '400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340141', '9500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340141', '500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340144', '9400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340144', '600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340209', '9300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340209', '700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340248', '9200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340248', '800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340488', '9100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340488', '900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340523', '9000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340523', '1000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340529', '8900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340529', '1100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340575', '8800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340575', '1200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340709', '8700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340709', '1300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340771', '8600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340771', '1400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340810', '8500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340810', '1500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340817', '8400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340817', '1600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340832', '8300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340832', '1700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340881', '8200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340881', '1800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340897', '8100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340897', '1900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497340998', '8000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497340998', '2000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497341189', '7900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497341189', '2100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497341191', '7800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497341191', '2200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497341193', '7700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497341193', '2300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497341201', '7600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497341201', '2400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497341203', '7500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497341203', '2500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497341203', '7400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497341203', '2600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497341204', '7300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497341204', '2700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497341204', '7200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497341204', '2800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '2', '1', '100.00', '1497341210', '7100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('58', '1', '3', '100.00', '1497341210', '2900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('68', '1', '1', '100000.00', '1497511163', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('68', '1', '1', '100000.00', '1497511163', '100000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('68', '1', '1', '100000.00', '1497511163', '200000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('68', '1', '1', '100000.00', '1497511163', '300000.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('68', '1', '1', '100000.00', '1497515706', '-4.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('68', '2', '1', '100.00', '1497515635', '99996.00', '12', '购买产品6');
-INSERT INTO `qfb_money_log_t8` VALUES ('68', '1', '3', '100.00', '1497515635', '0.00', '12', '购买产品6');
-INSERT INTO `qfb_money_log_t8` VALUES ('68', '2', '1', '10.00', '1497517813', '99896.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t8` VALUES ('68', '1', '3', '10.00', '1497517813', '100.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t8` VALUES ('68', '2', '1', '10.00', '1497518102', '99886.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t8` VALUES ('68', '1', '3', '10.00', '1497518102', '110.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '10000.00', '1498040522', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1000.00', '1498040545', '10000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1000.00', '1498040545', '0.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1000.00', '1498040617', '9000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1000.00', '1498040617', '1000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1000.00', '1498040654', '8000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1000.00', '1498040654', '2000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1000.00', '1498040750', '7000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1000.00', '1498040750', '3000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1000.00', '1498040794', '6000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1000.00', '1498040794', '4000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1000.00', '1498040832', '5000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1000.00', '1498040832', '5000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '100.00', '1498040869', '4000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '100.00', '1498040869', '6000.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1000.00', '1498100543', '3900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1000.00', '1498100543', '6100.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1000.00', '1498100763', '3900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1000.00', '1498100763', '6100.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1000.00', '1498101052', '3900.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1000.00', '1498101052', '6100.00', '12', '购买lin123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '100.00', '1498116624', '2865.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '100.00', '1498116624', '2965.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '1000.00', '1498116818', '3065.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1.00', '1498117770', '4065.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1.00', '1498117770', '7100.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '1000.00', '1498119008', '4064.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '1000.00', '1498119194', '5064.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '1000.00', '1498119225', '6064.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '1000.00', '1498119290', '7064.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1.00', '1498119569', '8064.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1.00', '1498119569', '7101.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1.00', '1498119584', '8063.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1.00', '1498119584', '7102.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1000.00', '1498119748', '8062.00', '12', '购买新手测试1');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1000.00', '1498119748', '7103.00', '12', '购买新手测试1');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '100.00', '1498123107', '8062.00', '12', '购买新手测试1');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '100.00', '1498123107', '7103.00', '12', '购买新手测试1');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '100.00', '1498130701', '7962.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1.00', '1498182460', '7962.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1.00', '1498182460', '7203.00', '12', '购买sfsdofso');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '100.00', '1498182615', '7962.00', '12', '购买分页测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '100.00', '1498182615', '7203.00', '12', '购买分页测试');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1.00', '1498467455', '7862.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1.00', '1498467455', '7303.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '100.00', '1498467811', '7861.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '1.00', '1498467882', '7961.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '1.00', '1498467882', '7304.00', '12', '购买产品');
-INSERT INTO `qfb_money_log_t8` VALUES ('188', '1', '1', '10000.00', '1498475900', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '100.00', '1498629774', '7960.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '123.00', '1498630489', '8060.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '100.00', '1498631129', '8183.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '100.00', '1498631766', '8283.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '100.00', '1498631804', '8283.00', '7', '提现');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '1000.00', '1498636883', '8283.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '102.00', '1498637237', '9181.00', '7', '提现');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '102.00', '1498637270', '9079.00', '7', '提现');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '400000.00', '1498639460', '9079.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '500000.00', '1498702403', '409079.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '200.00', '1498734956', '908879.00', '12', '购买chan');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '200.00', '1498734956', '7505.00', '12', '购买chan');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '20.00', '1498735082', '908859.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '20.00', '1498735082', '7525.00', '12', '购买水电费水电费');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '100.00', '1498791081', '908759.00', '12', '购买321');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '100.00', '1498791081', '7625.00', '12', '购买321');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '100.00', '1498791190', '908659.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '100.00', '1498791190', '7725.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '100.00', '1498791411', '908559.00', '12', '购买123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '100.00', '1498791411', '7825.00', '12', '购买123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '100.00', '1498791301', '908559.00', '12', '投资本金返还');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '100.00', '1498791579', '908459.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '100.00', '1498791579', '7925.00', '12', '购买111');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '100.00', '1498792580', '908359.00', '12', '购买1');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '100.00', '1498792580', '8025.00', '12', '购买1');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '100.00', '1498792932', '908259.00', '12', '购买123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '100.00', '1498792932', '8125.00', '12', '购买123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '20.00', '1498794347', '908239.00', '12', '购买123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '20.00', '1498794347', '8145.00', '12', '购买123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '80.00', '1498794366', '908159.00', '12', '购买123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '80.00', '1498794366', '8225.00', '12', '购买123');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '100.00', '1499049392', '908159.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '500000.00', '1499306823', '908259.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '100.00', '1499391111', '1408159.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '100.00', '1499391111', '8325.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '200.00', '1499391746', '1407959.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '200.00', '1499391746', '8525.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '2', '1', '300.00', '1499391779', '1407659.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '3', '300.00', '1499391779', '8825.00', '12', '购买测试——勿动');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '10000.00', '1499652246', '1407659.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '26.30', '1499652381', '1417659.00', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '26.30', '1499652417', '1417685.30', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '10000.00', '1499830174', '1417711.60', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '1000.00', '1499831603', '1427711.60', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '1000.00', '1499831603', '1428711.60', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '10000.00', '1499841125', '1429711.60', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '10000.00', '1500012082', '1439711.60', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '100.00', '1500951133', '1449711.60', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '102.00', '1500951153', '1449811.60', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '123.00', '1502352633', '1449913.60', '2', '充值');
-INSERT INTO `qfb_money_log_t8` VALUES ('168', '1', '1', '10000.00', '1502761079', '1450036.60', '2', '充值');
-
--- ----------------------------
--- Table structure for qfb_money_log_t9
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_money_log_t9`;
-CREATE TABLE `qfb_money_log_t9` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1收入,2支出',
-  `money_type` int(11) NOT NULL DEFAULT '1' COMMENT '金额类型',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `old_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '旧金额',
-  `action` tinyint(4) NOT NULL COMMENT '行为类型',
-  `remark` varchar(150) NOT NULL DEFAULT '' COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='日志表';
-
--- ----------------------------
--- Records of qfb_money_log_t9
--- ----------------------------
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '1', '100.00', '1496992370', '973509.45', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '1', '100.00', '1496992370', '973609.45', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497002810', '973709.45', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497002810', '26000.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497002867', '973609.45', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497002867', '26100.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497002829', '973509.45', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497002829', '26200.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497002957', '973409.45', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497002957', '26300.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '1', '100.00', '1497003672', '973309.45', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '1', '100.00', '1497009615', '973409.45', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('9', '2', '1', '100.00', '1497016104', '100000.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('9', '1', '3', '100.00', '1497016104', '0.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497016605', '973509.45', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497016605', '26400.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497321397', '973409.45', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497321397', '26500.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497322114', '973309.45', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497322114', '26600.00', '12', '购买blake');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497338763', '973209.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497338763', '26700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497338867', '973109.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497338867', '26800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497339031', '973009.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497339031', '26900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497339036', '972909.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497339036', '27000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497339041', '972809.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497339041', '27100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497339044', '972709.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497339044', '27200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497339088', '972609.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497339088', '27300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497339374', '972509.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497339374', '27400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497339993', '972409.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497339993', '27500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497340122', '972309.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497340122', '27600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497341605', '972209.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497341605', '27700.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497342619', '972109.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497342619', '27800.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497342653', '972009.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497342653', '27900.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497342958', '971909.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497342958', '28000.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497342964', '971809.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497342964', '28100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497440724', '971709.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497440724', '28200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497441040', '971609.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497441040', '28300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497441081', '971509.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497441081', '28400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497515626', '971409.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497515626', '28500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497581498', '971309.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497581498', '28600.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497581581', '971209.45', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497581581', '28700.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497581591', '971109.45', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497581591', '28800.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497581621', '971009.45', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497581621', '28900.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497581657', '970909.45', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497581657', '29000.00', '12', '购买发送到发送到');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497581769', '970809.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497581769', '29100.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497582369', '970709.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497582369', '29200.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497583808', '970609.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497583808', '29300.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497584103', '970509.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497584103', '29400.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '2', '1', '100.00', '1497592286', '970409.45', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('19', '1', '3', '100.00', '1497592286', '29500.00', '12', '购买20170613产品添加测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('189', '1', '1', '100000.00', '1498531757', '0.00', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '10000.00', '1498741217', '90.00', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '1000.00', '1498741365', '9090.00', '12', '购买测试1111');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '1000.00', '1498741365', '1000.00', '12', '购买测试1111');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '1000.00', '1498742001', '8090.00', '12', '购买测试111');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '1000.00', '1498742001', '2000.00', '12', '购买测试111');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '8.49', '1498743119', '8090.00', '16', '投资人收益');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '1000.00', '1498745533', '8098.49', '12', '购买大主宰');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '1000.00', '1498745533', '2000.00', '12', '购买大主宰');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '8.21', '1498745699', '8098.49', '16', '投资人收益');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '5000.00', '1498795834', '9106.70', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '0.00', '1498795958', '13606.70', '12', '购买武动乾坤2');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '500.00', '1498795958', '1500.00', '12', '购买武动乾坤2');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '100.00', '1498796000', '13506.70', '12', '购买武动乾坤2');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '100.00', '1498796000', '1600.00', '12', '购买武动乾坤2');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '1000.00', '1498818430', '12506.70', '12', '购买武动乾坤3');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '1000.00', '1498818430', '2600.00', '12', '购买武动乾坤3');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '1000.00', '1498819289', '13514.91', '12', '投资人本金返还');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820048', '11506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820067', '10506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820083', '9506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820105', '8506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820120', '7506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820130', '6506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820160', '5506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820171', '4506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820192', '3506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820202', '2506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820215', '1506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '1000.00', '1498820239', '506.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '10.00', '1498820603', '496.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '10.00', '1498820735', '486.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '3.00', '1498893407', '483.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '3.00', '1498893505', '480.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '100.00', '1498896341', '380.70', '12', '购买诛仙');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '100.00', '1498896341', '2700.00', '12', '购买诛仙');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '10000.00', '1498899259', '380.70', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '1000.00', '1498899181', '9380.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '1000.00', '1498899196', '8380.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '1000.00', '1498899207', '7380.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '1000.00', '1498899220', '6380.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '1000.00', '1498899235', '5380.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '5000.00', '1498899280', '380.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '0.00', '1498899570', '380.70', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '10000.00', '1498899483', '380.70', '7', '提现');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '100.00', '1499149001', '280.70', '12', '购买123');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '100.00', '1499149001', '2800.00', '12', '购买123');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '0.00', '1499165558', '280.70', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '5000.00', '1499165601', '1280.70', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '4700.00', '1499165519', '1580.70', '12', '购买测试对账-勿操作');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '4700.00', '1499165519', '7500.00', '12', '购买测试对账-勿操作');
-INSERT INTO `qfb_money_log_t9` VALUES ('129', '1', '1', '7901.00', '1501570773', '90.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t9` VALUES ('129', '1', '1', '10000.00', '1501571079', '7991.00', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('129', '1', '1', '9000.00', '1501571730', '17991.00', '22', '已放款至借款人账户');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '100.00', '1502102097', '33506.70', '12', '购买1');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '100.00', '1502102097', '7600.00', '12', '购买1');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '100.00', '1502102129', '33406.70', '12', '购买1');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '100.00', '1502102129', '7700.00', '12', '购买1');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '1', '5000.00', '1502761080', '33406.70', '2', '充值');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '1000.00', '1502939585', '37406.70', '12', '购买dfsd ');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '1000.00', '1502939585', '8700.00', '12', '购买dfsd ');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '2', '1', '100.00', '1502939732', '37306.70', '12', '购买小李-测试');
-INSERT INTO `qfb_money_log_t9` VALUES ('139', '1', '3', '0.00', '1502939732', '8800.00', '12', '购买小李-测试');
-
 -- ----------------------------
 -- Table structure for qfb_navigation
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_navigation`;
 CREATE TABLE `qfb_navigation` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
-  `name` varchar(50) NOT NULL COMMENT '导航栏名称',
-  `url` varchar(100) NOT NULL COMMENT '跳转链接',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态，0:启用，2:禁用',
-  `sort` tinyint(10) NOT NULL DEFAULT '1' COMMENT '排序，越小越靠前',
-  PRIMARY KEY (`id`)
+                                  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+                                  `name` varchar(50) NOT NULL COMMENT '导航栏名称',
+                                  `url` varchar(100) NOT NULL COMMENT '跳转链接',
+                                  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态，0:启用，2:禁用',
+                                  `sort` tinyint(10) NOT NULL DEFAULT '1' COMMENT '排序，越小越靠前',
+                                  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='首页导航栏';
 
 -- ----------------------------
@@ -9360,16 +6843,16 @@ INSERT INTO `qfb_navigation` VALUES ('11', '暂无1', 'http://www.baidu.com', '1
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_notice`;
 CREATE TABLE `qfb_notice` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(150) NOT NULL DEFAULT '' COMMENT '公告标题',
-  `summary` varchar(255) NOT NULL DEFAULT '' COMMENT '概要',
-  `content` text NOT NULL COMMENT '公告内容',
-  `is_send` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否发送0否1是',
-  `is_up` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否弹框0否1是',
-  `create_time` int(10) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `send_time` int(11) NOT NULL DEFAULT '0' COMMENT '公告发送时间',
-  `show_end_time` int(11) NOT NULL DEFAULT '0' COMMENT '公告显示截止时间',
-  PRIMARY KEY (`id`)
+                              `id` int(11) NOT NULL AUTO_INCREMENT,
+                              `title` varchar(150) NOT NULL DEFAULT '' COMMENT '公告标题',
+                              `summary` varchar(255) NOT NULL DEFAULT '' COMMENT '概要',
+                              `content` text NOT NULL COMMENT '公告内容',
+                              `is_send` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否发送0否1是',
+                              `is_up` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否弹框0否1是',
+                              `create_time` int(10) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                              `send_time` int(11) NOT NULL DEFAULT '0' COMMENT '公告发送时间',
+                              `show_end_time` int(11) NOT NULL DEFAULT '0' COMMENT '公告显示截止时间',
+                              PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='公告数据表';
 
 -- ----------------------------
@@ -9397,14 +6880,14 @@ INSERT INTO `qfb_notice` VALUES ('16', '11111', '11', '<p>1111111111111111111111
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_operation`;
 CREATE TABLE `qfb_operation` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL COMMENT '网站名称',
-  `phone` varchar(50) NOT NULL COMMENT '服务热线',
-  `time` varchar(50) NOT NULL COMMENT '服务时间',
-  `bottom` varchar(100) NOT NULL COMMENT '底栏字样',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态，1：展示 2：不展示',
-  `logo` varchar(50) NOT NULL DEFAULT '' COMMENT '首页LOGO图',
-  PRIMARY KEY (`id`)
+                                 `id` int(11) NOT NULL AUTO_INCREMENT,
+                                 `name` varchar(50) NOT NULL COMMENT '网站名称',
+                                 `phone` varchar(50) NOT NULL COMMENT '服务热线',
+                                 `time` varchar(50) NOT NULL COMMENT '服务时间',
+                                 `bottom` varchar(100) NOT NULL COMMENT '底栏字样',
+                                 `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态，1：展示 2：不展示',
+                                 `logo` varchar(50) NOT NULL DEFAULT '' COMMENT '首页LOGO图',
+                                 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='运营内容';
 
 -- ----------------------------
@@ -9417,24 +6900,24 @@ INSERT INTO `qfb_operation` VALUES ('1', '钱富宝', '123-456-789', '工作日1
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_order`;
 CREATE TABLE `qfb_order` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单id',
-  `sn` varchar(50) NOT NULL COMMENT '订单编号',
-  `member_id` int(11) NOT NULL,
-  `price` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总价格',
-  `is_check` tinyint(1) NOT NULL DEFAULT '0' COMMENT '订单状态 0待支付，1已支付，2失败，3处理中，4无此交易 5通过审核',
-  `remark` varchar(50) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
-  `complete_time` int(11) NOT NULL DEFAULT '0' COMMENT '完成时间',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '类型1转入2转出',
-  `sorts` tinyint(1) NOT NULL DEFAULT '0' COMMENT '订单类别(0其他 1充值2提现3投标4还款)',
-  `bank_id` int(11) NOT NULL DEFAULT '0' COMMENT '银行卡id',
-  `fee` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '手续费',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '实际支付金额',
-  `bank_sn` varchar(50) NOT NULL DEFAULT '' COMMENT '第三方流水号',
-  `bank_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通道:0银嘉,1易联,2支付宝,3零钱,4京东,5快钱',
-  `out_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '提现类型0其他,1当日,2:1-3工作日',
-  `hr_sn` varchar(50) NOT NULL DEFAULT '' COMMENT '华融订单号',
-  PRIMARY KEY (`id`)
+                             `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单id',
+                             `sn` varchar(50) NOT NULL COMMENT '订单编号',
+                             `member_id` int(11) NOT NULL,
+                             `price` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总价格',
+                             `is_check` tinyint(1) NOT NULL DEFAULT '0' COMMENT '订单状态 0待支付，1已支付，2失败，3处理中，4无此交易 5通过审核',
+                             `remark` varchar(50) NOT NULL DEFAULT '' COMMENT '备注',
+                             `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
+                             `complete_time` int(11) NOT NULL DEFAULT '0' COMMENT '完成时间',
+                             `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '类型1转入2转出',
+                             `sorts` tinyint(1) NOT NULL DEFAULT '0' COMMENT '订单类别(0其他 1充值2提现3投标4还款)',
+                             `bank_id` int(11) NOT NULL DEFAULT '0' COMMENT '银行卡id',
+                             `fee` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '手续费',
+                             `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '实际支付金额',
+                             `bank_sn` varchar(50) NOT NULL DEFAULT '' COMMENT '第三方流水号',
+                             `bank_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通道:0银嘉,1易联,2支付宝,3零钱,4京东,5快钱',
+                             `out_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '提现类型0其他,1当日,2:1-3工作日',
+                             `hr_sn` varchar(50) NOT NULL DEFAULT '' COMMENT '华融订单号',
+                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=433 DEFAULT CHARSET=utf8 COMMENT='零钱充值提现表 (只保留1个月内的订单)';
 
 -- ----------------------------
@@ -9808,34 +7291,34 @@ INSERT INTO `qfb_order` VALUES ('432', 'CZ20170814102126J92GNI', '510', '111.00'
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_order_fix`;
 CREATE TABLE `qfb_order_fix` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `sn` varchar(30) NOT NULL COMMENT '订单编号',
-  `credit_sn` varchar(50) NOT NULL DEFAULT '' COMMENT '放款流水号',
-  `lock_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0：未上锁 1：上锁，正在还款操作中',
-  `member_id` int(11) NOT NULL COMMENT '下单用户',
-  `product_id` int(11) NOT NULL COMMENT '产品id',
-  `money` decimal(15,2) NOT NULL COMMENT '订单金额',
-  `pay_money` decimal(15,2) NOT NULL COMMENT '支付金额',
-  `interest` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息',
-  `day_interest` decimal(15,3) NOT NULL DEFAULT '0.000' COMMENT '每日利息',
-  `actual_repayment_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '已还款金额',
-  `status` tinyint(1) NOT NULL COMMENT '订单状态0.待支付1.投资中2.收益中3.已到期,4支付失败 ',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `next_profit_time` int(11) NOT NULL COMMENT '下次分润时间',
-  `end_time` int(11) NOT NULL COMMENT '到期时间',
-  `year_rate` decimal(5,2) NOT NULL COMMENT '年利率',
-  `number` tinyint(4) NOT NULL DEFAULT '0' COMMENT '分润次数',
-  `last_profit_time` int(11) NOT NULL DEFAULT '0' COMMENT '最后分润时间',
-  `profit_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '预期收益',
-  `bank_id` int(10) NOT NULL DEFAULT '0' COMMENT '银行卡id',
-  `bank_sn` varchar(30) NOT NULL DEFAULT '' COMMENT '第三方流水号',
-  `bank_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通道:0银嘉,1易联,2支付宝,3零钱,4京东,5快钱,6证联',
-  `hr_sn` varchar(50) NOT NULL DEFAULT '' COMMENT '华融订单号',
-  `option_time` int(11) NOT NULL DEFAULT '0' COMMENT '操作时间',
-  `option_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '操作状态 0 待操作 10 放款中 11 放款成功 19 放款异常 20 还款中 21 还款成功 29 还款异常 30 创建投资中 31 投资成功 39 投资异常或不存在',
-  PRIMARY KEY (`id`),
-  KEY `product_id` (`product_id`),
-  KEY `member_id` (`member_id`)
+                                 `id` int(11) NOT NULL AUTO_INCREMENT,
+                                 `sn` varchar(30) NOT NULL COMMENT '订单编号',
+                                 `credit_sn` varchar(50) NOT NULL DEFAULT '' COMMENT '放款流水号',
+                                 `lock_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0：未上锁 1：上锁，正在还款操作中',
+                                 `member_id` int(11) NOT NULL COMMENT '下单用户',
+                                 `product_id` int(11) NOT NULL COMMENT '产品id',
+                                 `money` decimal(15,2) NOT NULL COMMENT '订单金额',
+                                 `pay_money` decimal(15,2) NOT NULL COMMENT '支付金额',
+                                 `interest` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息',
+                                 `day_interest` decimal(15,3) NOT NULL DEFAULT '0.000' COMMENT '每日利息',
+                                 `actual_repayment_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '已还款金额',
+                                 `status` tinyint(1) NOT NULL COMMENT '订单状态0.待支付1.投资中2.收益中3.已到期,4支付失败 ',
+                                 `create_time` int(11) NOT NULL COMMENT '创建时间',
+                                 `next_profit_time` int(11) NOT NULL COMMENT '下次分润时间',
+                                 `end_time` int(11) NOT NULL COMMENT '到期时间',
+                                 `year_rate` decimal(5,2) NOT NULL COMMENT '年利率',
+                                 `number` tinyint(4) NOT NULL DEFAULT '0' COMMENT '分润次数',
+                                 `last_profit_time` int(11) NOT NULL DEFAULT '0' COMMENT '最后分润时间',
+                                 `profit_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '预期收益',
+                                 `bank_id` int(10) NOT NULL DEFAULT '0' COMMENT '银行卡id',
+                                 `bank_sn` varchar(30) NOT NULL DEFAULT '' COMMENT '第三方流水号',
+                                 `bank_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通道:0银嘉,1易联,2支付宝,3零钱,4京东,5快钱,6证联',
+                                 `hr_sn` varchar(50) NOT NULL DEFAULT '' COMMENT '华融订单号',
+                                 `option_time` int(11) NOT NULL DEFAULT '0' COMMENT '操作时间',
+                                 `option_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '操作状态 0 待操作 10 放款中 11 放款成功 19 放款异常 20 还款中 21 还款成功 29 还款异常 30 创建投资中 31 投资成功 39 投资异常或不存在',
+                                 PRIMARY KEY (`id`),
+                                 KEY `product_id` (`product_id`),
+                                 KEY `member_id` (`member_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=665 DEFAULT CHARSET=utf8 COMMENT='定期订单列表';
 
 -- ----------------------------
@@ -10471,15 +7954,15 @@ INSERT INTO `qfb_order_fix` VALUES ('664', 'DQ201708171115247ALH04', '', '0', '1
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_order_fix_extend`;
 CREATE TABLE `qfb_order_fix_extend` (
-  `order_id` int(11) NOT NULL,
-  `money_ticket_num` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '代金券金额',
-  `money_ticket_id` int(11) NOT NULL DEFAULT '0' COMMENT '会员代金券表id',
-  `rate_ticket_num` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '加息卷比例',
-  `rate_ticket_id` int(11) NOT NULL DEFAULT '0' COMMENT '加息券id',
-  `admin_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '管理奖利率',
-  `share_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '分润比例',
-  PRIMARY KEY (`order_id`),
-  CONSTRAINT `FK_Reference_3` FOREIGN KEY (`order_id`) REFERENCES `qfb_order_fix` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+                                        `order_id` int(11) NOT NULL,
+                                        `money_ticket_num` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '代金券金额',
+                                        `money_ticket_id` int(11) NOT NULL DEFAULT '0' COMMENT '会员代金券表id',
+                                        `rate_ticket_num` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '加息卷比例',
+                                        `rate_ticket_id` int(11) NOT NULL DEFAULT '0' COMMENT '加息券id',
+                                        `admin_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '管理奖利率',
+                                        `share_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '分润比例',
+                                        PRIMARY KEY (`order_id`),
+                                        CONSTRAINT `FK_Reference_3` FOREIGN KEY (`order_id`) REFERENCES `qfb_order_fix` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='定期订单拓展';
 
 -- ----------------------------
@@ -11087,12 +8570,12 @@ INSERT INTO `qfb_order_fix_extend` VALUES ('664', '0.00', '0', '0.00', '0', '1.0
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_order_fix_log`;
 CREATE TABLE `qfb_order_fix_log` (
-  `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `from_member` int(11) NOT NULL COMMENT '投资人id',
-  `to_member` int(11) NOT NULL COMMENT '推荐人id',
-  `remark` varchar(100) NOT NULL COMMENT '备注'
-) ENGINE=MRG_MyISAM DEFAULT CHARSET=utf8 UNION=(`qfb_order_fix_log0`,`qfb_order_fix_log1`,`qfb_order_fix_log2`,`qfb_order_fix_log3`,`qfb_order_fix_log4`,`qfb_order_fix_log5`,`qfb_order_fix_log6`,`qfb_order_fix_log7`,`qfb_order_fix_log8`,`qfb_order_fix_log9`);
+                                     `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
+                                     `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
+                                     `from_member` int(11) NOT NULL COMMENT '投资人id',
+                                     `to_member` int(11) NOT NULL COMMENT '推荐人id',
+                                     `remark` varchar(100) NOT NULL COMMENT '备注'
+) DEFAULT CHARSET=utf8 ;
 
 -- ----------------------------
 -- Records of qfb_order_fix_log
@@ -11368,520 +8851,22 @@ INSERT INTO `qfb_order_fix_log` VALUES ('78', '0.02', '19', '18', '185****6476(�
 INSERT INTO `qfb_order_fix_log` VALUES ('80', '0.02', '9', '1', '139****1782(谢邻)投资【blake】100.00元');
 INSERT INTO `qfb_order_fix_log` VALUES ('81', '0.02', '19', '18', '185****6476(李四)投资【blake】100.00元');
 INSERT INTO `qfb_order_fix_log` VALUES ('84', '0.02', '19', '18', '185****6476(李四)投资【blake】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('86', '0.02', '19', '18', '185****6476(李四)投资【blake】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('87', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('88', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('89', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('90', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('91', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('92', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('93', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('94', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('99', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('100', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('128', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('129', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('130', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('131', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('132', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('133', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('134', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('136', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('151', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('171', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('172', '0.02', '19', '18', '185****6476(李四)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('173', '0.02', '19', '18', '185****6476(李四)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('174', '0.02', '19', '18', '185****6476(李四)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('175', '0.02', '19', '18', '185****6476(李四)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('176', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('177', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('179', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('181', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('183', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('185', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('209', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('210', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('211', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log` VALUES ('605', '0.03', '139', '1', '137****7771(asd)投资【测试对账-勿操作】4700.00元');
 
--- ----------------------------
--- Table structure for qfb_order_fix_log0
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_log0`;
-CREATE TABLE `qfb_order_fix_log0` (
-  `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `from_member` int(11) NOT NULL COMMENT '投资人id',
-  `to_member` int(11) NOT NULL COMMENT '推荐人id',
-  `remark` varchar(100) NOT NULL COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of qfb_order_fix_log0
--- ----------------------------
-INSERT INTO `qfb_order_fix_log0` VALUES ('631', '0.06', '500', '1', '180****3005(3005)投资【ce 】800.00元');
-INSERT INTO `qfb_order_fix_log0` VALUES ('632', '0.08', '500', '1', '180****3005(3005)投资【测试】1000.00元');
-INSERT INTO `qfb_order_fix_log0` VALUES ('641', '0.08', '510', '1', '180****3699(3699)投资【数据测试中，勿操作】1000.00元');
-INSERT INTO `qfb_order_fix_log0` VALUES ('658', '0.09', '510', '1', '180****3699(3699)投资【测试9】1000.00元');
 
--- ----------------------------
--- Table structure for qfb_order_fix_log1
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_log1`;
-CREATE TABLE `qfb_order_fix_log1` (
-  `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `from_member` int(11) NOT NULL COMMENT '投资人id',
-  `to_member` int(11) NOT NULL COMMENT '推荐人id',
-  `remark` varchar(100) NOT NULL COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_log1
--- ----------------------------
-INSERT INTO `qfb_order_fix_log1` VALUES ('344', '0.07', '141', '1', '138****8881(投资人)投资【fsdf 】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('345', '0.07', '141', '1', '138****8881(投资人)投资【blake创建标的】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('346', '0.02', '141', '1', '138****8881(投资人)投资【balke产品1】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('347', '0.02', '141', '1', '138****8881(投资人)投资【balke产品1】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('348', '0.02', '141', '1', '138****8881(投资人)投资【blake产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('349', '0.07', '141', '1', '138****8881(投资人)投资【产品100】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('350', '0.07', '141', '1', '138****8881(投资人)投资【产品痘方式】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('351', '0.07', '141', '1', '138****8881(投资人)投资【时发生地方】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('352', '0.07', '141', '1', '138****8881(投资人)投资【时发生地方】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('353', '0.07', '141', '1', '138****8881(投资人)投资【时发生地方】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('354', '0.07', '141', '1', '138****8881(投资人)投资【时发生地方】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('355', '0.07', '141', '1', '138****8881(投资人)投资【时发生地方】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('356', '0.07', '141', '1', '138****8881(投资人)投资【时发生地方】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('357', '0.07', '141', '1', '138****8881(投资人)投资【时发生地方】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('362', '0.07', '141', '1', '138****8881(投资人)投资【ceshi  58】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('363', '0.07', '141', '1', '138****8881(投资人)投资【ceshi  58】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('364', '0.07', '141', '1', '138****8881(投资人)投资【ceshi  58】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('366', '0.07', '141', '1', '138****8881(投资人)投资【ceshi  58】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('385', '0.07', '141', '1', '138****8881(投资人)投资【测试产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('386', '0.07', '141', '1', '138****8881(投资人)投资【测试产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('387', '0.07', '141', '1', '138****8881(投资人)投资【测试产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('388', '0.07', '141', '1', '138****8881(投资人)投资【测试产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('389', '0.07', '141', '1', '138****8881(投资人)投资【测试产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('390', '0.07', '141', '1', '138****8881(投资人)投资【测试产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('430', '0.07', '141', '1', '138****8881(投资人)投资【产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('431', '0.07', '141', '1', '138****8881(投资人)投资【产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('432', '0.07', '141', '1', '138****8881(投资人)投资【产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('433', '0.07', '141', '1', '138****8881(投资人)投资【产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('434', '0.07', '141', '1', '138****8881(投资人)投资【产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('435', '0.07', '141', '1', '138****8881(投资人)投资【产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('436', '0.07', '141', '1', '138****8881(投资人)投资【产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('437', '0.07', '141', '1', '138****8881(投资人)投资【产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('438', '0.07', '141', '1', '138****8881(投资人)投资【产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('439', '0.07', '141', '1', '138****8881(投资人)投资【产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('440', '0.07', '141', '1', '138****8881(投资人)投资【产品2】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('441', '0.07', '141', '1', '138****8881(投资人)投资【产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('442', '0.07', '141', '1', '138****8881(投资人)投资【产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('443', '0.02', '141', '1', '138****8881(投资人)投资【产品159】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('444', '0.02', '141', '1', '138****8881(投资人)投资【产品159】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('445', '0.02', '141', '1', '138****8881(投资人)投资【产品159】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('446', '0.02', '141', '1', '138****8881(投资人)投资【产品159】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('447', '0.02', '141', '1', '138****8881(投资人)投资【产品159】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('448', '0.02', '141', '1', '138****8881(投资人)投资【产品159】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('450', '0.07', '141', '1', '138****8881(投资人)投资【产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('454', '0.07', '141', '1', '138****8881(投资人)投资【测试产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('455', '0.07', '141', '1', '138****8881(投资人)投资【测试产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('456', '0.07', '141', '1', '138****8881(投资人)投资【测试产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('457', '0.07', '141', '1', '138****8881(投资人)投资【产品名称】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('458', '0.07', '141', '1', '138****8881(投资人)投资【产品名称】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('459', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('461', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('462', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('463', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('464', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('465', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('466', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('467', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('468', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('469', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('470', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('471', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('472', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('473', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('474', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('475', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('476', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('477', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('478', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('479', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('480', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('481', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('482', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('483', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('484', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('485', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('486', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('487', '0.73', '141', '1', '138****8881(投资人)投资【chanpin】1000.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('488', '0.07', '141', '1', '138****8881(投资人)投资【chanpin】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('489', '0.36', '141', '1', '138****8881(投资人)投资【chanpin】500.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('490', '0.07', '141', '1', '138****8881(投资人)投资【sfsdofso】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('491', '0.07', '141', '1', '138****8881(投资人)投资【blake 测试产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('492', '0.07', '141', '1', '138****8881(投资人)投资【blake 测试产品】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('493', '0.07', '141', '1', '138****8881(投资人)投资【水电费水电费】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('494', '0.07', '141', '1', '138****8881(投资人)投资【水电费水电费】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('500', '0.73', '141', '1', '138****8881(投资人)投资【测试】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('501', '1.47', '141', '1', '138****8881(投资人)投资【测试】200.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('502', '1.47', '141', '1', '138****8881(投资人)投资【测试】200.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('504', '0.02', '141', '1', '138****8881(投资人)投资【测试】400.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('521', '0.36', '141', '1', '138****8881(投资人)投资【测试】500.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('574', '0.02', '141', '1', '138****8881(投资人)投资【chan】100.00元');
-INSERT INTO `qfb_order_fix_log1` VALUES ('577', '0.02', '141', '1', '138****8881(投资人)投资【测试还款-勿动】300.00元');
-
--- ----------------------------
--- Table structure for qfb_order_fix_log2
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_log2`;
-CREATE TABLE `qfb_order_fix_log2` (
-  `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `from_member` int(11) NOT NULL COMMENT '投资人id',
-  `to_member` int(11) NOT NULL COMMENT '推荐人id',
-  `remark` varchar(100) NOT NULL COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_log2
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_order_fix_log3
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_log3`;
-CREATE TABLE `qfb_order_fix_log3` (
-  `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `from_member` int(11) NOT NULL COMMENT '投资人id',
-  `to_member` int(11) NOT NULL COMMENT '推荐人id',
-  `remark` varchar(100) NOT NULL COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_log3
--- ----------------------------
-INSERT INTO `qfb_order_fix_log3` VALUES ('212', '0.02', '133', '1', '135****1115(ADA)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log3` VALUES ('214', '0.02', '133', '1', '135****1115(ADA)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log3` VALUES ('217', '0.02', '133', '1', '135****1115(ADA)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log3` VALUES ('545', '0.02', '73', '13', '139****1733(sdfsd)投资【sddddd】100.00元');
-INSERT INTO `qfb_order_fix_log3` VALUES ('546', '0.02', '73', '13', '139****1733(sdfsd)投资【sddddd】100.00元');
-INSERT INTO `qfb_order_fix_log3` VALUES ('547', '0.02', '73', '13', '139****1733(sdfsd)投资【sddddd】100.00元');
-INSERT INTO `qfb_order_fix_log3` VALUES ('548', '0.02', '73', '13', '139****1733(sdfsd)投资【sddddd】100.00元');
-INSERT INTO `qfb_order_fix_log3` VALUES ('549', '0.02', '73', '13', '139****1733(sdfsd)投资【sddddd】100.00元');
-INSERT INTO `qfb_order_fix_log3` VALUES ('550', '0.02', '73', '13', '139****1733(sdfsd)投资【sddddd】100.00元');
-INSERT INTO `qfb_order_fix_log3` VALUES ('552', '0.02', '73', '13', '139****1733(sdfsd)投资【chan】100.00元');
-INSERT INTO `qfb_order_fix_log3` VALUES ('553', '0.02', '73', '13', '139****1733(sdfsd)投资【chan】100.00元');
-INSERT INTO `qfb_order_fix_log3` VALUES ('554', '0.02', '73', '13', '139****1733(sdfsd)投资【chan】100.00元');
-
--- ----------------------------
--- Table structure for qfb_order_fix_log4
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_log4`;
-CREATE TABLE `qfb_order_fix_log4` (
-  `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `from_member` int(11) NOT NULL COMMENT '投资人id',
-  `to_member` int(11) NOT NULL COMMENT '推荐人id',
-  `remark` varchar(100) NOT NULL COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_log4
--- ----------------------------
-INSERT INTO `qfb_order_fix_log4` VALUES ('221', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('222', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('223', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('224', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('225', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('226', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('227', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('228', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('229', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('230', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('231', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('232', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('233', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('234', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('235', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('236', '0.04', '124', '1', '139****2657(投资人)投资【产品 添加17】200.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('237', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('238', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('239', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('240', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('241', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('242', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('243', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('244', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('245', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('246', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('247', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('248', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('249', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('250', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('251', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('252', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('253', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('254', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('255', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('256', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('257', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('258', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('259', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('260', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('261', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('262', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('263', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('264', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('265', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('266', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('267', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('268', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('269', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('270', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('271', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('272', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('273', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('274', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('275', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('276', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('277', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('278', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('279', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('280', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('281', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('282', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('283', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('284', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('285', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('286', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('287', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('288', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('289', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('290', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('291', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('292', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('293', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('294', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('295', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('296', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('297', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('298', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('299', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('300', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('301', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('302', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('303', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('304', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('305', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('306', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('307', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('308', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('309', '0.02', '124', '1', '139****2657(投资人)投资【产品 添加17】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('310', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('311', '0.02', '124', '1', '139****2657(投资人)投资【测试 产品】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('312', '0.02', '124', '1', '139****2657(投资人)投资【不要删除数据】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('313', '0.02', '124', '1', '139****2657(投资人)投资【不要删除数据】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('314', '0.02', '124', '1', '139****2657(投资人)投资【不要删除数据】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('315', '0.02', '124', '1', '139****2657(投资人)投资【不要删除数据】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('316', '0.02', '124', '1', '139****2657(投资人)投资【不要删除数据】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('317', '0.02', '124', '1', '139****2657(投资人)投资【不要删除数据】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('318', '0.02', '124', '1', '139****2657(投资人)投资【不要删除数据】100.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('340', '0.02', '124', '1', '139****2657(投资人)投资【产品6】111.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('341', '0.02', '124', '1', '139****2657(投资人)投资【产品6】111.00元');
-INSERT INTO `qfb_order_fix_log4` VALUES ('342', '0.02', '124', '1', '139****2657(投资人)投资【产品6】111.00元');
-
--- ----------------------------
--- Table structure for qfb_order_fix_log5
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_log5`;
-CREATE TABLE `qfb_order_fix_log5` (
-  `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `from_member` int(11) NOT NULL COMMENT '投资人id',
-  `to_member` int(11) NOT NULL COMMENT '推荐人id',
-  `remark` varchar(100) NOT NULL COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_log5
--- ----------------------------
-INSERT INTO `qfb_order_fix_log5` VALUES ('95', '0.02', '45', '44', '185****6482(豆子)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log5` VALUES ('460', '0.73', '145', '1', '135****2526(123)投资【chanpin】1000.00元');
-
--- ----------------------------
--- Table structure for qfb_order_fix_log6
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_log6`;
-CREATE TABLE `qfb_order_fix_log6` (
-  `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `from_member` int(11) NOT NULL COMMENT '投资人id',
-  `to_member` int(11) NOT NULL COMMENT '推荐人id',
-  `remark` varchar(100) NOT NULL COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_log6
--- ----------------------------
-INSERT INTO `qfb_order_fix_log6` VALUES ('1', '0.02', '66', '12', '139****1780(谢邻)投资【新手尊投2】10.00元');
-INSERT INTO `qfb_order_fix_log6` VALUES ('1', '0.02', '66', '13', '139****1780(谢邻)投资【新手尊投2】10.00元');
-INSERT INTO `qfb_order_fix_log6` VALUES ('10', '0.12', '66', '13', '139****1777(谢邻)投资【测试001】50.00元');
-INSERT INTO `qfb_order_fix_log6` VALUES ('10', '0.12', '66', '12', '139****1777(谢邻)投资【测试001】50.00元');
-INSERT INTO `qfb_order_fix_log6` VALUES ('343', '0.07', '6', '1', '135****9100(丁培文)投资【不要动本商品数据】100.00元');
-
--- ----------------------------
--- Table structure for qfb_order_fix_log7
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_log7`;
-CREATE TABLE `qfb_order_fix_log7` (
-  `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `from_member` int(11) NOT NULL COMMENT '投资人id',
-  `to_member` int(11) NOT NULL COMMENT '推荐人id',
-  `remark` varchar(100) NOT NULL COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_log7
--- ----------------------------
-INSERT INTO `qfb_order_fix_log7` VALUES ('199', '0.02', '137', '1', '135****2568(林1)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('200', '0.02', '137', '1', '135****2568(林1)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('201', '0.02', '137', '1', '135****2568(林1)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('202', '0.02', '137', '1', '135****2568(林1)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('203', '0.02', '137', '1', '135****2568(林1)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('204', '0.02', '137', '1', '135****2568(林1)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('205', '0.02', '137', '1', '135****2568(林1)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('206', '0.02', '137', '1', '135****2568(林1)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('207', '0.02', '137', '1', '135****2568(林1)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('208', '0.02', '137', '1', '135****2568(林1)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('335', '0.27', '137', '1', '135****2568(林1)投资【不要删除数据】1111.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('336', '0.24', '137', '1', '135****2568(林1)投资【不要删除数据】1000.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('337', '0.24', '137', '1', '135****2568(林1)投资【不要删除数据】1000.00元');
-INSERT INTO `qfb_order_fix_log7` VALUES ('338', '0.24', '137', '1', '135****2568(林1)投资【不要删除数据】1000.00元');
-
--- ----------------------------
--- Table structure for qfb_order_fix_log8
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_log8`;
-CREATE TABLE `qfb_order_fix_log8` (
-  `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `from_member` int(11) NOT NULL COMMENT '投资人id',
-  `to_member` int(11) NOT NULL COMMENT '推荐人id',
-  `remark` varchar(100) NOT NULL COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_log8
--- ----------------------------
-INSERT INTO `qfb_order_fix_log8` VALUES ('96', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('97', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('98', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('101', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('102', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('103', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('104', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('105', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('106', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('107', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('108', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('109', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('110', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('111', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('112', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('113', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('114', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('115', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('116', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('117', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('118', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('119', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('120', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('121', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('122', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('123', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('124', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('125', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('126', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('127', '0.02', '58', '1', '137****6328()投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('152', '0.02', '68', '13', '139****1791(sdfsdf)投资【产品6】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('566', '0.02', '168', '1', '136****5678(林兴武)投资【chan】100.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('567', '0.04', '168', '1', '136****5678(林兴武)投资【chan】200.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('579', '0.04', '168', '1', '136****5678(林兴武)投资【水电费水电费】4879.00元');
-INSERT INTO `qfb_order_fix_log8` VALUES ('580', '0.04', '168', '1', '136****5678(林兴武)投资【新2222】4899.00元');
-
--- ----------------------------
--- Table structure for qfb_order_fix_log9
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_log9`;
-CREATE TABLE `qfb_order_fix_log9` (
-  `order_id` int(11) NOT NULL COMMENT '定期理财订单表',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
-  `from_member` int(11) NOT NULL COMMENT '投资人id',
-  `to_member` int(11) NOT NULL COMMENT '推荐人id',
-  `remark` varchar(100) NOT NULL COMMENT '备注'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_log9
--- ----------------------------
-INSERT INTO `qfb_order_fix_log9` VALUES ('73', '0.02', '19', '18', '185****6476(李四)投资【blake】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('74', '0.02', '19', '18', '185****6476(李四)投资【blake】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('75', '0.02', '19', '18', '185****6476(李四)投资【blake】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('78', '0.02', '19', '18', '185****6476(李四)投资【blake】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('80', '0.02', '9', '1', '139****1782(谢邻)投资【blake】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('81', '0.02', '19', '18', '185****6476(李四)投资【blake】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('84', '0.02', '19', '18', '185****6476(李四)投资【blake】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('86', '0.02', '19', '18', '185****6476(李四)投资【blake】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('87', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('88', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('89', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('90', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('91', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('92', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('93', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('94', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('99', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('100', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('128', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('129', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('130', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('131', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('132', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('133', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('134', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('136', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('151', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('171', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('172', '0.02', '19', '18', '185****6476(李四)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('173', '0.02', '19', '18', '185****6476(李四)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('174', '0.02', '19', '18', '185****6476(李四)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('175', '0.02', '19', '18', '185****6476(李四)投资【发送到发送到】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('176', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('177', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('179', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('181', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('183', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('185', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('209', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('210', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('211', '0.02', '19', '18', '185****6476(李四)投资【20170613产品添加测试】100.00元');
-INSERT INTO `qfb_order_fix_log9` VALUES ('605', '0.03', '139', '1', '137****7771(asd)投资【测试对账-勿操作】4700.00元');
 
 -- ----------------------------
 -- Table structure for qfb_order_fix_money
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_order_fix_money`;
 CREATE TABLE `qfb_order_fix_money` (
-  `order_id` int(10) NOT NULL COMMENT '订单号',
-  `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
-  `create_time` int(10) NOT NULL COMMENT '创建时间',
-  `member_id` int(10) NOT NULL COMMENT '用户id',
-  `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
-  `from` tinyint(4) NOT NULL COMMENT '行为类型 1管理奖,2充值,3分润,5推荐奖,6转账,7提现,8收益,9退款,10兑换,12转入,13推代奖'
-) ENGINE=MRG_MyISAM DEFAULT CHARSET=utf8 UNION=(`qfb_order_fix_money0`,`qfb_order_fix_money1`,`qfb_order_fix_money2`,`qfb_order_fix_money3`,`qfb_order_fix_money4`,`qfb_order_fix_money5`,`qfb_order_fix_money6`,`qfb_order_fix_money7`,`qfb_order_fix_money8`,`qfb_order_fix_money9`) COMMENT='定期日志表';
+                                       `order_id` int(10) NOT NULL COMMENT '订单号',
+                                       `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
+                                       `create_time` int(10) NOT NULL COMMENT '创建时间',
+                                       `member_id` int(10) NOT NULL COMMENT '用户id',
+                                       `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
+                                       `from` tinyint(4) NOT NULL COMMENT '行为类型 1管理奖,2充值,3分润,5推荐奖,6转账,7提现,8收益,9退款,10兑换,12转入,13推代奖'
+)   DEFAULT CHARSET=utf8  COMMENT='定期日志表';
 
 -- ----------------------------
 -- Records of qfb_order_fix_money
@@ -11890,199 +8875,27 @@ INSERT INTO `qfb_order_fix_money` VALUES ('3', '0.00', '1497166546', '66', '1', 
 INSERT INTO `qfb_order_fix_money` VALUES ('4', '0.02', '1497166546', '66', '1', '8');
 INSERT INTO `qfb_order_fix_money` VALUES ('9', '0.27', '1497166546', '66', '1', '8');
 
--- ----------------------------
--- Table structure for qfb_order_fix_money0
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_money0`;
-CREATE TABLE `qfb_order_fix_money0` (
-  `order_id` int(11) NOT NULL COMMENT '订单号',
-  `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
-  `from` tinyint(4) NOT NULL COMMENT '行为类型 1管理奖,2充值,3分润,5推荐奖,6转账,7提现,8收益,9退款,10兑换,12转入,13推代奖'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_money0
--- ----------------------------
-INSERT INTO `qfb_order_fix_money0` VALUES ('3', '0.00', '1497166546', '66', '1', '8');
-INSERT INTO `qfb_order_fix_money0` VALUES ('4', '0.02', '1497166546', '66', '1', '8');
-INSERT INTO `qfb_order_fix_money0` VALUES ('9', '0.27', '1497166546', '66', '1', '8');
-
--- ----------------------------
--- Table structure for qfb_order_fix_money1
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_money1`;
-CREATE TABLE `qfb_order_fix_money1` (
-  `order_id` int(11) NOT NULL COMMENT '订单号',
-  `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
-  `from` tinyint(4) NOT NULL COMMENT '行为类型'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_money1
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_order_fix_money2
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_money2`;
-CREATE TABLE `qfb_order_fix_money2` (
-  `order_id` int(11) NOT NULL COMMENT '订单号',
-  `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
-  `from` tinyint(4) NOT NULL COMMENT '行为类型'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_money2
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_order_fix_money3
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_money3`;
-CREATE TABLE `qfb_order_fix_money3` (
-  `order_id` int(11) NOT NULL COMMENT '订单号',
-  `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
-  `from` tinyint(4) NOT NULL COMMENT '行为类型'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_money3
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_order_fix_money4
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_money4`;
-CREATE TABLE `qfb_order_fix_money4` (
-  `order_id` int(11) NOT NULL COMMENT '订单号',
-  `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
-  `from` tinyint(4) NOT NULL COMMENT '行为类型'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_money4
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_order_fix_money5
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_money5`;
-CREATE TABLE `qfb_order_fix_money5` (
-  `order_id` int(11) NOT NULL COMMENT '订单号',
-  `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
-  `from` tinyint(4) NOT NULL COMMENT '行为类型'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_money5
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_order_fix_money6
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_money6`;
-CREATE TABLE `qfb_order_fix_money6` (
-  `order_id` int(11) NOT NULL COMMENT '订单号',
-  `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
-  `from` tinyint(4) NOT NULL COMMENT '行为类型'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_money6
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_order_fix_money7
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_money7`;
-CREATE TABLE `qfb_order_fix_money7` (
-  `order_id` int(11) NOT NULL COMMENT '订单号',
-  `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
-  `from` tinyint(4) NOT NULL COMMENT '行为类型'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_money7
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_order_fix_money8
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_money8`;
-CREATE TABLE `qfb_order_fix_money8` (
-  `order_id` int(11) NOT NULL COMMENT '订单号',
-  `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
-  `from` tinyint(4) NOT NULL COMMENT '行为类型'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_money8
--- ----------------------------
-
--- ----------------------------
--- Table structure for qfb_order_fix_money9
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_fix_money9`;
-CREATE TABLE `qfb_order_fix_money9` (
-  `order_id` int(11) NOT NULL COMMENT '订单号',
-  `profit_money` decimal(15,2) NOT NULL COMMENT '收益',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `circle_times` smallint(6) NOT NULL DEFAULT '1' COMMENT '理财周期，默认第一次',
-  `from` tinyint(4) NOT NULL COMMENT '行为类型'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_fix_money9
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for qfb_order_overdue
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_order_overdue`;
 CREATE TABLE `qfb_order_overdue` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `product_id` int(11) NOT NULL DEFAULT '0' COMMENT '产品id',
-  `sn` varchar(60) NOT NULL DEFAULT '' COMMENT '流水号',
-  `member_id` int(11) NOT NULL DEFAULT '0' COMMENT '代偿人id(平台id)',
-  `to_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '被代偿人id',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '代偿本金',
-  `interest` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '代偿利息',
-  `overdue_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '逾期金额',
-  `repay_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '已还金额',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态:0未还款，1还款未确定，2确认还款，3还款失败9还款异常',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `complete_time` int(11) NOT NULL DEFAULT '0' COMMENT '完成时间',
-  `overdue_day` int(11) NOT NULL DEFAULT '0' COMMENT '逾期天数',
-  `option_date` varchar(32) NOT NULL DEFAULT '' COMMENT '操作日期',
-  PRIMARY KEY (`id`)
+                                     `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                                     `product_id` int(11) NOT NULL DEFAULT '0' COMMENT '产品id',
+                                     `sn` varchar(60) NOT NULL DEFAULT '' COMMENT '流水号',
+                                     `member_id` int(11) NOT NULL DEFAULT '0' COMMENT '代偿人id(平台id)',
+                                     `to_member_id` int(11) NOT NULL DEFAULT '0' COMMENT '被代偿人id',
+                                     `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '代偿本金',
+                                     `interest` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '代偿利息',
+                                     `overdue_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '逾期金额',
+                                     `repay_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '已还金额',
+                                     `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态:0未还款，1还款未确定，2确认还款，3还款失败9还款异常',
+                                     `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                     `complete_time` int(11) NOT NULL DEFAULT '0' COMMENT '完成时间',
+                                     `overdue_day` int(11) NOT NULL DEFAULT '0' COMMENT '逾期天数',
+                                     `option_date` varchar(32) NOT NULL DEFAULT '' COMMENT '操作日期',
+                                     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='逾期订单表';
 
 -- ----------------------------
@@ -12110,22 +8923,22 @@ INSERT INTO `qfb_order_overdue` VALUES ('21', '301', '', '2', '140', '1000.00', 
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_order_repayment`;
 CREATE TABLE `qfb_order_repayment` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `sn` varchar(255) NOT NULL DEFAULT '' COMMENT '还款流水号',
-  `product_id` int(11) NOT NULL DEFAULT '0' COMMENT '产品id',
-  `member_id` int(11) NOT NULL DEFAULT '0' COMMENT '还款人id',
-  `money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '待还本金',
-  `interest` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '待还利息',
-  `repay_money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '已还款金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '还款订单状态，0：未还款，1：已还款待确定，2：确认已还款,3:失败；9 : 订单异常',
-  `complete_time` int(11) NOT NULL DEFAULT '0' COMMENT '确认时间',
-  `is_commutation` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否代偿，0未代偿，1平台代偿',
-  `invest_day` int(11) NOT NULL DEFAULT '0' COMMENT '投资天数',
-  `is_end` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否是最后一期:0否，1是',
-  `periods` int(11) NOT NULL DEFAULT '1' COMMENT '期数',
-  `is_overdue` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否逾期',
-  PRIMARY KEY (`id`)
+                                       `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                                       `sn` varchar(255) NOT NULL DEFAULT '' COMMENT '还款流水号',
+                                       `product_id` int(11) NOT NULL DEFAULT '0' COMMENT '产品id',
+                                       `member_id` int(11) NOT NULL DEFAULT '0' COMMENT '还款人id',
+                                       `money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '待还本金',
+                                       `interest` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '待还利息',
+                                       `repay_money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '已还款金额',
+                                       `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                       `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '还款订单状态，0：未还款，1：已还款待确定，2：确认已还款,3:失败；9 : 订单异常',
+                                       `complete_time` int(11) NOT NULL DEFAULT '0' COMMENT '确认时间',
+                                       `is_commutation` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否代偿，0未代偿，1平台代偿',
+                                       `invest_day` int(11) NOT NULL DEFAULT '0' COMMENT '投资天数',
+                                       `is_end` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否是最后一期:0否，1是',
+                                       `periods` int(11) NOT NULL DEFAULT '1' COMMENT '期数',
+                                       `is_overdue` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否逾期',
+                                       PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=140 DEFAULT CHARSET=utf8 COMMENT='还款订单表';
 
 -- ----------------------------
@@ -12188,13 +9001,13 @@ INSERT INTO `qfb_order_repayment` VALUES ('139', 'HK20170816141453IS8IBN', '306'
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_order_repayment_extend`;
 CREATE TABLE `qfb_order_repayment_extend` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL DEFAULT '0' COMMENT '还款订单id',
-  `sn` varchar(60) NOT NULL DEFAULT '' COMMENT '还款流水号',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0是还款，1是逾期还款',
-  `option_status` tinyint(5) NOT NULL DEFAULT '0' COMMENT '操作状态，0：未操作，1：成功，2：失败；9 : 订单异常'',',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  PRIMARY KEY (`id`)
+                                              `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                                              `order_id` int(11) NOT NULL DEFAULT '0' COMMENT '还款订单id',
+                                              `sn` varchar(60) NOT NULL DEFAULT '' COMMENT '还款流水号',
+                                              `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0是还款，1是逾期还款',
+                                              `option_status` tinyint(5) NOT NULL DEFAULT '0' COMMENT '操作状态，0：未操作，1：成功，2：失败；9 : 订单异常'',',
+                                              `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                              PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -12226,19 +9039,19 @@ INSERT INTO `qfb_order_repayment_extend` VALUES ('20', '139', 'HK20170816141453I
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_order_repayment_log`;
 CREATE TABLE `qfb_order_repayment_log` (
-  `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id,逾期还款,平台代偿',
-  `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
-  `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
-  `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
-  `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
-  `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
-  `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
-  `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  UNIQUE KEY `sn` (`sn`) USING BTREE
-) ENGINE=MRG_MyISAM DEFAULT CHARSET=utf8 UNION=(`qfb_order_repayment_log_t0`,`qfb_order_repayment_log_t1`,`qfb_order_repayment_log_t2`,`qfb_order_repayment_log_t3`,`qfb_order_repayment_log_t4`,`qfb_order_repayment_log_t5`,`qfb_order_repayment_log_t6`,`qfb_order_repayment_log_t7`,`qfb_order_repayment_log_t8`,`qfb_order_repayment_log_t9`) COMMENT='日志表';
+                                           `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id,逾期还款,平台代偿',
+                                           `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
+                                           `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
+                                           `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
+                                           `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
+                                           `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
+                                           `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
+                                           `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
+                                           `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
+                                           `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
+                                           `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                           UNIQUE KEY `sn` (`sn`) USING BTREE
+)  DEFAULT CHARSET=utf8  COMMENT='日志表';
 
 -- ----------------------------
 -- Records of qfb_order_repayment_log
@@ -12300,306 +9113,21 @@ INSERT INTO `qfb_order_repayment_log` VALUES ('129', 'HK201708141357214GL3FA', '
 INSERT INTO `qfb_order_repayment_log` VALUES ('19', 'HK_O_20170814160138BRF2JK', '3', '1000.00', '0.03', '0.00', '1000.03', '140', 'SYS_GENERATE_001', '借款人还逾期款', '1502697699');
 INSERT INTO `qfb_order_repayment_log` VALUES ('139', 'HK20170816145656GNK1LB', '1', '1000.00', '0.00', '0.00', '1000.00', '140', '502', '借款人还款', '1502866616');
 
--- ----------------------------
--- Table structure for qfb_order_repayment_log_t0
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_repayment_log_t0`;
-CREATE TABLE `qfb_order_repayment_log_t0` (
-  `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id',
-  `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
-  `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
-  `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
-  `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
-  `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
-  `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
-  `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  UNIQUE KEY `sn` (`sn`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_repayment_log_t0
--- ----------------------------
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809180447K31L1G', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273089');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809181323YBOAX3', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273604');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809181346247IA4', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273627');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809181535LYCQXO', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273736');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809181556HJ8BF2', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273757');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK201708091816468NBE53', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273807');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809181706K0OU6D', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273827');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK201708091817362FLV4V', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273857');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809181806OTVNJS', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273887');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809181827UURLK7', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273908');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809181837X2FBUQ', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273918');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809181904HXABLA', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273945');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809181914RVF3E6', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502273955');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809182006MNYYE9', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502274007');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809182029TOPVI0', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502274030');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809182958FSN66T', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502274600');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK201708091831273CQM8N', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502274688');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809184218ZR3MCN', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502275339');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK20170809184321QBAQD7', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502275402');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('110', 'HK201708091844253NYPDO', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502275466');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('10', 'HK20170810145500FVGF6M', '3', '1000.00', '0.20', '0.00', '1000.20', '140', 'SYS_GENERATE_001', '借款人还逾期款', '1502348102');
-INSERT INTO `qfb_order_repayment_log_t0` VALUES ('20', 'HK_O_201708141639154CCGIO', '3', '1000.00', '0.03', '0.00', '1000.03', '140', 'SYS_GENERATE_001', '借款人还逾期款', '1502699956');
-
--- ----------------------------
--- Table structure for qfb_order_repayment_log_t1
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_repayment_log_t1`;
-CREATE TABLE `qfb_order_repayment_log_t1` (
-  `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id',
-  `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
-  `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
-  `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
-  `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
-  `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
-  `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
-  `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  UNIQUE KEY `sn` (`sn`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_repayment_log_t1
--- ----------------------------
-INSERT INTO `qfb_order_repayment_log_t1` VALUES ('121', 'HK20170814123514C05TZE', '1', '0.00', '8.10', '0.00', '8.10', '140', '504', '借款人还款', '1502685314');
-INSERT INTO `qfb_order_repayment_log_t1` VALUES ('131', 'HK20170814142854NZB3P0', '2', '1000.00', '0.02', '0.00', '1000.02', 'SYS_GENERATE_001', '510', '平台代偿还款', '1502692135');
-
--- ----------------------------
--- Table structure for qfb_order_repayment_log_t2
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_repayment_log_t2`;
-CREATE TABLE `qfb_order_repayment_log_t2` (
-  `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id',
-  `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
-  `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
-  `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
-  `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
-  `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
-  `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
-  `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  UNIQUE KEY `sn` (`sn`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_repayment_log_t2
--- ----------------------------
-INSERT INTO `qfb_order_repayment_log_t2` VALUES ('92', '', '1', '5000.00', '0.00', '0.00', '5000.00', '140', '16', '借款人还款', '1502272591');
-
--- ----------------------------
--- Table structure for qfb_order_repayment_log_t3
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_repayment_log_t3`;
-CREATE TABLE `qfb_order_repayment_log_t3` (
-  `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id',
-  `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
-  `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
-  `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
-  `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
-  `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
-  `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
-  `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  UNIQUE KEY `sn` (`sn`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_repayment_log_t3
--- ----------------------------
-INSERT INTO `qfb_order_repayment_log_t3` VALUES ('133', 'HK201708141557163HR8ZJ', '2', '1000.00', '0.02', '0.00', '1000.02', 'SYS_GENERATE_001', '510', '平台代偿还款', '1502697436');
-
--- ----------------------------
--- Table structure for qfb_order_repayment_log_t4
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_repayment_log_t4`;
-CREATE TABLE `qfb_order_repayment_log_t4` (
-  `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id',
-  `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
-  `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
-  `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
-  `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
-  `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
-  `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
-  `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  UNIQUE KEY `sn` (`sn`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_repayment_log_t4
--- ----------------------------
-INSERT INTO `qfb_order_repayment_log_t4` VALUES ('114', 'HK20170814123515ITWZG6', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502685316');
-INSERT INTO `qfb_order_repayment_log_t4` VALUES ('134', 'HK20170814163032KYAS9T', '1', '1000.00', '0.02', '0.00', '1000.02', '140', '510', '借款人还款', '1502699432');
-
--- ----------------------------
--- Table structure for qfb_order_repayment_log_t5
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_repayment_log_t5`;
-CREATE TABLE `qfb_order_repayment_log_t5` (
-  `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id',
-  `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
-  `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
-  `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
-  `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
-  `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
-  `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
-  `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  UNIQUE KEY `sn` (`sn`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_repayment_log_t5
--- ----------------------------
-INSERT INTO `qfb_order_repayment_log_t5` VALUES ('125', 'HK201708141235149F6HQG', '1', '0.00', '8.10', '0.00', '8.10', '140', '504', '借款人还款', '1502685314');
-INSERT INTO `qfb_order_repayment_log_t5` VALUES ('115', 'HK20170814123515J1E0OL', '1', '0.00', '8.10', '0.00', '8.10', '140', '504', '借款人还款', '1502685315');
-INSERT INTO `qfb_order_repayment_log_t5` VALUES ('135', 'HK20170814163911M1YVXK', '2', '1000.00', '0.02', '0.00', '1000.02', 'SYS_GENERATE_001', '510', '平台代偿还款', '1502699951');
-
--- ----------------------------
--- Table structure for qfb_order_repayment_log_t6
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_repayment_log_t6`;
-CREATE TABLE `qfb_order_repayment_log_t6` (
-  `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id',
-  `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
-  `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
-  `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
-  `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
-  `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
-  `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
-  `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  UNIQUE KEY `sn` (`sn`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_repayment_log_t6
--- ----------------------------
-INSERT INTO `qfb_order_repayment_log_t6` VALUES ('136', 'HK20170815090046DDXXL7', '2', '1000.00', '0.02', '0.00', '1000.02', 'SYS_GENERATE_001', '510', '平台代偿还款', '1502758846');
-
--- ----------------------------
--- Table structure for qfb_order_repayment_log_t7
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_repayment_log_t7`;
-CREATE TABLE `qfb_order_repayment_log_t7` (
-  `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id',
-  `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
-  `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
-  `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
-  `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
-  `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
-  `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
-  `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  UNIQUE KEY `sn` (`sn`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_repayment_log_t7
--- ----------------------------
-INSERT INTO `qfb_order_repayment_log_t7` VALUES ('117', 'HK201708101451475OAX13', '2', '1000.00', '0.20', '0.00', '1000.20', 'SYS_GENERATE_001', '510', '平台代偿还款', '1502347909');
-INSERT INTO `qfb_order_repayment_log_t7` VALUES ('17', 'HK201708141516029T665V', '3', '1000.00', '0.03', '0.00', '1000.03', '140', 'SYS_GENERATE_001', '借款人还逾期款', '1502694963');
-INSERT INTO `qfb_order_repayment_log_t7` VALUES ('137', 'HK20170816090519BAUKRT', '1', '1000.00', '0.02', '0.00', '1000.02', '140', '502', '借款人还款', '1502845519');
-
--- ----------------------------
--- Table structure for qfb_order_repayment_log_t8
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_repayment_log_t8`;
-CREATE TABLE `qfb_order_repayment_log_t8` (
-  `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id',
-  `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
-  `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
-  `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
-  `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
-  `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
-  `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
-  `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  UNIQUE KEY `sn` (`sn`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_repayment_log_t8
--- ----------------------------
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170810152542LR6B2A', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502349944');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK201708101528020MPPU5', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502350083');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170810153010HB58IW', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502350212');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170814123514GPSN89', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502685315');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('128', 'HK20170814132207SF3L3Q', '1', '1000.00', '0.02', '0.00', '1000.02', '140', '510', '借款人还款', '1502688128');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170814142854JQUARV', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502692134');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170814144559CFSVVF', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502693159');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK201708141557157J29HS', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502697435');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK2017081416303242FPM6', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502699432');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK201708141639112XJPI6', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502699951');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170815090045NHYYDC', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502758846');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170816090518RT0V66', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502845518');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170816133751L8670P', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502861871');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('138', 'HK20170816133752R7PLMQ', '1', '1000.00', '0.02', '0.00', '1000.02', '140', '502', '借款人还款', '1502861872');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170816133818U5BW6F', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502861898');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170816133937FWX98R', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502861977');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170816134026WR6TMG', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502862027');
-INSERT INTO `qfb_order_repayment_log_t8` VALUES ('118', 'HK20170816145655L0CB43', '2', '0.00', '8.10', '0.00', '8.10', 'SYS_GENERATE_001', '504', '平台代偿还款', '1502866615');
-
--- ----------------------------
--- Table structure for qfb_order_repayment_log_t9
--- ----------------------------
-DROP TABLE IF EXISTS `qfb_order_repayment_log_t9`;
-CREATE TABLE `qfb_order_repayment_log_t9` (
-  `order_repayment_id` int(11) unsigned NOT NULL COMMENT '还款订单id',
-  `sn` varchar(30) NOT NULL DEFAULT '' COMMENT '请求流水号',
-  `repayment_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1:借款人直接还款 2：平台代偿 3：借款人还代偿',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '本金金额',
-  `interest_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '利息金额',
-  `other_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '其他金额',
-  `total_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总金额',
-  `out_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '出款账户',
-  `in_account_id` varchar(20) NOT NULL DEFAULT '' COMMENT '入款账户',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  UNIQUE KEY `sn` (`sn`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of qfb_order_repayment_log_t9
--- ----------------------------
-INSERT INTO `qfb_order_repayment_log_t9` VALUES ('129', 'HK201708141357214GL3FA', '1', '1000.00', '0.02', '0.00', '1000.02', '140', '510', '借款人还款', '1502690242');
-INSERT INTO `qfb_order_repayment_log_t9` VALUES ('19', 'HK_O_20170814160138BRF2JK', '3', '1000.00', '0.03', '0.00', '1000.03', '140', 'SYS_GENERATE_001', '借款人还逾期款', '1502697699');
-INSERT INTO `qfb_order_repayment_log_t9` VALUES ('139', 'HK20170816145656GNK1LB', '1', '1000.00', '0.00', '0.00', '1000.00', '140', '502', '借款人还款', '1502866616');
 
 -- ----------------------------
 -- Table structure for qfb_pc_image
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_pc_image`;
 CREATE TABLE `qfb_pc_image` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '标题',
-  `image` varchar(50) NOT NULL DEFAULT '' COMMENT '图片地址',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '投放位置，1：banner，2：合作方，3：底部小图片，4：关于我们横幅',
-  `url` varchar(100) NOT NULL DEFAULT '' COMMENT '跳转链接',
-  `time` int(11) NOT NULL DEFAULT '0' COMMENT '发布时间',
-  `sort` tinyint(1) NOT NULL DEFAULT '1' COMMENT '排序',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态，1：启用，2：禁用',
-  PRIMARY KEY (`id`)
+                                `id` int(11) NOT NULL AUTO_INCREMENT,
+                                `name` varchar(50) NOT NULL DEFAULT '' COMMENT '标题',
+                                `image` varchar(50) NOT NULL DEFAULT '' COMMENT '图片地址',
+                                `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '投放位置，1：banner，2：合作方，3：底部小图片，4：关于我们横幅',
+                                `url` varchar(100) NOT NULL DEFAULT '' COMMENT '跳转链接',
+                                `time` int(11) NOT NULL DEFAULT '0' COMMENT '发布时间',
+                                `sort` tinyint(1) NOT NULL DEFAULT '1' COMMENT '排序',
+                                `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态，1：启用，2：禁用',
+                                PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='PC图片';
 
 -- ----------------------------
@@ -12618,18 +9146,18 @@ INSERT INTO `qfb_pc_image` VALUES ('18', '12', '1/cmsdEUDJf0oFlJ6lqR1897slPWkz7n
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_platform_income`;
 CREATE TABLE `qfb_platform_income` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  `platform_name` varchar(30) NOT NULL DEFAULT 'SYS_GENERATE_004' COMMENT '平台账户名称',
-  `sn` varchar(50) NOT NULL DEFAULT '' COMMENT '产品(标的)编号',
-  `product_name` varchar(30) NOT NULL DEFAULT '' COMMENT '产品名称',
-  `member_id` int(11) NOT NULL DEFAULT '0' COMMENT '借款人id，如代偿还款业务，当前是投资人id',
-  `remark` varchar(50) NOT NULL DEFAULT '' COMMENT '备注',
-  `complete_time` int(11) NOT NULL DEFAULT '0' COMMENT '完成时间',
-  `amount` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '发生金额',
-  `balance` decimal(11,2) NOT NULL COMMENT '当前金额',
-  `ls_sn` varchar(50) NOT NULL DEFAULT '' COMMENT '流水号',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0:放款，1：提现，3：充值 4:代偿还款 5:借款人还代偿款',
-  PRIMARY KEY (`id`)
+                                       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+                                       `platform_name` varchar(30) NOT NULL DEFAULT 'SYS_GENERATE_004' COMMENT '平台账户名称',
+                                       `sn` varchar(50) NOT NULL DEFAULT '' COMMENT '产品(标的)编号',
+                                       `product_name` varchar(30) NOT NULL DEFAULT '' COMMENT '产品名称',
+                                       `member_id` int(11) NOT NULL DEFAULT '0' COMMENT '借款人id，如代偿还款业务，当前是投资人id',
+                                       `remark` varchar(50) NOT NULL DEFAULT '' COMMENT '备注',
+                                       `complete_time` int(11) NOT NULL DEFAULT '0' COMMENT '完成时间',
+                                       `amount` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '发生金额',
+                                       `balance` decimal(11,2) NOT NULL COMMENT '当前金额',
+                                       `ls_sn` varchar(50) NOT NULL DEFAULT '' COMMENT '流水号',
+                                       `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0:放款，1：提现，3：充值 4:代偿还款 5:借款人还代偿款',
+                                       PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=288 DEFAULT CHARSET=utf8 COMMENT='平台收益表';
 
 -- ----------------------------
@@ -12849,16 +9377,16 @@ INSERT INTO `qfb_platform_income` VALUES ('287', 'SYS_GENERATE_001', 'HK20170816
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_pro_category`;
 CREATE TABLE `qfb_pro_category` (
-  `id` int(4) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(30) NOT NULL DEFAULT '' COMMENT '产品分类名称',
-  `category_des` varchar(50) NOT NULL DEFAULT '' COMMENT '分类简介',
-  `rate` varchar(50) NOT NULL DEFAULT '' COMMENT '收益率区间范围',
-  `rate_tips` varchar(50) NOT NULL DEFAULT '' COMMENT '收益率文字说明',
-  `pic` varchar(50) NOT NULL DEFAULT '' COMMENT '图片地址',
-  `is_down` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否下架 0否 1是',
-  `icon` varchar(50) NOT NULL DEFAULT '' COMMENT '图标',
-  `sort` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
-  PRIMARY KEY (`id`)
+                                    `id` int(4) NOT NULL AUTO_INCREMENT,
+                                    `category_name` varchar(30) NOT NULL DEFAULT '' COMMENT '产品分类名称',
+                                    `category_des` varchar(50) NOT NULL DEFAULT '' COMMENT '分类简介',
+                                    `rate` varchar(50) NOT NULL DEFAULT '' COMMENT '收益率区间范围',
+                                    `rate_tips` varchar(50) NOT NULL DEFAULT '' COMMENT '收益率文字说明',
+                                    `pic` varchar(50) NOT NULL DEFAULT '' COMMENT '图片地址',
+                                    `is_down` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否下架 0否 1是',
+                                    `icon` varchar(50) NOT NULL DEFAULT '' COMMENT '图标',
+                                    `sort` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
+                                    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -12874,45 +9402,45 @@ INSERT INTO `qfb_pro_category` VALUES ('7', '', '当前国际金价', '', '市�
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_product`;
 CREATE TABLE `qfb_product` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '产品id',
-  `sn` varchar(30) NOT NULL COMMENT '产品编号',
-  `product_type` tinyint(4) NOT NULL COMMENT '产品类型:1活期，2定期。',
-  `product_name` varchar(30) NOT NULL COMMENT '产品名称',
-  `category_id` int(5) NOT NULL DEFAULT '0' COMMENT '产品分类id ，1表示新手尊投，2表示活期理财（钱富宝），3表示定期理财列表，4单独某一个定期 ，5表示活期基金列表，6表示单独某个活期基金',
-  `min_money` decimal(10,2) NOT NULL COMMENT '起投金额',
-  `max_money` decimal(15,2) NOT NULL COMMENT '投资上限金额',
-  `step_money` decimal(10,2) NOT NULL COMMENT '递增金额',
-  `has_money` decimal(15,2) NOT NULL COMMENT '已投金额',
-  `stock_money` decimal(15,2) NOT NULL COMMENT '项目总额',
-  `year_rate` decimal(5,2) NOT NULL COMMENT '年化收益率',
-  `can_rate_ticket` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否可用加息券1是，0否',
-  `can_money_ticket` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否可用代金券(1是，0否)',
-  `profit_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '收益方式:(1)到期还本付息(2)按月等额付息，到期还本(3)按日等额付息，到期还本(4)按月等额本息(5)按日等额本息(6)按月等额还本，到期付息(7)按日等额还本，到期付息',
-  `is_newer` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否新手(1是，0不是)',
-  `lock_day` smallint(5) NOT NULL COMMENT '锁定期:用户在投资成交后一段时间内不能提现',
-  `invest_day` smallint(5) NOT NULL COMMENT '投资期限:用户该笔投资的持续时间',
-  `profit_day` tinyint(2) NOT NULL COMMENT '起息日:10:投资日11:投资日+1 20:满标日21:满标日+1',
-  `status` tinyint(2) NOT NULL COMMENT '0:已创建1:募集中2:售罄,未放款3:流标4:关闭,,5:放款中,6:已放款,还款中 ,7:已还款,待确认,8:确认已还款 ',
-  `create_time` int(11) NOT NULL COMMENT '创建时间',
-  `start_time` int(11) NOT NULL DEFAULT '0' COMMENT '开始时间',
-  `end_time` int(11) NOT NULL COMMENT '筹集到期时间',
-  `finish_time` int(11) NOT NULL DEFAULT '0' COMMENT '筹集完成时间',
-  `is_index` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否在首页显示 1是，0否',
-  `is_hidden` tinyint(1) NOT NULL DEFAULT '0' COMMENT '隐藏(0:否，1是)',
-  `member_id` int(11) NOT NULL COMMENT '借款人id(标的所属人)',
-  `platform_income` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '平台收益-待作废',
-  `platform_income_rate` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '平台收益率',
-  `credit_time` int(11) NOT NULL DEFAULT '0' COMMENT '放款时间',
-  `repayment_time` int(11) NOT NULL DEFAULT '0' COMMENT '还款时间',
-  `total_credit_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '应放款总额',
-  `actual_credit_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '已放款金额',
-  `credit_incomme` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '已发放平台收益',
-  `option_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 待操作 10 放款中 20 待变更标的  21 已变更还款中 29 变更还款中异常',
-  `total_repayment_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '应还款金额',
-  `actual_repayment_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '已还款金额',
-  `warranty_type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '保证方式 1 质押保证 2 抵押担保 3 保证担保',
-  `address` varchar(150) NOT NULL DEFAULT '' COMMENT '借款人地址',
-  PRIMARY KEY (`id`)
+                               `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '产品id',
+                               `sn` varchar(30) NOT NULL COMMENT '产品编号',
+                               `product_type` tinyint(4) NOT NULL COMMENT '产品类型:1活期，2定期。',
+                               `product_name` varchar(30) NOT NULL COMMENT '产品名称',
+                               `category_id` int(5) NOT NULL DEFAULT '0' COMMENT '产品分类id ，1表示新手尊投，2表示活期理财（钱富宝），3表示定期理财列表，4单独某一个定期 ，5表示活期基金列表，6表示单独某个活期基金',
+                               `min_money` decimal(10,2) NOT NULL COMMENT '起投金额',
+                               `max_money` decimal(15,2) NOT NULL COMMENT '投资上限金额',
+                               `step_money` decimal(10,2) NOT NULL COMMENT '递增金额',
+                               `has_money` decimal(15,2) NOT NULL COMMENT '已投金额',
+                               `stock_money` decimal(15,2) NOT NULL COMMENT '项目总额',
+                               `year_rate` decimal(5,2) NOT NULL COMMENT '年化收益率',
+                               `can_rate_ticket` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否可用加息券1是，0否',
+                               `can_money_ticket` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否可用代金券(1是，0否)',
+                               `profit_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '收益方式:(1)到期还本付息(2)按月等额付息，到期还本(3)按日等额付息，到期还本(4)按月等额本息(5)按日等额本息(6)按月等额还本，到期付息(7)按日等额还本，到期付息',
+                               `is_newer` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否新手(1是，0不是)',
+                               `lock_day` smallint(5) NOT NULL COMMENT '锁定期:用户在投资成交后一段时间内不能提现',
+                               `invest_day` smallint(5) NOT NULL COMMENT '投资期限:用户该笔投资的持续时间',
+                               `profit_day` tinyint(2) NOT NULL COMMENT '起息日:10:投资日11:投资日+1 20:满标日21:满标日+1',
+                               `status` tinyint(2) NOT NULL COMMENT '0:已创建1:募集中2:售罄,未放款3:流标4:关闭,,5:放款中,6:已放款,还款中 ,7:已还款,待确认,8:确认已还款 ',
+                               `create_time` int(11) NOT NULL COMMENT '创建时间',
+                               `start_time` int(11) NOT NULL DEFAULT '0' COMMENT '开始时间',
+                               `end_time` int(11) NOT NULL COMMENT '筹集到期时间',
+                               `finish_time` int(11) NOT NULL DEFAULT '0' COMMENT '筹集完成时间',
+                               `is_index` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否在首页显示 1是，0否',
+                               `is_hidden` tinyint(1) NOT NULL DEFAULT '0' COMMENT '隐藏(0:否，1是)',
+                               `member_id` int(11) NOT NULL COMMENT '借款人id(标的所属人)',
+                               `platform_income` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '平台收益-待作废',
+                               `platform_income_rate` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '平台收益率',
+                               `credit_time` int(11) NOT NULL DEFAULT '0' COMMENT '放款时间',
+                               `repayment_time` int(11) NOT NULL DEFAULT '0' COMMENT '还款时间',
+                               `total_credit_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '应放款总额',
+                               `actual_credit_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '已放款金额',
+                               `credit_incomme` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '已发放平台收益',
+                               `option_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 待操作 10 放款中 20 待变更标的  21 已变更还款中 29 变更还款中异常',
+                               `total_repayment_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '应还款金额',
+                               `actual_repayment_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '已还款金额',
+                               `warranty_type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '保证方式 1 质押保证 2 抵押担保 3 保证担保',
+                               `address` varchar(150) NOT NULL DEFAULT '' COMMENT '借款人地址',
+                               PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=307 DEFAULT CHARSET=utf8 COMMENT='产品表';
 
 -- ----------------------------
@@ -13122,10 +9650,10 @@ INSERT INTO `qfb_product` VALUES ('306', 'Dq20170816140649WIZG98', '2', '1017', 
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_product_agreement`;
 CREATE TABLE `qfb_product_agreement` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `product_id` int(11) NOT NULL DEFAULT '0',
-  `agreement_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                         `id` int(10) NOT NULL AUTO_INCREMENT,
+                                         `product_id` int(11) NOT NULL DEFAULT '0',
+                                         `agreement_id` int(11) DEFAULT NULL,
+                                         PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=402 DEFAULT CHARSET=utf8 COMMENT='产品协议关联表';
 
 -- ----------------------------
@@ -13473,12 +10001,12 @@ INSERT INTO `qfb_product_agreement` VALUES ('401', '306', '8');
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_product_detail`;
 CREATE TABLE `qfb_product_detail` (
-  `product_id` int(11) NOT NULL COMMENT '产品id',
-  `content` varchar(100) NOT NULL DEFAULT '' COMMENT '产品简述',
-  `detail` text NOT NULL COMMENT '产品详情',
-  `tips` varchar(255) DEFAULT '' COMMENT '新手计划的右上角图标url\\活期背景图',
-  PRIMARY KEY (`product_id`),
-  CONSTRAINT `FK_Reference_1` FOREIGN KEY (`product_id`) REFERENCES `qfb_product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+                                      `product_id` int(11) NOT NULL COMMENT '产品id',
+                                      `content` varchar(100) NOT NULL DEFAULT '' COMMENT '产品简述',
+                                      `detail` text NOT NULL COMMENT '产品详情',
+                                      `tips` varchar(255) DEFAULT '' COMMENT '新手计划的右上角图标url\\活期背景图',
+                                      PRIMARY KEY (`product_id`),
+                                      CONSTRAINT `FK_Reference_1` FOREIGN KEY (`product_id`) REFERENCES `qfb_product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='产品详情';
 
 -- ----------------------------
@@ -13676,22 +10204,22 @@ INSERT INTO `qfb_product_detail` VALUES ('306', '是否', '<p>地方</p>', '');
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_profit_settings`;
 CREATE TABLE `qfb_profit_settings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_type` tinyint(4) NOT NULL COMMENT '产品类型,1活期，2定期',
-  `product_id` int(11) NOT NULL COMMENT '产品id',
-  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '是否可用,1可用，0不可用',
-  `direct_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '直接会员分润比例',
-  `indirect_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '间接推荐分润比例',
-  `share_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '分享会员分润比例',
-  `recommond_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '分润比例',
-  `manage_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '管理奖比例',
-  `province_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '省级代理管理奖比例',
-  `city_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '市级代理管理奖比例',
-  `area_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '区级代理管理奖比例',
-  `agent_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '推荐代理奖',
-  `operator` int(11) NOT NULL DEFAULT '0' COMMENT '最后操作人',
-  `edit_time` int(11) NOT NULL DEFAULT '0' COMMENT '编辑时间',
-  PRIMARY KEY (`id`)
+                                       `id` int(11) NOT NULL AUTO_INCREMENT,
+                                       `product_type` tinyint(4) NOT NULL COMMENT '产品类型,1活期，2定期',
+                                       `product_id` int(11) NOT NULL COMMENT '产品id',
+                                       `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '是否可用,1可用，0不可用',
+                                       `direct_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '直接会员分润比例',
+                                       `indirect_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '间接推荐分润比例',
+                                       `share_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '分享会员分润比例',
+                                       `recommond_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '分润比例',
+                                       `manage_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '管理奖比例',
+                                       `province_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '省级代理管理奖比例',
+                                       `city_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '市级代理管理奖比例',
+                                       `area_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '区级代理管理奖比例',
+                                       `agent_rate` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '推荐代理奖',
+                                       `operator` int(11) NOT NULL DEFAULT '0' COMMENT '最后操作人',
+                                       `edit_time` int(11) NOT NULL DEFAULT '0' COMMENT '编辑时间',
+                                       PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=278 DEFAULT CHARSET=utf8 COMMENT='收益率设置';
 
 -- ----------------------------
@@ -13917,16 +10445,16 @@ INSERT INTO `qfb_profit_settings` VALUES ('277', '2', '306', '1', '30.00', '30.0
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_pt_account`;
 CREATE TABLE `qfb_pt_account` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `zn_name` varchar(50) NOT NULL DEFAULT '' COMMENT '账户名',
-  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '账户编号',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '账户余额',
-  `frozen` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '冻结金额',
-  `commutation_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '代偿金额',
-  `bank` varchar(20) NOT NULL DEFAULT '' COMMENT '银行卡号',
-  `bank_code` varchar(10) NOT NULL DEFAULT '' COMMENT '银行编码',
-  `is_open` tinyint(10) NOT NULL DEFAULT '0' COMMENT '是否绑卡 0：未绑卡 1：绑卡',
-  PRIMARY KEY (`id`)
+                                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                                  `zn_name` varchar(50) NOT NULL DEFAULT '' COMMENT '账户名',
+                                  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '账户编号',
+                                  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '账户余额',
+                                  `frozen` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '冻结金额',
+                                  `commutation_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '代偿金额',
+                                  `bank` varchar(20) NOT NULL DEFAULT '' COMMENT '银行卡号',
+                                  `bank_code` varchar(10) NOT NULL DEFAULT '' COMMENT '银行编码',
+                                  `is_open` tinyint(10) NOT NULL DEFAULT '0' COMMENT '是否绑卡 0：未绑卡 1：绑卡',
+                                  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='平台账户表';
 
 -- ----------------------------
@@ -13945,19 +10473,19 @@ INSERT INTO `qfb_pt_account` VALUES ('7', '代充值账户', 'SYS_GENERATE_006',
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_pt_order`;
 CREATE TABLE `qfb_pt_order` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单id',
-  `sn` varchar(50) NOT NULL COMMENT '订单编号',
-  `pt_number` varchar(50) NOT NULL COMMENT '平台账户编号',
-  `price` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总价格',
-  `is_check` tinyint(1) NOT NULL DEFAULT '0' COMMENT '订单状态 0待支付，1已支付，2失败，3处理中，4无此交易 5通过审核',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
-  `complete_time` int(11) NOT NULL DEFAULT '0' COMMENT '完成时间',
-  `sorts` tinyint(1) NOT NULL DEFAULT '0' COMMENT '订单类别(0其他 1充值2提现3投标4还款)',
-  `fee` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '手续费',
-  `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '实际支付金额',
-  `bank_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通道ID',
-  `out_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '提现类型0其他,1当日,2:1-3工作日',
-  PRIMARY KEY (`id`)
+                                `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单id',
+                                `sn` varchar(50) NOT NULL COMMENT '订单编号',
+                                `pt_number` varchar(50) NOT NULL COMMENT '平台账户编号',
+                                `price` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '总价格',
+                                `is_check` tinyint(1) NOT NULL DEFAULT '0' COMMENT '订单状态 0待支付，1已支付，2失败，3处理中，4无此交易 5通过审核',
+                                `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
+                                `complete_time` int(11) NOT NULL DEFAULT '0' COMMENT '完成时间',
+                                `sorts` tinyint(1) NOT NULL DEFAULT '0' COMMENT '订单类别(0其他 1充值2提现3投标4还款)',
+                                `fee` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '手续费',
+                                `money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '实际支付金额',
+                                `bank_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通道ID',
+                                `out_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '提现类型0其他,1当日,2:1-3工作日',
+                                PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=516 DEFAULT CHARSET=utf8 COMMENT='平台充值提现表 (只保留1个月内的订单)';
 
 -- ----------------------------
@@ -14059,16 +10587,16 @@ INSERT INTO `qfb_pt_order` VALUES ('515', 'PT_CZ2017082215425190CZML', 'SYS_GENE
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_reconciliation_log`;
 CREATE TABLE `qfb_reconciliation_log` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `r_id` int(11) NOT NULL DEFAULT '0' COMMENT '临时对账表id',
-  `ls_sn` varchar(32) NOT NULL DEFAULT '' COMMENT '平台请求流水号',
-  `platform_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '平台金额',
-  `account_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '到账金额(银行金额)',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型 0 提现 1 放款 2 充值 3 交易',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否处理 0 否 1 是',
-  `remark` text COMMENT '备注',
-  PRIMARY KEY (`id`)
+                                          `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                          `r_id` int(11) NOT NULL DEFAULT '0' COMMENT '临时对账表id',
+                                          `ls_sn` varchar(32) NOT NULL DEFAULT '' COMMENT '平台请求流水号',
+                                          `platform_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '平台金额',
+                                          `account_money` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '到账金额(银行金额)',
+                                          `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '类型 0 提现 1 放款 2 充值 3 交易',
+                                          `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                          `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否处理 0 否 1 是',
+                                          `remark` text COMMENT '备注',
+                                          PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=855 DEFAULT CHARSET=utf8 COMMENT='对账异常记录表';
 
 -- ----------------------------
@@ -14790,15 +11318,15 @@ INSERT INTO `qfb_reconciliation_log` VALUES ('854', '27', 'CZ20170816093734PSGKG
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_share`;
 CREATE TABLE `qfb_share` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) NOT NULL DEFAULT '' COMMENT '分享标题',
-  `content` varchar(200) NOT NULL DEFAULT '' COMMENT '分享内容',
-  `pic_url` varchar(150) NOT NULL DEFAULT '' COMMENT '图片地址',
-  `url` varchar(150) NOT NULL DEFAULT '' COMMENT '页面地址',
-  `type` tinyint(2) NOT NULL DEFAULT '1' COMMENT '类型 1首页',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `is_open` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否开启0否1是',
-  PRIMARY KEY (`id`)
+                             `id` int(11) NOT NULL AUTO_INCREMENT,
+                             `title` varchar(50) NOT NULL DEFAULT '' COMMENT '分享标题',
+                             `content` varchar(200) NOT NULL DEFAULT '' COMMENT '分享内容',
+                             `pic_url` varchar(150) NOT NULL DEFAULT '' COMMENT '图片地址',
+                             `url` varchar(150) NOT NULL DEFAULT '' COMMENT '页面地址',
+                             `type` tinyint(2) NOT NULL DEFAULT '1' COMMENT '类型 1首页',
+                             `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                             `is_open` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否开启0否1是',
+                             PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='分享表';
 
 -- ----------------------------
@@ -14812,13 +11340,13 @@ INSERT INTO `qfb_share` VALUES ('2', '首页高收益，零风险', '理财改�
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_sms_code`;
 CREATE TABLE `qfb_sms_code` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `phone` varchar(24) NOT NULL COMMENT '手机号码',
-  `code` varchar(100) NOT NULL COMMENT '验证字符串',
-  `sen_time` int(11) NOT NULL DEFAULT '0' COMMENT '发送时间',
-  `use_time` int(11) NOT NULL DEFAULT '0' COMMENT '使用时间',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '用户状态，1未使用，0已使用',
-  PRIMARY KEY (`id`)
+                                `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+                                `phone` varchar(24) NOT NULL COMMENT '手机号码',
+                                `code` varchar(100) NOT NULL COMMENT '验证字符串',
+                                `sen_time` int(11) NOT NULL DEFAULT '0' COMMENT '发送时间',
+                                `use_time` int(11) NOT NULL DEFAULT '0' COMMENT '使用时间',
+                                `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '用户状态，1未使用，0已使用',
+                                PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=959 DEFAULT CHARSET=utf8mb4 COMMENT='手机验证码';
 
 -- ----------------------------
@@ -14844,8 +11372,8 @@ INSERT INTO `qfb_sms_code` VALUES ('958', '13128829243', '1234', '1498207773', '
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_statis_data`;
 CREATE TABLE `qfb_statis_data` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  PRIMARY KEY (`id`)
+                                   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+                                   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='数据统计表';
 
 -- ----------------------------
@@ -14857,10 +11385,10 @@ CREATE TABLE `qfb_statis_data` (
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_system_maintenance`;
 CREATE TABLE `qfb_system_maintenance` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `is_maintenance` tinyint(4) NOT NULL DEFAULT '0' COMMENT '维护状态（0，未维护，1维护中）',
-  `msg` text NOT NULL COMMENT '维护消息',
-  PRIMARY KEY (`id`)
+                                          `id` int(11) NOT NULL AUTO_INCREMENT,
+                                          `is_maintenance` tinyint(4) NOT NULL DEFAULT '0' COMMENT '维护状态（0，未维护，1维护中）',
+                                          `msg` text NOT NULL COMMENT '维护消息',
+                                          PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -14873,21 +11401,21 @@ INSERT INTO `qfb_system_maintenance` VALUES ('1', '0', '为保障数据及资金
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_system_settings`;
 CREATE TABLE `qfb_system_settings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '出账状态,0可进行活期定期操作，1不可活期定期操作',
-  `min_money` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '提现小于的固定金额',
-  `money_fee` decimal(3,2) NOT NULL DEFAULT '0.00' COMMENT '提现小于固定金额收取费用',
-  `fast_rate` decimal(3,2) NOT NULL DEFAULT '0.00' COMMENT '快速提现费率',
-  `slow_rate` decimal(3,2) NOT NULL DEFAULT '0.00' COMMENT '慢速提现费率',
-  `per_money` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '单笔最大提现金额',
-  `day_money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '单日最大提现金额',
-  `gold_money` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '当日黄金价格',
-  `gold_market_money` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '当日黄金市场价格',
-  `operator` varchar(25) NOT NULL DEFAULT '' COMMENT '操作者',
-  `open_start_time` int(2) NOT NULL DEFAULT '9' COMMENT '每日提现开始时间',
-  `open_end_time` int(2) NOT NULL DEFAULT '17' COMMENT '每日提现结束时间',
-  `close_content` varchar(255) NOT NULL DEFAULT '' COMMENT '关闭提现显示的内容',
-  PRIMARY KEY (`id`)
+                                       `id` int(11) NOT NULL AUTO_INCREMENT,
+                                       `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '出账状态,0可进行活期定期操作，1不可活期定期操作',
+                                       `min_money` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '提现小于的固定金额',
+                                       `money_fee` decimal(3,2) NOT NULL DEFAULT '0.00' COMMENT '提现小于固定金额收取费用',
+                                       `fast_rate` decimal(3,2) NOT NULL DEFAULT '0.00' COMMENT '快速提现费率',
+                                       `slow_rate` decimal(3,2) NOT NULL DEFAULT '0.00' COMMENT '慢速提现费率',
+                                       `per_money` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '单笔最大提现金额',
+                                       `day_money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '单日最大提现金额',
+                                       `gold_money` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '当日黄金价格',
+                                       `gold_market_money` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT '当日黄金市场价格',
+                                       `operator` varchar(25) NOT NULL DEFAULT '' COMMENT '操作者',
+                                       `open_start_time` int(2) NOT NULL DEFAULT '9' COMMENT '每日提现开始时间',
+                                       `open_end_time` int(2) NOT NULL DEFAULT '17' COMMENT '每日提现结束时间',
+                                       `close_content` varchar(255) NOT NULL DEFAULT '' COMMENT '关闭提现显示的内容',
+                                       PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='系统全局设置';
 
 -- ----------------------------
@@ -14900,20 +11428,20 @@ INSERT INTO `qfb_system_settings` VALUES ('1', '0', '100.00', '2.00', '0.00', '0
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_temporary_commission`;
 CREATE TABLE `qfb_temporary_commission` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  `withhold_time` varchar(32) NOT NULL COMMENT '扣款时间',
-  `member_id` varchar(32) NOT NULL COMMENT '平台商户id',
-  `sn` varchar(32) NOT NULL COMMENT '订单编号',
-  `operation_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '业务类型 0 否',
-  `initiator_platform_id` varchar(32) NOT NULL COMMENT '发起方平台用户id',
-  `receive_platform_id` varchar(32) NOT NULL COMMENT '接收方平台用户id',
-  `money` decimal(15,2) NOT NULL COMMENT '金额',
-  `currency` varchar(32) NOT NULL DEFAULT '0' COMMENT '币种 0 人民币 1 美元',
-  `product_sn` varchar(32) NOT NULL COMMENT '产品编号',
-  `remark` text COMMENT '备注',
-  `ls_sn` varchar(32) NOT NULL COMMENT '平台请求流水号',
-  `date` varchar(32) NOT NULL DEFAULT '' COMMENT '文件日期',
-  PRIMARY KEY (`id`)
+                                            `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+                                            `withhold_time` varchar(32) NOT NULL COMMENT '扣款时间',
+                                            `member_id` varchar(32) NOT NULL COMMENT '平台商户id',
+                                            `sn` varchar(32) NOT NULL COMMENT '订单编号',
+                                            `operation_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '业务类型 0 否',
+                                            `initiator_platform_id` varchar(32) NOT NULL COMMENT '发起方平台用户id',
+                                            `receive_platform_id` varchar(32) NOT NULL COMMENT '接收方平台用户id',
+                                            `money` decimal(15,2) NOT NULL COMMENT '金额',
+                                            `currency` varchar(32) NOT NULL DEFAULT '0' COMMENT '币种 0 人民币 1 美元',
+                                            `product_sn` varchar(32) NOT NULL COMMENT '产品编号',
+                                            `remark` text COMMENT '备注',
+                                            `ls_sn` varchar(32) NOT NULL COMMENT '平台请求流水号',
+                                            `date` varchar(32) NOT NULL DEFAULT '' COMMENT '文件日期',
+                                            PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=301 DEFAULT CHARSET=utf8 COMMENT='临时佣金表';
 
 -- ----------------------------
@@ -15009,24 +11537,24 @@ INSERT INTO `qfb_temporary_commission` VALUES ('300', '20170816090624', '7000000
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_temporary_recharge`;
 CREATE TABLE `qfb_temporary_recharge` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  `recharge_time` varchar(32) NOT NULL COMMENT '充值时间',
-  `member_id` varchar(32) NOT NULL COMMENT '平台商户id',
-  `zf_company` varchar(32) NOT NULL COMMENT '支付公司代码',
-  `ls_sn` varchar(32) NOT NULL COMMENT '平台请求流水号',
-  `sn` varchar(32) NOT NULL COMMENT '订单编号',
-  `operation_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '业务类型 0 否',
-  `money` decimal(15,2) NOT NULL COMMENT '金额',
-  `currency` varchar(32) NOT NULL DEFAULT '0' COMMENT '币种 0 人民币 1 美元',
-  `initiator_id` varchar(32) NOT NULL COMMENT '会员id',
-  `platform_id` varchar(32) NOT NULL COMMENT '平台用户id',
-  `no` varchar(32) NOT NULL COMMENT '银行卡号',
-  `bank_abbr` varchar(16) NOT NULL DEFAULT '' COMMENT '银行缩写(如CCB)',
-  `payment_type` varchar(32) NOT NULL COMMENT '支付方式',
-  `account_money` decimal(15,2) NOT NULL COMMENT '到账金额',
-  `remark` text COMMENT '备注',
-  `date` varchar(32) NOT NULL DEFAULT '' COMMENT '文件日期',
-  PRIMARY KEY (`id`)
+                                          `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+                                          `recharge_time` varchar(32) NOT NULL COMMENT '充值时间',
+                                          `member_id` varchar(32) NOT NULL COMMENT '平台商户id',
+                                          `zf_company` varchar(32) NOT NULL COMMENT '支付公司代码',
+                                          `ls_sn` varchar(32) NOT NULL COMMENT '平台请求流水号',
+                                          `sn` varchar(32) NOT NULL COMMENT '订单编号',
+                                          `operation_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '业务类型 0 否',
+                                          `money` decimal(15,2) NOT NULL COMMENT '金额',
+                                          `currency` varchar(32) NOT NULL DEFAULT '0' COMMENT '币种 0 人民币 1 美元',
+                                          `initiator_id` varchar(32) NOT NULL COMMENT '会员id',
+                                          `platform_id` varchar(32) NOT NULL COMMENT '平台用户id',
+                                          `no` varchar(32) NOT NULL COMMENT '银行卡号',
+                                          `bank_abbr` varchar(16) NOT NULL DEFAULT '' COMMENT '银行缩写(如CCB)',
+                                          `payment_type` varchar(32) NOT NULL COMMENT '支付方式',
+                                          `account_money` decimal(15,2) NOT NULL COMMENT '到账金额',
+                                          `remark` text COMMENT '备注',
+                                          `date` varchar(32) NOT NULL DEFAULT '' COMMENT '文件日期',
+                                          PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8 COMMENT='临时充值表';
 
 -- ----------------------------
@@ -15052,15 +11580,15 @@ INSERT INTO `qfb_temporary_recharge` VALUES ('162', '20170816093714', '700000035
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_temporary_reconciliation`;
 CREATE TABLE `qfb_temporary_reconciliation` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  `file_name` varchar(30) NOT NULL COMMENT '对账日期字符',
-  `file_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '文件类型 0 充值 1 提现 2 交易 3 佣金',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态 0 初始状态 1 失败 2 成功',
-  `affirm_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '对账确认状态 0 初始状态 1 失败 2 成功',
-  `withhold_time` int(11) NOT NULL COMMENT '对账时间(开始时间）',
-  `end_time` int(11) NOT NULL DEFAULT '0' COMMENT '结束时间',
-  `remark` text NOT NULL COMMENT '备注',
-  PRIMARY KEY (`id`)
+                                                `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+                                                `file_name` varchar(30) NOT NULL COMMENT '对账日期字符',
+                                                `file_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '文件类型 0 充值 1 提现 2 交易 3 佣金',
+                                                `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态 0 初始状态 1 失败 2 成功',
+                                                `affirm_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '对账确认状态 0 初始状态 1 失败 2 成功',
+                                                `withhold_time` int(11) NOT NULL COMMENT '对账时间(开始时间）',
+                                                `end_time` int(11) NOT NULL DEFAULT '0' COMMENT '结束时间',
+                                                `remark` text NOT NULL COMMENT '备注',
+                                                PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COMMENT='临时对账表';
 
 -- ----------------------------
@@ -15091,26 +11619,26 @@ INSERT INTO `qfb_temporary_reconciliation` VALUES ('27', '20170816', '0', '1', '
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_temporary_transaction`;
 CREATE TABLE `qfb_temporary_transaction` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  `generated_time` varchar(32) NOT NULL COMMENT '发生时间',
-  `member_id` varchar(32) NOT NULL COMMENT '平台用户id',
-  `ls_sn` varchar(30) NOT NULL COMMENT '流水号',
-  `sn` varchar(30) NOT NULL COMMENT '订单编号',
-  `operation_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '业务类型 0 否',
-  `money` decimal(15,2) NOT NULL COMMENT '金额',
-  `interest_money` decimal(15,2) NOT NULL COMMENT '利息金额',
-  `currency` varchar(32) NOT NULL DEFAULT '0' COMMENT '币种 0 人民币 1 美元',
-  `initiator_id` varchar(32) NOT NULL COMMENT '发起方会员id',
-  `initiator_platform_id` varchar(32) NOT NULL COMMENT '发起方平台用户id',
-  `receive_id` varchar(32) NOT NULL COMMENT '接收方会员id',
-  `receive_platform_id` varchar(32) NOT NULL COMMENT '接收方平台用户id',
-  `object_sn` varchar(30) NOT NULL COMMENT '标的号',
-  `original_sn` varchar(30) NOT NULL COMMENT '原订单编号',
-  `remark` text COMMENT '备注',
-  `bond_share` varchar(32) NOT NULL DEFAULT '0' COMMENT '债权份额',
-  `custom` text COMMENT '商户自定义参数',
-  `date` varchar(32) NOT NULL DEFAULT '' COMMENT '文件日期',
-  PRIMARY KEY (`id`)
+                                             `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+                                             `generated_time` varchar(32) NOT NULL COMMENT '发生时间',
+                                             `member_id` varchar(32) NOT NULL COMMENT '平台用户id',
+                                             `ls_sn` varchar(30) NOT NULL COMMENT '流水号',
+                                             `sn` varchar(30) NOT NULL COMMENT '订单编号',
+                                             `operation_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '业务类型 0 否',
+                                             `money` decimal(15,2) NOT NULL COMMENT '金额',
+                                             `interest_money` decimal(15,2) NOT NULL COMMENT '利息金额',
+                                             `currency` varchar(32) NOT NULL DEFAULT '0' COMMENT '币种 0 人民币 1 美元',
+                                             `initiator_id` varchar(32) NOT NULL COMMENT '发起方会员id',
+                                             `initiator_platform_id` varchar(32) NOT NULL COMMENT '发起方平台用户id',
+                                             `receive_id` varchar(32) NOT NULL COMMENT '接收方会员id',
+                                             `receive_platform_id` varchar(32) NOT NULL COMMENT '接收方平台用户id',
+                                             `object_sn` varchar(30) NOT NULL COMMENT '标的号',
+                                             `original_sn` varchar(30) NOT NULL COMMENT '原订单编号',
+                                             `remark` text COMMENT '备注',
+                                             `bond_share` varchar(32) NOT NULL DEFAULT '0' COMMENT '债权份额',
+                                             `custom` text COMMENT '商户自定义参数',
+                                             `date` varchar(32) NOT NULL DEFAULT '' COMMENT '文件日期',
+                                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1024 DEFAULT CHARSET=utf8 COMMENT='临时交易表';
 
 -- ----------------------------
@@ -15502,27 +12030,27 @@ INSERT INTO `qfb_temporary_transaction` VALUES ('1023', '20170816090624', '70000
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_temporary_withdraw`;
 CREATE TABLE `qfb_temporary_withdraw` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  `withdraw_time` varchar(32) NOT NULL COMMENT '提现时间',
-  `member_id` varchar(32) NOT NULL COMMENT '平台商户id',
-  `ls_sn` varchar(30) NOT NULL COMMENT '平台请求流水号',
-  `sn` varchar(30) NOT NULL COMMENT '订单编号',
-  `operation_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '业务类型 0 否',
-  `money` decimal(15,2) NOT NULL COMMENT '金额',
-  `currency` varchar(32) NOT NULL DEFAULT '0' COMMENT '币种 0 人民币 1 美元',
-  `initiator_id` varchar(32) NOT NULL COMMENT '会员id',
-  `platform_id` varchar(32) NOT NULL COMMENT '平台用户id',
-  `no` varchar(30) NOT NULL COMMENT '银行卡号',
-  `bank_abbr` varchar(16) NOT NULL DEFAULT '' COMMENT '银行缩写(如CCB)',
-  `account_money` decimal(15,2) NOT NULL COMMENT '到账金额',
-  `remark` text COMMENT '备注',
-  `status` varchar(32) NOT NULL DEFAULT '' COMMENT '提现状态',
-  `way` varchar(32) NOT NULL DEFAULT '' COMMENT '提现方式',
-  `advance` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '垫付款',
-  `speed_type` varchar(32) NOT NULL DEFAULT '' COMMENT '出款类型',
-  `withdaw_type` varchar(32) NOT NULL DEFAULT '' COMMENT '提现类型',
-  `date` varchar(32) NOT NULL DEFAULT '' COMMENT '文件日期',
-  PRIMARY KEY (`id`)
+                                          `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+                                          `withdraw_time` varchar(32) NOT NULL COMMENT '提现时间',
+                                          `member_id` varchar(32) NOT NULL COMMENT '平台商户id',
+                                          `ls_sn` varchar(30) NOT NULL COMMENT '平台请求流水号',
+                                          `sn` varchar(30) NOT NULL COMMENT '订单编号',
+                                          `operation_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '业务类型 0 否',
+                                          `money` decimal(15,2) NOT NULL COMMENT '金额',
+                                          `currency` varchar(32) NOT NULL DEFAULT '0' COMMENT '币种 0 人民币 1 美元',
+                                          `initiator_id` varchar(32) NOT NULL COMMENT '会员id',
+                                          `platform_id` varchar(32) NOT NULL COMMENT '平台用户id',
+                                          `no` varchar(30) NOT NULL COMMENT '银行卡号',
+                                          `bank_abbr` varchar(16) NOT NULL DEFAULT '' COMMENT '银行缩写(如CCB)',
+                                          `account_money` decimal(15,2) NOT NULL COMMENT '到账金额',
+                                          `remark` text COMMENT '备注',
+                                          `status` varchar(32) NOT NULL DEFAULT '' COMMENT '提现状态',
+                                          `way` varchar(32) NOT NULL DEFAULT '' COMMENT '提现方式',
+                                          `advance` decimal(15,2) NOT NULL DEFAULT '0.00' COMMENT '垫付款',
+                                          `speed_type` varchar(32) NOT NULL DEFAULT '' COMMENT '出款类型',
+                                          `withdaw_type` varchar(32) NOT NULL DEFAULT '' COMMENT '提现类型',
+                                          `date` varchar(32) NOT NULL DEFAULT '' COMMENT '文件日期',
+                                          PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='临时提现表';
 
 -- ----------------------------
@@ -15538,17 +12066,17 @@ INSERT INTO `qfb_temporary_withdraw` VALUES ('6', '20170816134343', '7000000356'
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_version`;
 CREATE TABLE `qfb_version` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ver_code` int(11) NOT NULL DEFAULT '100' COMMENT '版本code',
-  `ver_name` varchar(6) NOT NULL DEFAULT '1.0.0' COMMENT '版本名称',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `content` text NOT NULL COMMENT '更新内容介绍',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '文件类型1安卓 2ios',
-  `url` varchar(150) NOT NULL DEFAULT '' COMMENT '文件地址',
-  `is_force` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否强制跟新0否1是',
-  `channel` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否上传市场0否1是',
-  `imprint` varchar(255) NOT NULL DEFAULT '' COMMENT '版本说明',
-  PRIMARY KEY (`id`)
+                               `id` int(11) NOT NULL AUTO_INCREMENT,
+                               `ver_code` int(11) NOT NULL DEFAULT '100' COMMENT '版本code',
+                               `ver_name` varchar(6) NOT NULL DEFAULT '1.0.0' COMMENT '版本名称',
+                               `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                               `content` text NOT NULL COMMENT '更新内容介绍',
+                               `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '文件类型1安卓 2ios',
+                               `url` varchar(150) NOT NULL DEFAULT '' COMMENT '文件地址',
+                               `is_force` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否强制跟新0否1是',
+                               `channel` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否上传市场0否1是',
+                               `imprint` varchar(255) NOT NULL DEFAULT '' COMMENT '版本说明',
+                               PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='版本列表';
 
 -- ----------------------------
@@ -15560,19 +12088,19 @@ CREATE TABLE `qfb_version` (
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_vouchers`;
 CREATE TABLE `qfb_vouchers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '代金券编号',
-  `name` varchar(10) NOT NULL DEFAULT '' COMMENT '代金券名称',
-  `type` tinyint(2) NOT NULL DEFAULT '0' COMMENT '代金券类型(0:固定规则发放,1:活动发放)',
-  `valid_days` int(4) NOT NULL DEFAULT '0' COMMENT '有效期(天)',
-  `money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '代金券金额',
-  `use_money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '使用条件(满多少元可用)',
-  `use_members` varchar(20) NOT NULL DEFAULT '' COMMENT '可用人群',
-  `use_type` tinyint(2) NOT NULL DEFAULT '0' COMMENT '可用产品类型0全部1活期2定期',
-  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '是否开启(1:是,0:否)',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `start_time` int(11) NOT NULL,
-  `end_time` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+                                `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '代金券编号',
+                                `name` varchar(10) NOT NULL DEFAULT '' COMMENT '代金券名称',
+                                `type` tinyint(2) NOT NULL DEFAULT '0' COMMENT '代金券类型(0:固定规则发放,1:活动发放)',
+                                `valid_days` int(4) NOT NULL DEFAULT '0' COMMENT '有效期(天)',
+                                `money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '代金券金额',
+                                `use_money` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '使用条件(满多少元可用)',
+                                `use_members` varchar(20) NOT NULL DEFAULT '' COMMENT '可用人群',
+                                `use_type` tinyint(2) NOT NULL DEFAULT '0' COMMENT '可用产品类型0全部1活期2定期',
+                                `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '是否开启(1:是,0:否)',
+                                `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
+                                `start_time` int(11) NOT NULL,
+                                `end_time` int(11) NOT NULL,
+                                PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COMMENT='代金券';
 
 -- ----------------------------
@@ -15600,18 +12128,18 @@ INSERT INTO `qfb_vouchers` VALUES ('26', '10', '1', '6', '10.00', '100.00', ',15
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_warranty`;
 CREATE TABLE `qfb_warranty` (
-  `id` int(4) NOT NULL AUTO_INCREMENT,
-  `product_id` int(4) NOT NULL COMMENT '产品ID',
-  `plate_number` varchar(50) NOT NULL DEFAULT '' COMMENT '牌照号',
-  `model` varchar(50) NOT NULL DEFAULT '' COMMENT '型号',
-  `engine_number` varchar(50) NOT NULL DEFAULT '' COMMENT '发动机号',
-  `vin` varchar(50) NOT NULL DEFAULT '' COMMENT '车架号',
-  `contract_number` varchar(50) NOT NULL DEFAULT '' COMMENT '合同编码',
-  `warrantor` varchar(50) NOT NULL DEFAULT '' COMMENT '保证人',
-  `id_card` varchar(50) NOT NULL DEFAULT '' COMMENT '身份证号码',
-  `mobile` varchar(50) NOT NULL DEFAULT '' COMMENT '联系电话',
-  `guarantee_way` tinyint(4) NOT NULL DEFAULT '0' COMMENT '保证方式 1 一般保证 2 连带责任保',
-  PRIMARY KEY (`id`)
+                                `id` int(4) NOT NULL AUTO_INCREMENT,
+                                `product_id` int(4) NOT NULL COMMENT '产品ID',
+                                `plate_number` varchar(50) NOT NULL DEFAULT '' COMMENT '牌照号',
+                                `model` varchar(50) NOT NULL DEFAULT '' COMMENT '型号',
+                                `engine_number` varchar(50) NOT NULL DEFAULT '' COMMENT '发动机号',
+                                `vin` varchar(50) NOT NULL DEFAULT '' COMMENT '车架号',
+                                `contract_number` varchar(50) NOT NULL DEFAULT '' COMMENT '合同编码',
+                                `warrantor` varchar(50) NOT NULL DEFAULT '' COMMENT '保证人',
+                                `id_card` varchar(50) NOT NULL DEFAULT '' COMMENT '身份证号码',
+                                `mobile` varchar(50) NOT NULL DEFAULT '' COMMENT '联系电话',
+                                `guarantee_way` tinyint(4) NOT NULL DEFAULT '0' COMMENT '保证方式 1 一般保证 2 连带责任保',
+                                PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COMMENT='担保信息表';
 
 -- ----------------------------
@@ -15651,10 +12179,10 @@ INSERT INTO `qfb_warranty` VALUES ('43', '306', '', '', '', '', '水电费', '',
 -- ----------------------------
 DROP TABLE IF EXISTS `qfb_white_member`;
 CREATE TABLE `qfb_white_member` (
-  `member_id` int(11) NOT NULL COMMENT '用户id',
-  `level` int(11) NOT NULL COMMENT '等级id 4、区代 5、市代',
-  `active` tinyint(1) NOT NULL DEFAULT '0' COMMENT '白名单   1开0关',
-  PRIMARY KEY (`member_id`)
+                                    `member_id` int(11) NOT NULL COMMENT '用户id',
+                                    `level` int(11) NOT NULL COMMENT '等级id 4、区代 5、市代',
+                                    `active` tinyint(1) NOT NULL DEFAULT '0' COMMENT '白名单   1开0关',
+                                    PRIMARY KEY (`member_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='白名单';
 
 -- ----------------------------

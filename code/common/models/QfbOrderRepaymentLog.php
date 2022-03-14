@@ -24,17 +24,17 @@ class QfbOrderRepaymentLog extends \yii\db\ActiveRecord
 
     public function __construct($_order_repayment_id)
     {
-        if($_order_repayment_id != 'order_repayment_log'){
-            $number = $_order_repayment_id%10;
-            self::$postfix = '_t'.$number;
-        }
+//        if($_order_repayment_id != 'order_repayment_log'){
+//            $number = $_order_repayment_id%10;
+//            self::$postfix = '_t'.$number;
+//        }
     }
 
     public static function tableName()
     {
-        if(!empty(self::$postfix)){
-           return '{{%order_repayment_log'.self::$postfix.'}}';
-        }
+//        if(!empty(self::$postfix)){
+//           return '{{%order_repayment_log'.self::$postfix.'}}';
+//        }
         return '{{%order_repayment_log}}';
     }
 

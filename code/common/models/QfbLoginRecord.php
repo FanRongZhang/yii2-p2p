@@ -19,15 +19,16 @@ class QfbLoginRecord extends \yii\db\ActiveRecord
      * @inheritdoc
      */
     protected  static $_member_id;
-    public function __construct($_member_id)
+    public function __construct($_member_id=0)
     {
         self::$_member_id = $_member_id;
     }
 
     public static function tableName()
     {
-        $number= self::$_member_id%10;
-        return '{{%login_record_t'.$number.'}}';
+        return '{{%login_record%}}';
+//        $number= self::$_member_id%10;
+//        return '{{%login_record_t'.$number.'}}';
     }
     /**
      * @inheritdoc

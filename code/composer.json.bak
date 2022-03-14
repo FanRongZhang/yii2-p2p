@@ -1,4 +1,6 @@
 {
+
+
     "name": "yiisoft/yii2-app-advanced",
     "description": "Yii 2 Advanced Project Template",
     "keywords": ["yii2", "framework", "advanced", "project template"],
@@ -20,6 +22,7 @@
         "yiisoft/yii2-swiftmailer": "*",
         "weison-tech/yii2-imperavi-redactor": "dev-master@dev",
         "weison-tech/yii2-file-kit": "dev-master",
+        "yiisoft/yii2-mongodb": "~2.0.0",
         "kartik-v/yii2-export": "@dev",
         "trntv/yii2-datetime-widget": "*",
         "kartik-v/yii2-mpdf": "dev-master",
@@ -27,11 +30,10 @@
         "mpdf/mpdf":"*"
     },
     "require-dev": {
-        "yiisoft/yii2-debug": "~2.0.0",
-        "yiisoft/yii2-gii": "~2.0.0",
-        "yiisoft/yii2-faker": "~2.0.0",
-        "codeception/base": "^2.2.3",
-        "codeception/verify": "~0.3.1"
+        "yiisoft/yii2-codeception": "*",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-faker": "*"
     },
     "config": {
         "process-timeout": 1800
@@ -41,15 +43,5 @@
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
         }
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://mirrors.aliyun.com/composer/"
-        },
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ]
+    }
 }
